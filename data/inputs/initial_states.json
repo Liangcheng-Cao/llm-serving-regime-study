@@ -1,0 +1,337 @@
+{
+  "all_lifecycle_checks_pass": true,
+  "requests_checked": 7028,
+  "states": [
+    {
+      "rep": 1,
+      "history": "LOW",
+      "N_client": 4,
+      "jobs": [
+        {
+          "remaining_tokens": 10
+        },
+        {
+          "remaining_tokens": 41
+        },
+        {
+          "remaining_tokens": 69
+        },
+        {
+          "remaining_tokens": 99
+        }
+      ]
+    },
+    {
+      "rep": 1,
+      "history": "HIGH",
+      "N_client": 13,
+      "jobs": [
+        {
+          "remaining_tokens": 5
+        },
+        {
+          "remaining_tokens": 15
+        },
+        {
+          "remaining_tokens": 25
+        },
+        {
+          "remaining_tokens": 34
+        },
+        {
+          "remaining_tokens": 43
+        },
+        {
+          "remaining_tokens": 52
+        },
+        {
+          "remaining_tokens": 62
+        },
+        {
+          "remaining_tokens": 71
+        },
+        {
+          "remaining_tokens": 81
+        },
+        {
+          "remaining_tokens": 90
+        },
+        {
+          "remaining_tokens": 99
+        },
+        {
+          "remaining_tokens": 109
+        },
+        {
+          "remaining_tokens": 119
+        }
+      ]
+    },
+    {
+      "rep": 2,
+      "history": "LOW",
+      "N_client": 4,
+      "jobs": [
+        {
+          "remaining_tokens": 5
+        },
+        {
+          "remaining_tokens": 36
+        },
+        {
+          "remaining_tokens": 66
+        },
+        {
+          "remaining_tokens": 98
+        }
+      ]
+    },
+    {
+      "rep": 2,
+      "history": "HIGH",
+      "N_client": 14,
+      "jobs": [
+        {
+          "remaining_tokens": 8
+        },
+        {
+          "remaining_tokens": 17
+        },
+        {
+          "remaining_tokens": 26
+        },
+        {
+          "remaining_tokens": 35
+        },
+        {
+          "remaining_tokens": 43
+        },
+        {
+          "remaining_tokens": 52
+        },
+        {
+          "remaining_tokens": 61
+        },
+        {
+          "remaining_tokens": 69
+        },
+        {
+          "remaining_tokens": 80
+        },
+        {
+          "remaining_tokens": 87
+        },
+        {
+          "remaining_tokens": 95
+        },
+        {
+          "remaining_tokens": 104
+        },
+        {
+          "remaining_tokens": 112
+        },
+        {
+          "remaining_tokens": 121
+        }
+      ]
+    },
+    {
+      "rep": 3,
+      "history": "LOW",
+      "N_client": 4,
+      "jobs": [
+        {
+          "remaining_tokens": 4
+        },
+        {
+          "remaining_tokens": 35
+        },
+        {
+          "remaining_tokens": 66
+        },
+        {
+          "remaining_tokens": 97
+        }
+      ]
+    },
+    {
+      "rep": 3,
+      "history": "HIGH",
+      "N_client": 13,
+      "jobs": [
+        {
+          "remaining_tokens": 4
+        },
+        {
+          "remaining_tokens": 14
+        },
+        {
+          "remaining_tokens": 23
+        },
+        {
+          "remaining_tokens": 33
+        },
+        {
+          "remaining_tokens": 42
+        },
+        {
+          "remaining_tokens": 52
+        },
+        {
+          "remaining_tokens": 62
+        },
+        {
+          "remaining_tokens": 71
+        },
+        {
+          "remaining_tokens": 81
+        },
+        {
+          "remaining_tokens": 91
+        },
+        {
+          "remaining_tokens": 100
+        },
+        {
+          "remaining_tokens": 110
+        },
+        {
+          "remaining_tokens": 120
+        }
+      ]
+    },
+    {
+      "rep": 4,
+      "history": "LOW",
+      "N_client": 4,
+      "jobs": [
+        {
+          "remaining_tokens": 7
+        },
+        {
+          "remaining_tokens": 38
+        },
+        {
+          "remaining_tokens": 68
+        },
+        {
+          "remaining_tokens": 99
+        }
+      ]
+    },
+    {
+      "rep": 4,
+      "history": "HIGH",
+      "N_client": 14,
+      "jobs": [
+        {
+          "remaining_tokens": 7
+        },
+        {
+          "remaining_tokens": 16
+        },
+        {
+          "remaining_tokens": 26
+        },
+        {
+          "remaining_tokens": 35
+        },
+        {
+          "remaining_tokens": 43
+        },
+        {
+          "remaining_tokens": 52
+        },
+        {
+          "remaining_tokens": 60
+        },
+        {
+          "remaining_tokens": 68
+        },
+        {
+          "remaining_tokens": 78
+        },
+        {
+          "remaining_tokens": 86
+        },
+        {
+          "remaining_tokens": 94
+        },
+        {
+          "remaining_tokens": 103
+        },
+        {
+          "remaining_tokens": 112
+        },
+        {
+          "remaining_tokens": 121
+        }
+      ]
+    },
+    {
+      "rep": 5,
+      "history": "LOW",
+      "N_client": 4,
+      "jobs": [
+        {
+          "remaining_tokens": 7
+        },
+        {
+          "remaining_tokens": 38
+        },
+        {
+          "remaining_tokens": 68
+        },
+        {
+          "remaining_tokens": 99
+        }
+      ]
+    },
+    {
+      "rep": 5,
+      "history": "HIGH",
+      "N_client": 13,
+      "jobs": [
+        {
+          "remaining_tokens": 8
+        },
+        {
+          "remaining_tokens": 17
+        },
+        {
+          "remaining_tokens": 27
+        },
+        {
+          "remaining_tokens": 36
+        },
+        {
+          "remaining_tokens": 45
+        },
+        {
+          "remaining_tokens": 54
+        },
+        {
+          "remaining_tokens": 64
+        },
+        {
+          "remaining_tokens": 73
+        },
+        {
+          "remaining_tokens": 82
+        },
+        {
+          "remaining_tokens": 91
+        },
+        {
+          "remaining_tokens": 101
+        },
+        {
+          "remaining_tokens": 110
+        },
+        {
+          "remaining_tokens": 120
+        }
+      ]
+    }
+  ]
+}
