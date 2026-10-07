@@ -149,3 +149,12 @@ but is **not** supplied as a tested runnable harness.
 - [Limitations](docs/limitations.md): what the evidence cannot establish.
 
 Code and released study artifacts are provided under the [MIT License](LICENSE).
+
+## GPU mechanism pipeline extension
+
+Phase 2B/2C adds a fixed-cohort runner with verified graph/eager policies and bounded
+Nsight Systems capture. [Runner instructions](profiling/README.md) and the
+[fresh-environment validation report](outputs/gpu-mechanism-study/REPORT.md) document
+the four supported arms, two output lengths, trace exports, observed overhead and
+trace completeness limitations. This extension does not change the historical
+tables or claim GPU-level causal attribution. No full profiling campaign has run.

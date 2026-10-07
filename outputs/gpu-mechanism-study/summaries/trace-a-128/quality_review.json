@@ -1,0 +1,33 @@
+{
+  "validation_level": "structural_capture_validation",
+  "worker_warnings": [
+    {
+      "timestamp": -18887180435,
+      "timestampType": 1,
+      "source": 1,
+      "severity": 2,
+      "text": "CUDA device 0: Unified Memory cannot be traced on devices that don't support peer-to-peer transfers.Please verify that SLI/NVLink is functioning properly.",
+      "globalPid": 281497709838336
+    },
+    {
+      "timestamp": 103854196,
+      "timestampType": 2,
+      "source": 3,
+      "severity": 2,
+      "text": "Not all NVTX events might have been collected.",
+      "globalPid": 281497709838336
+    },
+    {
+      "timestamp": 103858815,
+      "timestampType": 2,
+      "source": 3,
+      "severity": 2,
+      "text": "Not all CUDA events might have been collected.",
+      "globalPid": 281497709838336
+    }
+  ],
+  "all_process_warning_count": 17,
+  "unmatched_window_kernel_correlations": 0,
+  "completeness_proven": false,
+  "counts_are_observed_not_guaranteed_exhaustive": true
+}

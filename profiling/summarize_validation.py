@@ -43,7 +43,7 @@ def main():
     if not rows:
         raise ValueError("No valid runs")
     with (STUDY/"results.csv").open("w",newline="") as stream:
-        writer=csv.DictWriter(stream,fieldnames=list(rows[0]))
+        writer=csv.DictWriter(stream,fieldnames=list(rows[0]),lineterminator="\n")
         writer.writeheader();writer.writerows(rows)
     overhead=[]
     for arm in ("a","b"):

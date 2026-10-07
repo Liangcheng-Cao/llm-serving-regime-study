@@ -12,7 +12,7 @@ def checked(command):
     result=subprocess.run(command,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,timeout=180)
     if result.returncode:
         raise RuntimeError(f"Export failed: {command}: {result.stdout[-3000:]}")
-    return result.stdout
+    return "\n".join(line.rstrip() for line in result.stdout.splitlines()).rstrip()+"\n"
 
 
 def export_trace(output, run_id, manifest):

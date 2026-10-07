@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-07",
+  "timezone": "Asia/Shanghai",
+  "unit_test_command": "python -m unittest discover -s tests -v",
+  "unit_tests_passed": 17,
+  "historical_validation_command": "python src/validate.py",
+  "historical_validation_result": "PASS: analytic case, 60 frozen scenarios, conservation, causal contrast and service cliff.",
+  "historical_preservation_sha256_files_checked": 205,
+  "historical_preservation_result": "all unchanged",
+  "gpu_runs": 8,
+  "unprofiled_runs": 6,
+  "profiled_runs": 2,
+  "invalid_runs": 0,
+  "trace_validation_level": "structural_capture_validation",
+  "trace_completeness_proven": false,
+  "readiness": "READY WITH LIMITATIONS",
+  "full_campaign_performed": false,
+  "mechanism_interpretation_performed": false
+}
