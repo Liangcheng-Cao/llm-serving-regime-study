@@ -17,3 +17,5 @@ outputs/gpu-mechanism-study/phase2d/runs/*/control.json
 outputs/gpu-mechanism-study/phase2d/runs/*/observations.jsonl
 outputs/gpu-mechanism-study/phase2d/summaries/**/*.sqlite
 outputs/gpu-mechanism-study/phase2d/summaries/**/*trace.csv
+# Reconstructible event-level Phase 2E associations; compact summaries are tracked.
+outputs/gpu-mechanism-study/phase2e/summaries/*-associations.csv.gz

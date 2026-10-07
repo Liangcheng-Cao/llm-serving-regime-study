@@ -163,3 +163,9 @@ Phase 2D completes the [controlled trace campaign](outputs/gpu-mechanism-study/p
 three independent primary traces per arm, separate unprofiled repetitions, and a
 smaller output256 confirmation. The [protocol](profiling/phase2d_protocol.md)
 defines the steady decode region, observed-count limitations and reproduction.
+
+Phase 2E adds [mechanism analysis](outputs/gpu-mechanism-study/phase2e/REPORT.md)
+using the existing traces: event correlation, gap distributions, kernel sequence
+and duration comparisons, and synchronization interpretation. The strongest claim
+is level 2 (strong mechanism evidence), with completeness and profiler limits
+retained. No additional GPU experiment was needed for that claim.
