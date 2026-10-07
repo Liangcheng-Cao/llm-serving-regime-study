@@ -1,0 +1,113 @@
+run_id,arm,label,block,output_len,family,count,time_us_per_token
+d-128-c-b1-trace,C,B8 graph,1,128,GEMM/matmul,8472,300.73355535714285
+d-128-c-b1-trace,C,B8 graph,1,128,elementwise,4061,11.063833928571428
+d-128-c-b1-trace,C,B8 graph,1,128,normalization,3430,8.443530357142858
+d-128-c-b1-trace,C,B8 graph,1,128,unknown,2100,4.063051785714286
+d-128-c-b1-trace,C,B8 graph,1,128,KV/cache,1680,2.8854928571428573
+d-128-c-b1-trace,C,B8 graph,1,128,attention,3360,24.5791875
+d-128-c-b1-trace,C,B8 graph,1,128,sampling,70,1.2790714285714286
+d-128-d-b1-trace,D,B8 forced eager,1,128,unknown,2100,5.0519517857142855
+d-128-d-b1-trace,D,B8 forced eager,1,128,elementwise,4060,12.331455357142858
+d-128-d-b1-trace,D,B8 forced eager,1,128,normalization,3430,10.164819642857143
+d-128-d-b1-trace,D,B8 forced eager,1,128,GEMM/matmul,8470,306.0496821428572
+d-128-d-b1-trace,D,B8 forced eager,1,128,KV/cache,1680,3.6107767857142856
+d-128-d-b1-trace,D,B8 forced eager,1,128,attention,3360,24.745644642857144
+d-128-d-b1-trace,D,B8 forced eager,1,128,sampling,70,1.4121535714285716
+d-128-a-b1-trace,A,B9 natural eager,1,128,unknown,2100,4.277068253968254
+d-128-a-b1-trace,A,B9 natural eager,1,128,elementwise,4060,10.502471428571429
+d-128-a-b1-trace,A,B9 natural eager,1,128,normalization,3430,8.101207936507937
+d-128-a-b1-trace,A,B9 natural eager,1,128,GEMM/matmul,8470,271.5226126984127
+d-128-a-b1-trace,A,B9 natural eager,1,128,KV/cache,1680,3.004847619047619
+d-128-a-b1-trace,A,B9 natural eager,1,128,attention,3360,21.414652380952383
+d-128-a-b1-trace,A,B9 natural eager,1,128,sampling,70,1.2296904761904761
+d-128-b-b1-trace,B,B9 graph bucket12,1,128,GEMM/matmul,8471,269.22859206349204
+d-128-b-b1-trace,B,B9 graph bucket12,1,128,elementwise,4410,13.05952857142857
+d-128-b-b1-trace,B,B9 graph bucket12,1,128,normalization,3430,7.562036507936508
+d-128-b-b1-trace,B,B9 graph bucket12,1,128,unknown,2100,3.7861349206349204
+d-128-b-b1-trace,B,B9 graph bucket12,1,128,KV/cache,1680,2.5657571428571426
+d-128-b-b1-trace,B,B9 graph bucket12,1,128,attention,3360,25.276655555555557
+d-128-b-b1-trace,B,B9 graph bucket12,1,128,sampling,70,1.1940365079365078
+d-128-b-b2-trace,B,B9 graph bucket12,2,128,GEMM/matmul,8471,271.9648238095238
+d-128-b-b2-trace,B,B9 graph bucket12,2,128,normalization,3430,7.510504761904762
+d-128-b-b2-trace,B,B9 graph bucket12,2,128,unknown,2100,3.7810079365079363
+d-128-b-b2-trace,B,B9 graph bucket12,2,128,KV/cache,1680,2.5650222222222223
+d-128-b-b2-trace,B,B9 graph bucket12,2,128,elementwise,4410,10.948755555555556
+d-128-b-b2-trace,B,B9 graph bucket12,2,128,attention,3360,22.707496825396824
+d-128-b-b2-trace,B,B9 graph bucket12,2,128,sampling,70,1.185904761904762
+d-128-a-b2-trace,A,B9 natural eager,2,128,unknown,2101,4.547785714285714
+d-128-a-b2-trace,A,B9 natural eager,2,128,elementwise,4060,11.010187301587301
+d-128-a-b2-trace,A,B9 natural eager,2,128,normalization,3430,8.443103174603175
+d-128-a-b2-trace,A,B9 natural eager,2,128,GEMM/matmul,8470,274.5433142857143
+d-128-a-b2-trace,A,B9 natural eager,2,128,KV/cache,1680,3.254652380952381
+d-128-a-b2-trace,A,B9 natural eager,2,128,attention,3360,22.39368888888889
+d-128-a-b2-trace,A,B9 natural eager,2,128,sampling,70,1.2809000000000001
+d-128-d-b2-trace,D,B8 forced eager,2,128,unknown,2099,5.065871428571429
+d-128-d-b2-trace,D,B8 forced eager,2,128,elementwise,4060,12.249714285714287
+d-128-d-b2-trace,D,B8 forced eager,2,128,normalization,3430,10.08199642857143
+d-128-d-b2-trace,D,B8 forced eager,2,128,GEMM/matmul,8470,303.4784410714286
+d-128-d-b2-trace,D,B8 forced eager,2,128,KV/cache,1680,3.5728571428571425
+d-128-d-b2-trace,D,B8 forced eager,2,128,attention,3360,24.691151785714286
+d-128-d-b2-trace,D,B8 forced eager,2,128,sampling,70,1.4134160714285715
+d-128-c-b2-trace,C,B8 graph,2,128,GEMM/matmul,8476,299.7498732142857
+d-128-c-b2-trace,C,B8 graph,2,128,unknown,2102,4.107335714285714
+d-128-c-b2-trace,C,B8 graph,2,128,KV/cache,1682,2.8770553571428574
+d-128-c-b2-trace,C,B8 graph,2,128,elementwise,4062,10.194025
+d-128-c-b2-trace,C,B8 graph,2,128,attention,3362,25.357789285714286
+d-128-c-b2-trace,C,B8 graph,2,128,normalization,3432,8.850467857142858
+d-128-c-b2-trace,C,B8 graph,2,128,sampling,70,1.2616321428571426
+d-128-d-b3-trace,D,B8 forced eager,3,128,unknown,2100,5.0660267857142856
+d-128-d-b3-trace,D,B8 forced eager,3,128,elementwise,4060,12.219589285714287
+d-128-d-b3-trace,D,B8 forced eager,3,128,normalization,3430,10.139655357142857
+d-128-d-b3-trace,D,B8 forced eager,3,128,GEMM/matmul,8470,303.4743392857143
+d-128-d-b3-trace,D,B8 forced eager,3,128,KV/cache,1680,3.5792464285714285
+d-128-d-b3-trace,D,B8 forced eager,3,128,attention,3360,24.713932142857143
+d-128-d-b3-trace,D,B8 forced eager,3,128,sampling,70,1.393125
+d-128-c-b3-trace,C,B8 graph,3,128,GEMM/matmul,8475,302.73709285714284
+d-128-c-b3-trace,C,B8 graph,3,128,normalization,3432,8.44155
+d-128-c-b3-trace,C,B8 graph,3,128,unknown,2101,4.0695017857142854
+d-128-c-b3-trace,C,B8 graph,3,128,KV/cache,1681,2.8924767857142855
+d-128-c-b3-trace,C,B8 graph,3,128,elementwise,4061,10.165946428571429
+d-128-c-b3-trace,C,B8 graph,3,128,attention,3362,24.701441071428572
+d-128-c-b3-trace,C,B8 graph,3,128,sampling,70,1.2407142857142859
+d-128-b-b3-trace,B,B9 graph bucket12,3,128,attention,3350,23.180633333333336
+d-128-b-b3-trace,B,B9 graph bucket12,3,128,GEMM/matmul,8442,263.2589126984127
+d-128-b-b3-trace,B,B9 graph bucket12,3,128,normalization,3419,8.536430158730157
+d-128-b-b3-trace,B,B9 graph bucket12,3,128,elementwise,4398,10.043660317460317
+d-128-b-b3-trace,B,B9 graph bucket12,3,128,unknown,2094,3.7728968253968254
+d-128-b-b3-trace,B,B9 graph bucket12,3,128,KV/cache,1674,2.5461142857142858
+d-128-b-b3-trace,B,B9 graph bucket12,3,128,sampling,70,1.1733587301587303
+d-128-a-b3-trace,A,B9 natural eager,3,128,unknown,2100,4.546104761904762
+d-128-a-b3-trace,A,B9 natural eager,3,128,elementwise,4060,11.150138095238095
+d-128-a-b3-trace,A,B9 natural eager,3,128,normalization,3430,8.69422380952381
+d-128-a-b3-trace,A,B9 natural eager,3,128,GEMM/matmul,8470,271.2974920634921
+d-128-a-b3-trace,A,B9 natural eager,3,128,KV/cache,1680,3.2523015873015875
+d-128-a-b3-trace,A,B9 natural eager,3,128,attention,3360,22.539425396825397
+d-128-a-b3-trace,A,B9 natural eager,3,128,sampling,70,1.321373015873016
+d-256-c-b1-trace,C,B8 graph,1,256,GEMM/matmul,8471,315.31203392857145
+d-256-c-b1-trace,C,B8 graph,1,256,elementwise,4061,11.0183125
+d-256-c-b1-trace,C,B8 graph,1,256,normalization,3430,8.953823214285714
+d-256-c-b1-trace,C,B8 graph,1,256,unknown,2100,4.107382142857142
+d-256-c-b1-trace,C,B8 graph,1,256,KV/cache,1680,2.9186839285714288
+d-256-c-b1-trace,C,B8 graph,1,256,attention,3360,25.402394642857143
+d-256-c-b1-trace,C,B8 graph,1,256,sampling,70,1.2615714285714286
+d-256-d-b1-trace,D,B8 forced eager,1,256,unknown,2101,4.488623214285714
+d-256-d-b1-trace,D,B8 forced eager,1,256,elementwise,4060,10.760064285714286
+d-256-d-b1-trace,D,B8 forced eager,1,256,normalization,3430,9.040894642857143
+d-256-d-b1-trace,D,B8 forced eager,1,256,GEMM/matmul,8470,301.83148392857146
+d-256-d-b1-trace,D,B8 forced eager,1,256,KV/cache,1680,3.1793892857142856
+d-256-d-b1-trace,D,B8 forced eager,1,256,attention,3360,22.572833928571427
+d-256-d-b1-trace,D,B8 forced eager,1,256,sampling,70,1.2434053571428572
+d-256-d-b2-trace,D,B8 forced eager,2,256,unknown,2099,4.570398214285714
+d-256-d-b2-trace,D,B8 forced eager,2,256,elementwise,4060,10.837148214285715
+d-256-d-b2-trace,D,B8 forced eager,2,256,normalization,3430,9.046389285714286
+d-256-d-b2-trace,D,B8 forced eager,2,256,GEMM/matmul,8470,302.7966839285714
+d-256-d-b2-trace,D,B8 forced eager,2,256,KV/cache,1680,3.185058928571429
+d-256-d-b2-trace,D,B8 forced eager,2,256,attention,3360,22.698505357142857
+d-256-d-b2-trace,D,B8 forced eager,2,256,sampling,70,1.251557142857143
+d-256-c-b2-trace,C,B8 graph,2,256,GEMM/matmul,8451,308.2398446428571
+d-256-c-b2-trace,C,B8 graph,2,256,elementwise,4053,10.467378571428572
+d-256-c-b2-trace,C,B8 graph,2,256,normalization,3422,8.378951785714285
+d-256-c-b2-trace,C,B8 graph,2,256,unknown,2096,4.052392857142857
+d-256-c-b2-trace,C,B8 graph,2,256,KV/cache,1676,2.8769428571428572
+d-256-c-b2-trace,C,B8 graph,2,256,attention,3352,25.229092857142856
+d-256-c-b2-trace,C,B8 graph,2,256,sampling,70,2.0229857142857144

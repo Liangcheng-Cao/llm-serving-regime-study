@@ -157,4 +157,9 @@ Nsight Systems capture. [Runner instructions](profiling/README.md) and the
 [fresh-environment validation report](outputs/gpu-mechanism-study/REPORT.md) document
 the four supported arms, two output lengths, trace exports, observed overhead and
 trace completeness limitations. This extension does not change the historical
-tables or claim GPU-level causal attribution. No full profiling campaign has run.
+tables or claim GPU-level causal attribution.
+
+Phase 2D completes the [controlled trace campaign](outputs/gpu-mechanism-study/phase2d/REPORT.md):
+three independent primary traces per arm, separate unprofiled repetitions, and a
+smaller output256 confirmation. The [protocol](profiling/phase2d_protocol.md)
+defines the steady decode region, observed-count limitations and reproduction.

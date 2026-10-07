@@ -1,0 +1,1549 @@
+{
+  "schema_version": 1,
+  "config": {
+    "batch_size": 9,
+    "graph_policy": "enabled",
+    "max_decode_bs": 8,
+    "force_decode_eager": false,
+    "input_len": 128,
+    "output_len": 128,
+    "warmup": 3,
+    "repeats": 1,
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "dtype": "bfloat16",
+    "seed": 42,
+    "port": 30149,
+    "run_id": "d-128-a-b2-trace",
+    "profiling": true,
+    "nvtx": true
+  },
+  "requested_mode": "natural_eager",
+  "valid": true,
+  "status": "valid",
+  "cohorts": [
+    {
+      "cohort": "warmup-0",
+      "warmup": true,
+      "valid": true,
+      "requested_mode": "natural_eager",
+      "verified_mode": "eager",
+      "actual_batch": 9,
+      "replay_bucket": null,
+      "decode_intervals": 70,
+      "useful_decode_tokens": 630,
+      "interval_ms": {
+        "count": 70,
+        "mean": 11.333499871428572,
+        "median": 11.059740000000001,
+        "p95": 13.539228199999998,
+        "sd": 0.9851602124540553,
+        "cv": 0.086924623781716
+      },
+      "intervals_ms": [
+        10.673323,
+        10.700741,
+        10.889335,
+        10.960325,
+        12.018867,
+        10.06047,
+        12.001142,
+        10.612567,
+        10.781688,
+        10.018121,
+        11.036252,
+        13.382157,
+        10.455086,
+        12.215695,
+        13.89626,
+        10.838724,
+        10.926376,
+        9.927261,
+        10.675929,
+        10.360695,
+        11.686729,
+        11.467466,
+        9.891531,
+        11.577205,
+        10.590924,
+        14.059782,
+        10.599914,
+        11.963937,
+        10.443223,
+        11.466887,
+        10.317042,
+        10.824671,
+        11.932276,
+        10.680898,
+        12.382868,
+        12.490245,
+        10.873594,
+        11.917677,
+        11.239213,
+        12.218121,
+        13.667741,
+        11.080078,
+        10.552187,
+        11.388357,
+        11.115885,
+        11.660707,
+        10.488082,
+        11.287872,
+        11.333138,
+        10.604622,
+        13.056486,
+        12.047968,
+        10.737117,
+        10.083873,
+        11.039402,
+        10.902381,
+        10.796317,
+        10.144801,
+        11.543796,
+        11.11412,
+        12.042561,
+        12.775903,
+        10.526289,
+        11.327231,
+        10.812094,
+        11.459923,
+        11.518026,
+        10.908999,
+        12.29141,
+        13.982408
+      ],
+      "useful_tokens_s": 794.1059780385,
+      "worker_pid": 4532,
+      "window_forward_ids": [
+        22,
+        92
+      ],
+      "e2e_s": 1.4898520770000232,
+      "output_tokens": 1152,
+      "full_cohort_output_tokens_s": 773.2311266227688,
+      "request_throughput_s": 6.040868176740381,
+      "client_stable_interval_ms": {
+        "count": 9,
+        "mean": 11.34265196984127,
+        "median": 11.342627342857142,
+        "p95": 11.343457697142858,
+        "sd": 0.0006512928027945973,
+        "cv": 5.741979957829135e-05
+      },
+      "client_proxy_note": "token 11\u219281 span/70; not network-chunk ITL"
+    },
+    {
+      "cohort": "warmup-1",
+      "warmup": true,
+      "valid": true,
+      "requested_mode": "natural_eager",
+      "verified_mode": "eager",
+      "actual_batch": 9,
+      "replay_bucket": null,
+      "decode_intervals": 70,
+      "useful_decode_tokens": 630,
+      "interval_ms": {
+        "count": 70,
+        "mean": 11.166346514285713,
+        "median": 11.0392785,
+        "p95": 12.569309449999999,
+        "sd": 1.2410536371656928,
+        "cv": 0.11114231817702823
+      },
+      "intervals_ms": [
+        10.311253,
+        11.473569,
+        11.615313,
+        10.174537,
+        11.846045,
+        11.434467,
+        10.696764,
+        11.627143,
+        10.388546,
+        11.075709,
+        9.890112,
+        10.941907,
+        11.720816,
+        12.816017,
+        12.026989,
+        10.886187,
+        11.302597,
+        11.86127,
+        11.030228,
+        13.191472,
+        10.516046,
+        11.72073,
+        10.470162,
+        11.050802,
+        11.817867,
+        10.798664,
+        11.518093,
+        10.360545,
+        10.35056,
+        10.376827,
+        10.867671,
+        11.121777,
+        10.429204,
+        12.267778,
+        10.304356,
+        9.969504,
+        10.252218,
+        11.236069,
+        11.398228,
+        9.953555,
+        10.511597,
+        10.59889,
+        10.376173,
+        10.952415,
+        10.837062,
+        10.852038,
+        9.904596,
+        11.182983,
+        10.01164,
+        11.194099,
+        10.083965,
+        10.401862,
+        11.679285,
+        11.356275,
+        11.44003,
+        9.812079,
+        9.997565,
+        11.402327,
+        11.32049,
+        10.438044,
+        11.816629,
+        11.886704,
+        10.730525,
+        11.716675,
+        11.176588,
+        11.048329,
+        11.214125,
+        10.493407,
+        17.544486,
+        16.571776
+      ],
+      "useful_tokens_s": 805.9932573725713,
+      "worker_pid": 4532,
+      "window_forward_ids": [
+        151,
+        221
+      ],
+      "e2e_s": 1.4568172589999904,
+      "output_tokens": 1152,
+      "full_cohort_output_tokens_s": 790.7649314854854,
+      "request_throughput_s": 6.177851027230354,
+      "client_stable_interval_ms": {
+        "count": 9,
+        "mean": 11.16847478888889,
+        "median": 11.168603742857144,
+        "p95": 11.16923220857143,
+        "sd": 0.0007197667540551869,
+        "cv": 6.444628901085552e-05
+      },
+      "client_proxy_note": "token 11\u219281 span/70; not network-chunk ITL"
+    },
+    {
+      "cohort": "warmup-2",
+      "warmup": true,
+      "valid": true,
+      "requested_mode": "natural_eager",
+      "verified_mode": "eager",
+      "actual_batch": 9,
+      "replay_bucket": null,
+      "decode_intervals": 70,
+      "useful_decode_tokens": 630,
+      "interval_ms": {
+        "count": 70,
+        "mean": 11.270814842857142,
+        "median": 11.2127585,
+        "p95": 12.7696143,
+        "sd": 0.8994573259362048,
+        "cv": 0.07980410808595921
+      },
+      "intervals_ms": [
+        10.741211,
+        10.059671,
+        10.705104,
+        9.892297,
+        10.173231,
+        11.926294,
+        13.622803,
+        10.54155,
+        11.762652,
+        10.055903,
+        11.985852,
+        10.986428,
+        11.204205,
+        11.530569,
+        10.881866,
+        11.837246,
+        11.751157,
+        13.270509,
+        11.896696,
+        11.429533,
+        10.72851,
+        10.45943,
+        9.871722,
+        11.491416,
+        10.214089,
+        10.88457,
+        10.056073,
+        11.746735,
+        11.399084,
+        9.777966,
+        11.119908,
+        11.231616,
+        11.426099,
+        11.329578,
+        11.390096,
+        12.410559,
+        10.07582,
+        12.586045,
+        12.764518,
+        10.96428,
+        10.712972,
+        10.682186,
+        12.285509,
+        10.264404,
+        11.184906,
+        10.440984,
+        9.670991,
+        12.773784,
+        10.537348,
+        11.314654,
+        10.289016,
+        10.877729,
+        12.092296,
+        11.092328,
+        10.929206,
+        10.761253,
+        11.22491,
+        11.023716,
+        12.657738,
+        12.293482,
+        11.612221,
+        12.704053,
+        12.147373,
+        11.458739,
+        13.176146,
+        11.68781,
+        11.221312,
+        11.975069,
+        10.871282,
+        10.810731
+      ],
+      "useful_tokens_s": 798.5225669556388,
+      "worker_pid": 4532,
+      "window_forward_ids": [
+        280,
+        350
+      ],
+      "e2e_s": 1.451499479000006,
+      "output_tokens": 1152,
+      "full_cohort_output_tokens_s": 793.6620141218771,
+      "request_throughput_s": 6.200484485327165,
+      "client_stable_interval_ms": {
+        "count": 9,
+        "mean": 11.276851273015874,
+        "median": 11.276856,
+        "p95": 11.277653588571429,
+        "sd": 0.0005581349432437279,
+        "cv": 4.9493863999011545e-05
+      },
+      "client_proxy_note": "token 11\u219281 span/70; not network-chunk ITL"
+    },
+    {
+      "cohort": "measure-3",
+      "warmup": false,
+      "valid": true,
+      "requested_mode": "natural_eager",
+      "verified_mode": "eager",
+      "actual_batch": 9,
+      "replay_bucket": null,
+      "decode_intervals": 70,
+      "useful_decode_tokens": 630,
+      "interval_ms": {
+        "count": 70,
+        "mean": 13.469945485714286,
+        "median": 13.485202000000001,
+        "p95": 15.31920865,
+        "sd": 1.138031443988968,
+        "cv": 0.08448671490140187
+      },
+      "intervals_ms": [
+        13.902782,
+        12.795905,
+        13.410348,
+        13.616055,
+        13.547622,
+        14.496473,
+        14.931994,
+        14.806185,
+        14.50518,
+        13.946957,
+        15.328813,
+        14.598309,
+        14.806257,
+        14.804719,
+        14.269868,
+        14.749022,
+        14.192142,
+        13.939496,
+        15.990026,
+        13.711228,
+        12.448329,
+        12.800453,
+        11.452895,
+        15.78336,
+        12.587084,
+        11.691451,
+        13.021845,
+        13.268625,
+        13.185191,
+        13.259032,
+        14.96477,
+        14.664494,
+        12.932245,
+        12.74121,
+        14.585661,
+        14.19056,
+        13.037944,
+        13.760882,
+        13.564118,
+        13.469879,
+        13.281807,
+        11.830271,
+        12.073216,
+        13.619418,
+        13.500525,
+        11.683063,
+        11.326727,
+        12.43337,
+        12.020023,
+        14.077043,
+        14.569403,
+        13.550563,
+        14.400066,
+        15.30747,
+        15.982549,
+        12.296556,
+        12.464139,
+        12.613594,
+        12.258018,
+        13.825077,
+        12.847511,
+        12.205033,
+        12.43458,
+        13.286486,
+        12.862465,
+        12.59848,
+        13.663684,
+        11.907365,
+        12.002197,
+        12.216076
+      ],
+      "useful_tokens_s": 668.1541517406332,
+      "worker_pid": 4532,
+      "window_forward_ids": [
+        409,
+        479
+      ],
+      "e2e_s": 1.7540648500000202,
+      "output_tokens": 1152,
+      "full_cohort_output_tokens_s": 656.7602104334892,
+      "request_throughput_s": 5.130939144011634,
+      "client_stable_interval_ms": {
+        "count": 9,
+        "mean": 13.470297596825397,
+        "median": 13.470472557142857,
+        "p95": 13.470900991428572,
+        "sd": 0.0005428849537414423,
+        "cv": 4.030237267136446e-05
+      },
+      "client_proxy_note": "token 11\u219281 span/70; not network-chunk ITL"
+    }
+  ],
+  "failures": [],
+  "environment": {
+    "timestamp_utc": "2026-10-07T05:49:48.100149+00:00",
+    "client_timezone": "Asia/Shanghai",
+    "hostname": "Kyyy",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "python": "3.12.14 (main, Sep  1 2026, 14:16:52) [Clang 22.1.3 ]",
+    "packages": {
+      "torch": "2.13.0",
+      "sglang": "0.5.19",
+      "aiohttp": "3.14.3"
+    },
+    "torch_version": "2.13.0+cu130",
+    "torch_cuda": "13.0",
+    "gpu": {
+      "returncode": 0,
+      "output": "Wed Oct  7 13:49:48 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 580.76.07              Driver Version: 581.08         CUDA Version: 13.0     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 4070        On  |   00000000:04:00.0  On |                  N/A |\n|  0%   46C    P0             28W /  200W |    1389MiB /  12282MiB |      4%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A              28      G   /Xwayland                             N/A      |\n+-----------------------------------------------------------------------------------------+\n"
+    },
+    "toolkit": {
+      "returncode": 0,
+      "output": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2026 NVIDIA Corporation\nBuilt on Tue_Jun_09_02:43:40_PM_PDT_2026\nCuda compilation tools, release 13.3, V13.3.73\nBuild cuda_13.3.r13.3/compiler.38244171_0\n"
+    },
+    "nsys": {
+      "returncode": 0,
+      "output": "NVIDIA Nsight Systems version 2026.1.3.425-261338342291v0\n"
+    },
+    "git_commit": {
+      "returncode": 0,
+      "output": "0247f48eeb99727f5c44ed5e2fb5ffdf95cfd4c9\n"
+    },
+    "git_status": {
+      "returncode": 0,
+      "output": "?? outputs/gpu-mechanism-study/phase2d/\n"
+    }
+  },
+  "client_command": [
+    "/home/liang/sglang-project/.venv/bin/python",
+    "/mnt/c/Users/liang/Documents/Codex/2026-09-25/files-pasted-by-the-user-start-2/llm-serving-regime-study/profiling/run_phase2d.py",
+    "--stage",
+    "primary"
+  ],
+  "timing_scope": "completion endpoints 10\u219280; 70 intervals",
+  "pipeline_source_hashes": {
+    "profiling/analyze_phase2d.py": "76d226fd806d32809b7bf5def949b7c8ad040abc61b7bb6947224f7836ed0d5a",
+    "profiling/core.py": "bf1e138cc8cc4dac2798a9da93ed5dd5fcbcf5a85737e8b57658950cd662c005",
+    "profiling/instrument.py": "2fc965ead8d18dd6ae53a75b14750e4b2ba982351c60965222116f9cdbe7c9f0",
+    "profiling/observer.py": "0ab108f506a4752090af36fa3010590039c51daf0f7477c93a7bc1ae1529f17f",
+    "profiling/phase2d_metrics.py": "b1a39da3e1e51976bec8dc5ec0f5b6a60902050109df0c1f7537e366081dcd75",
+    "profiling/run_decode_experiment.py": "789030e6acf329119f9c2a8db3e6038cb31470ce347bf58ac3bc3d67ab9f5030",
+    "profiling/run_nsys_profile.py": "848df54c3332fa6f408255397eba72e5af47fe60689c3ee3441219f2d347b19c",
+    "profiling/run_phase2d.py": "7b18c80f4d158582be012f1335246563a7482fa42f483971572171360d4c5bca",
+    "profiling/summarize_validation.py": "2570bb45aee52447cb09b14cef009e98d24f1f9070a72c94152488303cc2a5f3",
+    "profiling/__init__.py": "130ad50b27ec550e7c26fca14b0503d1186f982cd12270a26dda36e95aaf0974",
+    "profiling/parsers/nsys.py": "52739034b2be5ede7c2ecb1346c1e7e0eae406cbd44c79b92342ed139700be9f",
+    "profiling/parsers/__init__.py": "c06f2c77c3931d1aa11a59d9e08bbb7c8fd699e94ae5600b5a31494aff5d83b1"
+  },
+  "instrumentation": {
+    "scratch_path": "/tmp/gpu-mech-d-128-a-b2-trace-k7dda2en",
+    "sources": {
+      "srt/managers/scheduler_components/batch_result_processor.py": {
+        "original_sha256": "0f0a3d92603c58bc555969b4f01daf2796f5aac9f38ad5a7155455ef5ca3ed4a",
+        "instrumented_sha256": "a3d1b43da656443b8b9acf29907765d0203fc100cf64417399ca0f3a280b1b13"
+      },
+      "srt/model_executor/runner/decode_cuda_graph_runner.py": {
+        "original_sha256": "4f9b185ed058b8a6fb1e1d803ab17840a618af5d5816e534fbcdb6f67878072d",
+        "instrumented_sha256": "99f63d39422be401aadacd71bf23ce03ac7f06db0096a7731092c79a71379359"
+      },
+      "srt/model_executor/model_runner.py": {
+        "original_sha256": "b40efe0c7fb87d6f3baf5f9df3e755b9138247f82505183c564b4f8b1bc6663a",
+        "instrumented_sha256": "223199356d21a70db521a388b7c5a8e2cad9b0235fad40bbe87c0dcd3ba361a3"
+      }
+    },
+    "observer_sha256": "0ab108f506a4752090af36fa3010590039c51daf0f7477c93a7bc1ae1529f17f"
+  },
+  "server_command": [
+    "/home/liang/sglang-project/.venv/bin/python",
+    "-m",
+    "sglang.launch_server",
+    "--model-path",
+    "Qwen/Qwen2.5-0.5B-Instruct",
+    "--revision",
+    "7ae557604adf67be50417f59c2c2f167def9a775",
+    "--dtype",
+    "bfloat16",
+    "--attention-backend",
+    "flashinfer",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "30149",
+    "--mem-fraction-static",
+    "0.669",
+    "--chunked-prefill-size",
+    "2048",
+    "--disable-radix-cache",
+    "--random-seed",
+    "42",
+    "--cuda-graph-max-bs-decode",
+    "8",
+    "--decode-log-interval",
+    "1000000"
+  ],
+  "profiler_command": [
+    "nsys",
+    "profile",
+    "--trace=cuda,nvtx",
+    "--cuda-trace-scope=process-tree",
+    "--sample=none",
+    "--cpuctxsw=none",
+    "--cuda-graph-trace=node",
+    "--capture-range=cudaProfilerApi",
+    "--capture-range-end=stop",
+    "--kill=none",
+    "--output=/mnt/c/Users/liang/Documents/Codex/2026-09-25/files-pasted-by-the-user-start-2/llm-serving-regime-study/outputs/gpu-mechanism-study/phase2d/traces/d-128-a-b2-trace",
+    "/home/liang/sglang-project/.venv/bin/python",
+    "-m",
+    "sglang.launch_server",
+    "--model-path",
+    "Qwen/Qwen2.5-0.5B-Instruct",
+    "--revision",
+    "7ae557604adf67be50417f59c2c2f167def9a775",
+    "--dtype",
+    "bfloat16",
+    "--attention-backend",
+    "flashinfer",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "30149",
+    "--mem-fraction-static",
+    "0.669",
+    "--chunked-prefill-size",
+    "2048",
+    "--disable-radix-cache",
+    "--random-seed",
+    "42",
+    "--cuda-graph-max-bs-decode",
+    "8",
+    "--decode-log-interval",
+    "1000000"
+  ],
+  "launch_pid": 4421,
+  "startup_s": 23.193184120000012,
+  "effective_config": {
+    "model_path": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "dtype": "bfloat16",
+    "attention_backend": "flashinfer",
+    "disable_radix_cache": true,
+    "disable_overlap_schedule": false,
+    "disable_prefill_cuda_graph": false,
+    "disable_decode_cuda_graph": false,
+    "mem_fraction_static": 0.669,
+    "chunked_prefill_size": 2048,
+    "random_seed": 42,
+    "tp_size": 1,
+    "dp_size": 1,
+    "pp_size": 1,
+    "cuda_graph_max_bs_decode": 8,
+    "cuda_graph_bs_decode": null,
+    "cuda_graph_config": {
+      "decode": {
+        "backend": "full",
+        "max_bs": 8,
+        "bs": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "tc_compiler": "eager",
+        "full_prefill_max_req": null,
+        "full_prefill_prefix_chunk_tokens": null
+      },
+      "prefill": {
+        "backend": "breakable",
+        "max_bs": 2048,
+        "bs": [
+          4,
+          8,
+          12,
+          16,
+          20,
+          24,
+          28,
+          32,
+          48,
+          64,
+          80,
+          96,
+          112,
+          128,
+          144,
+          160,
+          176,
+          192,
+          208,
+          224,
+          240,
+          256,
+          288,
+          320,
+          352,
+          384,
+          416,
+          448,
+          480,
+          512,
+          576,
+          640,
+          704,
+          768,
+          832,
+          896,
+          960,
+          1024,
+          1280,
+          1536,
+          1792,
+          2048
+        ],
+        "tc_compiler": "eager",
+        "full_prefill_max_req": null,
+        "full_prefill_prefix_chunk_tokens": null
+      }
+    }
+  },
+  "summary": {
+    "cohort_mean_interval_ms": {
+      "count": 1,
+      "mean": 13.469945485714286,
+      "median": 13.469945485714286,
+      "p95": 13.469945485714286,
+      "sd": null,
+      "cv": null
+    },
+    "cohort_e2e_s": {
+      "count": 1,
+      "mean": 1.7540648500000202,
+      "median": 1.7540648500000202,
+      "p95": 1.7540648500000202,
+      "sd": null,
+      "cv": null
+    }
+  },
+  "total_run_s": 36.96877337699999,
+  "installed_sources_unchanged": true,
+  "trace": {
+    "valid": true,
+    "report": "/mnt/c/Users/liang/Documents/Codex/2026-09-25/files-pasted-by-the-user-start-2/llm-serving-regime-study/outputs/gpu-mechanism-study/phase2d/traces/d-128-a-b2-trace.nsys-rep",
+    "bytes": 2807227,
+    "sha256": "bf52df6b6808fc4e263afd85e79b2172da41c15c76cd8351da71eb56d807803b",
+    "commands": [
+      [
+        "nsys",
+        "export",
+        "--type=sqlite",
+        "--output=/mnt/c/Users/liang/Documents/Codex/2026-09-25/files-pasted-by-the-user-start-2/llm-serving-regime-study/outputs/gpu-mechanism-study/phase2d/summaries/d-128-a-b2-trace/trace.sqlite",
+        "/mnt/c/Users/liang/Documents/Codex/2026-09-25/files-pasted-by-the-user-start-2/llm-serving-regime-study/outputs/gpu-mechanism-study/phase2d/traces/d-128-a-b2-trace.nsys-rep"
+      ],
+      [
+        "nsys",
+        "stats",
+        "--report",
+        "cuda_api_sum",
+        "--format",
+        "csv",
+        "/mnt/c/Users/liang/Documents/Codex/2026-09-25/files-pasted-by-the-user-start-2/llm-serving-regime-study/outputs/gpu-mechanism-study/phase2d/summaries/d-128-a-b2-trace/trace.sqlite"
+      ],
+      [
+        "nsys",
+        "stats",
+        "--report",
+        "cuda_gpu_kern_sum",
+        "--format",
+        "csv",
+        "/mnt/c/Users/liang/Documents/Codex/2026-09-25/files-pasted-by-the-user-start-2/llm-serving-regime-study/outputs/gpu-mechanism-study/phase2d/summaries/d-128-a-b2-trace/trace.sqlite"
+      ],
+      [
+        "nsys",
+        "stats",
+        "--report",
+        "nvtx_pushpop_trace",
+        "--format",
+        "csv",
+        "/mnt/c/Users/liang/Documents/Codex/2026-09-25/files-pasted-by-the-user-start-2/llm-serving-regime-study/outputs/gpu-mechanism-study/phase2d/summaries/d-128-a-b2-trace/trace.sqlite"
+      ],
+      [
+        "nsys",
+        "stats",
+        "--report",
+        "cuda_gpu_trace",
+        "--format",
+        "csv",
+        "/mnt/c/Users/liang/Documents/Codex/2026-09-25/files-pasted-by-the-user-start-2/llm-serving-regime-study/outputs/gpu-mechanism-study/phase2d/summaries/d-128-a-b2-trace/trace.sqlite"
+      ]
+    ],
+    "whole_capture_summaries": {
+      "api": {
+        "count": 74877,
+        "total_ns": 398130084,
+        "dominant": [
+          {
+            "name": "cudaLaunchKernelExC",
+            "count": 18712,
+            "total_ns": 156667966
+          },
+          {
+            "name": "cuLaunchKernel",
+            "count": 12417,
+            "total_ns": 91002789
+          },
+          {
+            "name": "cudaLaunchKernel",
+            "count": 11246,
+            "total_ns": 88423160
+          },
+          {
+            "name": "cudaMemcpyAsync",
+            "count": 826,
+            "total_ns": 40503001
+          },
+          {
+            "name": "cuKernelGetFunction",
+            "count": 12417,
+            "total_ns": 6907032
+          },
+          {
+            "name": "cuKernelGetName",
+            "count": 11350,
+            "total_ns": 3454107
+          },
+          {
+            "name": "cudaMemsetAsync",
+            "count": 3201,
+            "total_ns": 2946848
+          },
+          {
+            "name": "cudaEventRecordWithFlags",
+            "count": 658,
+            "total_ns": 1518292
+          },
+          {
+            "name": "cuLaunchKernelEx",
+            "count": 131,
+            "total_ns": 1158779
+          },
+          {
+            "name": "cudaEventQuery",
+            "count": 378,
+            "total_ns": 956079
+          }
+        ],
+        "sync_count": 390,
+        "sync_total_ns": 985273,
+        "graph_launch_count": 25
+      },
+      "kernel": {
+        "count": 42700,
+        "total_ns": 395574456,
+        "dominant": [
+          {
+            "name": "void cutlass::Kernel2<cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_16x16_128x2_tn_align8>(T1::Params)",
+            "count": 12288,
+            "total_ns": 232084570
+          },
+          {
+            "name": "void cutlass::Kernel2<cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_16x16_128x1_tn_align8>(T1::Params)",
+            "count": 129,
+            "total_ns": 80773296
+          },
+          {
+            "name": "void flashinfer::BatchPrefillWithPagedKVCacheKernel<flashinfer::KernelTraits<(flashinfer::MaskMode)0, (unsigned int)16, (unsigned int)1, (unsigned int)2, (unsigned int)4, (unsigned int)4, (unsigned int)1, (unsigned int)4, (flashinfer::PosEncodingMode)0, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, int, flashinfer::DefaultAttention<(bool)0, (bool)0, (bool)0, (bool)0>>, PagedParams>(T2)",
+            "count": 3072,
+            "total_ns": 18446350
+          },
+          {
+            "name": "ampere_bf16_s1688gemm_bf16_128x128_ldg8_f2f_tn",
+            "count": 24,
+            "total_ns": 10426825
+          },
+          {
+            "name": "kernel_cutlass_kernel_flashinfernormkernelsfused_add_rmsnormFusedAddRMSNormKernel_object_at__tensorptrbf16gmemalign128oi648968961_tensorptrbf16gmemalign128oi648968961_tensorptrbf16gmemali_0",
+            "count": 6192,
+            "total_ns": 9970055
+          },
+          {
+            "name": "void flashinfer::PersistentVariableLengthMergeStatesKernel<(unsigned int)8, (unsigned int)8, (unsigned int)16, (unsigned int)4, __nv_bfloat16, __nv_bfloat16, int>(T5 *, float *, T7 *, T6 *, float *, unsigned int, unsigned int *, unsigned int)",
+            "count": 3072,
+            "total_ns": 7386454
+          },
+          {
+            "name": "void at::native::elementwise_kernel<(int)128, (int)4, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 12)]::operator ()() const::[lambda(c10::BFloat16) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",
+            "count": 3096,
+            "total_ns": 5631460
+          },
+          {
+            "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, (bool)0, (bool)0, (bool)0, (bool)0>(sglang::ActivationParams)",
+            "count": 3096,
+            "total_ns": 5131380
+          },
+          {
+            "name": "ampere_bf16_s1688gemm_bf16_128x128_ldg8_f2f_stages_32x1_tn",
+            "count": 24,
+            "total_ns": 5037604
+          },
+          {
+            "name": "void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, __nv_bfloat16, __nv_bfloat16, float, __nv_bfloat16, (bool)0, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, (bool)1, (bool)0, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",
+            "count": 3072,
+            "total_ns": 4049688
+          }
+        ]
+      }
+    },
+    "completion_window": {
+      "valid": true,
+      "worker_pid": 4532,
+      "nvtx_pid": 4532,
+      "nvtx_range": "GPU_MECH_MEASUREMENT_COMPLETION:measure-3",
+      "window_ns": [
+        182629483,
+        1125524244
+      ],
+      "scope": "temporally contained events in completion window; boundary overlap excluded; not causal per-iteration attribution",
+      "kernel_count": 23169,
+      "kernel_total_ns": 204361049,
+      "kernel_duration_ns": {
+        "count": 23169,
+        "mean": 8820.451853770124,
+        "median": 1760,
+        "p95": 37792.0,
+        "sd": 35450.46672578014,
+        "cv": 4.019121391227543
+      },
+      "cuda_runtime_api_count": 40703,
+      "cuda_runtime_api_total_ns": 208836267,
+      "synchronization_count": 210,
+      "synchronization_total_ns": 522896,
+      "graph_launch_count": 0,
+      "dominant_kernel_counts": [
+        [
+          "void cutlass::Kernel2<cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_16x16_128x2_tn_align8>(T1::Params)",
+          6720
+        ],
+        [
+          "kernel_cutlass_kernel_flashinfernormkernelsfused_add_rmsnormFusedAddRMSNormKernel_object_at__tensorptrbf16gmemalign128oi648968961_tensorptrbf16gmemalign128oi648968961_tensorptrbf16gmemali_0",
+          3360
+        ],
+        [
+          "void sglang::fused_rope_kernel<(bool)1, (long)64, (bool)0, __nv_bfloat16, __nv_bfloat16, long, (unsigned int)8>(sglang::FusedRopeParams)",
+          1680
+        ],
+        [
+          "void sglang::store_kvcache<(long)256, (long)256, (int)1, (bool)0, long>(sglang::StoreKVCacheParams)",
+          1680
+        ],
+        [
+          "void at::native::elementwise_kernel<(int)128, (int)4, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 12)]::operator ()() const::[lambda(c10::BFloat16) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",
+          1680
+        ],
+        [
+          "void flashinfer::BatchPrefillWithPagedKVCacheKernel<flashinfer::KernelTraits<(flashinfer::MaskMode)0, (unsigned int)16, (unsigned int)1, (unsigned int)2, (unsigned int)4, (unsigned int)4, (unsigned int)1, (unsigned int)4, (flashinfer::PosEncodingMode)0, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, int, flashinfer::DefaultAttention<(bool)0, (bool)0, (bool)0, (bool)0>>, PagedParams>(T2)",
+          1680
+        ],
+        [
+          "void flashinfer::PersistentVariableLengthMergeStatesKernel<(unsigned int)8, (unsigned int)8, (unsigned int)16, (unsigned int)4, __nv_bfloat16, __nv_bfloat16, int>(T5 *, float *, T7 *, T6 *, float *, unsigned int, unsigned int *, unsigned int)",
+          1680
+        ],
+        [
+          "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, (bool)0, (bool)0, (bool)0, (bool)0>(sglang::ActivationParams)",
+          1680
+        ],
+        [
+          "void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, __nv_bfloat16, __nv_bfloat16, float, __nv_bfloat16, (bool)0, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, (bool)1, (bool)0, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",
+          1680
+        ],
+        [
+          "void at::native::vectorized_elementwise_kernel<(int)2, at::native::CUDAFunctorOnSelf_add<long>, std::array<char *, (unsigned long)2>>(int, T2, T3)",
+          140
+        ]
+      ],
+      "streams": [
+        13,
+        33
+      ],
+      "whole_capture_worker_kernel_count": 42700,
+      "sqlite_tables": [
+        "ANALYSIS_DETAILS",
+        "ANALYSIS_FILE",
+        "CUPTI_ACTIVITY_KIND_CUDA_EVENT",
+        "CUPTI_ACTIVITY_KIND_KERNEL",
+        "CUPTI_ACTIVITY_KIND_MEMCPY",
+        "CUPTI_ACTIVITY_KIND_MEMSET",
+        "CUPTI_ACTIVITY_KIND_RUNTIME",
+        "CUPTI_ACTIVITY_KIND_SYNCHRONIZATION",
+        "DIAGNOSTIC_EVENT",
+        "ENUM_CUDA_DEV_MEM_EVENT_OPER",
+        "ENUM_CUDA_FUNC_CACHE_CONFIG",
+        "ENUM_CUDA_KERNEL_LAUNCH_TYPE",
+        "ENUM_CUDA_MEMCPY_OPER",
+        "ENUM_CUDA_MEMPOOL_OPER",
+        "ENUM_CUDA_MEMPOOL_TYPE",
+        "ENUM_CUDA_MEM_KIND",
+        "ENUM_CUDA_SHARED_MEM_LIMIT_CONFIG",
+        "ENUM_CUDA_UNIF_MEM_ACCESS_TYPE",
+        "ENUM_CUDA_UNIF_MEM_MIGRATION",
+        "ENUM_CUPTI_OVERHEAD_TYPE",
+        "ENUM_CUPTI_STREAM_TYPE",
+        "ENUM_CUPTI_SYNC_TYPE",
+        "ENUM_DIAGNOSTIC_SEVERITY_LEVEL",
+        "ENUM_DIAGNOSTIC_SOURCE_TYPE",
+        "ENUM_DIAGNOSTIC_TIMESTAMP_SOURCE",
+        "ENUM_NSYS_EVENT_CLASS",
+        "ENUM_NSYS_EVENT_TYPE",
+        "ENUM_NSYS_GENERIC_EVENT_FIELD_ETW_FLAGS",
+        "ENUM_NSYS_GENERIC_EVENT_FIELD_ETW_PROPERTY",
+        "ENUM_NSYS_GENERIC_EVENT_FIELD_ETW_TYPE",
+        "ENUM_NSYS_GENERIC_EVENT_FIELD_TYPE",
+        "ENUM_NSYS_GENERIC_EVENT_GROUP",
+        "ENUM_NSYS_GENERIC_EVENT_SOURCE",
+        "META_DATA_CAPTURE",
+        "META_DATA_EXPORT",
+        "NVTX_EVENTS",
+        "PROCESSES",
+        "PROFILER_OVERHEAD",
+        "ProcessStreams",
+        "StringIds",
+        "TARGET_INFO_CUDA_CONTEXT_INFO",
+        "TARGET_INFO_CUDA_DEVICE",
+        "TARGET_INFO_CUDA_STREAM",
+        "TARGET_INFO_GPU",
+        "TARGET_INFO_SESSION_START_TIME",
+        "TARGET_INFO_SYSTEM_ENV",
+        "ThreadNames"
+      ],
+      "diagnostics": {
+        "ANALYSIS_FILE": [
+          {
+            "id": 0,
+            "filename": "/tmp/nvidia/nsight_systems/quadd_session_104435/streams/pid_4448_stdout.log",
+            "contentId": 111,
+            "globalPid": 281549601767424
+          },
+          {
+            "id": 1,
+            "filename": "/tmp/nvidia/nsight_systems/quadd_session_104435/streams/pid_4448_stderr.log",
+            "contentId": 81,
+            "globalPid": 281549601767424
+          }
+        ],
+        "DIAGNOSTIC_EVENT": [
+          {
+            "timestamp": -27957524316,
+            "timestampType": 1,
+            "source": 2,
+            "severity": 1,
+            "text": "Process was launched by the profiler, see /tmp/nvidia/nsight_systems/quadd_session_104435/streams/pid_4448_stdout.log and stderr.log for program output",
+            "globalPid": 281549601767424
+          },
+          {
+            "timestamp": -27941033711,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "Common injection library initialized successfully.",
+            "globalPid": 281549601767424
+          },
+          {
+            "timestamp": -26402878354,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "Buffers holding CUDA trace data will be flushed on CudaProfilerStop() call. See --flush-on-cudaprofilerstop to control this behavior.",
+            "globalPid": 281549601767424
+          },
+          {
+            "timestamp": -26395740873,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "Loaded CUPTI library: /opt/nvidia/nsight-systems/2026.1.3/target-linux-x64/libcupti.so.13.3",
+            "globalPid": 281549601767424
+          },
+          {
+            "timestamp": -26211933478,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "Enabling trace for device graph launch",
+            "globalPid": 281549601767424
+          },
+          {
+            "timestamp": -26211906972,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "CUDA injection initialized successfully.",
+            "globalPid": 281549601767424
+          },
+          {
+            "timestamp": -26189561706,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 2,
+            "text": "CUDA device 0: Unified Memory cannot be traced on devices that don't support peer-to-peer transfers.Please verify that SLI/NVLink is functioning properly.",
+            "globalPid": 281549601767424
+          },
+          {
+            "timestamp": -21273332376,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "Common injection library initialized successfully.",
+            "globalPid": 281550994276352
+          },
+          {
+            "timestamp": -21273091669,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "Common injection library initialized successfully.",
+            "globalPid": 281551011053568
+          },
+          {
+            "timestamp": -21272763704,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "Common injection library initialized successfully.",
+            "globalPid": 281551027830784
+          },
+          {
+            "timestamp": -19653292778,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "Buffers holding CUDA trace data will be flushed on CudaProfilerStop() call. See --flush-on-cudaprofilerstop to control this behavior.",
+            "globalPid": 281551011053568
+          },
+          {
+            "timestamp": -19653290404,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "Buffers holding CUDA trace data will be flushed on CudaProfilerStop() call. See --flush-on-cudaprofilerstop to control this behavior.",
+            "globalPid": 281551027830784
+          },
+          {
+            "timestamp": -19646297438,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "Loaded CUPTI library: /opt/nvidia/nsight-systems/2026.1.3/target-linux-x64/libcupti.so.13.3",
+            "globalPid": 281551027830784
+          },
+          {
+            "timestamp": -19646270404,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "Loaded CUPTI library: /opt/nvidia/nsight-systems/2026.1.3/target-linux-x64/libcupti.so.13.3",
+            "globalPid": 281551011053568
+          },
+          {
+            "timestamp": -19404102467,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "Enabling trace for device graph launch",
+            "globalPid": 281551011053568
+          },
+          {
+            "timestamp": -19404078110,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "CUDA injection initialized successfully.",
+            "globalPid": 281551011053568
+          },
+          {
+            "timestamp": -19403715606,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "Enabling trace for device graph launch",
+            "globalPid": 281551027830784
+          },
+          {
+            "timestamp": -19403695165,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "CUDA injection initialized successfully.",
+            "globalPid": 281551027830784
+          },
+          {
+            "timestamp": -19379490744,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 2,
+            "text": "CUDA device 0: Unified Memory cannot be traced on devices that don't support peer-to-peer transfers.Please verify that SLI/NVLink is functioning properly.",
+            "globalPid": 281551011053568
+          },
+          {
+            "timestamp": -19379449269,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 2,
+            "text": "CUDA device 0: Unified Memory cannot be traced on devices that don't support peer-to-peer transfers.Please verify that SLI/NVLink is functioning properly.",
+            "globalPid": 281551027830784
+          },
+          {
+            "timestamp": -11933013934,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "NVTX injection initialized successfully.",
+            "globalPid": 281551011053568
+          },
+          {
+            "timestamp": 0,
+            "timestampType": 1,
+            "source": 3,
+            "severity": 1,
+            "text": "Profiling has started.",
+            "globalPid": -144115188075855872
+          },
+          {
+            "timestamp": 5122388,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "Profiling started due to cudaProfilerStart API invoked in the application.",
+            "globalPid": 281551011053568
+          },
+          {
+            "timestamp": 101113956,
+            "timestampType": 2,
+            "source": 3,
+            "severity": 2,
+            "text": "Not all NVTX events might have been collected.",
+            "globalPid": 281551011053568
+          },
+          {
+            "timestamp": 101118465,
+            "timestampType": 2,
+            "source": 3,
+            "severity": 1,
+            "text": "Number of NVTX events collected: \t135.",
+            "globalPid": 281551011053568
+          },
+          {
+            "timestamp": 101119566,
+            "timestampType": 2,
+            "source": 3,
+            "severity": 2,
+            "text": "Not all NVTX events might have been collected.",
+            "globalPid": 281551027830784
+          },
+          {
+            "timestamp": 101119751,
+            "timestampType": 2,
+            "source": 3,
+            "severity": 2,
+            "text": "No NVTX events collected. Does the process use NVTX?",
+            "globalPid": 281551027830784
+          },
+          {
+            "timestamp": 101120014,
+            "timestampType": 2,
+            "source": 3,
+            "severity": 2,
+            "text": "Not all NVTX events might have been collected.",
+            "globalPid": 281550994276352
+          },
+          {
+            "timestamp": 101120538,
+            "timestampType": 2,
+            "source": 3,
+            "severity": 2,
+            "text": "No NVTX events collected. Does the process use NVTX?",
+            "globalPid": 281550994276352
+          },
+          {
+            "timestamp": 101120716,
+            "timestampType": 2,
+            "source": 3,
+            "severity": 2,
+            "text": "Not all NVTX events might have been collected.",
+            "globalPid": 281549601767424
+          },
+          {
+            "timestamp": 101120868,
+            "timestampType": 2,
+            "source": 3,
+            "severity": 2,
+            "text": "No NVTX events collected. Does the process use NVTX?",
+            "globalPid": 281549601767424
+          },
+          {
+            "timestamp": 101121783,
+            "timestampType": 2,
+            "source": 3,
+            "severity": 2,
+            "text": "Not all CUDA events might have been collected.",
+            "globalPid": 281551011053568
+          },
+          {
+            "timestamp": 101122254,
+            "timestampType": 2,
+            "source": 3,
+            "severity": 1,
+            "text": "Number of CUDA events collected: \t118557.",
+            "globalPid": 281551011053568
+          },
+          {
+            "timestamp": 101122497,
+            "timestampType": 2,
+            "source": 3,
+            "severity": 2,
+            "text": "Not all CUDA events might have been collected.",
+            "globalPid": 281551027830784
+          },
+          {
+            "timestamp": 101122640,
+            "timestampType": 2,
+            "source": 3,
+            "severity": 2,
+            "text": "No CUDA events collected. Does the process use CUDA?",
+            "globalPid": 281551027830784
+          },
+          {
+            "timestamp": 101122814,
+            "timestampType": 2,
+            "source": 3,
+            "severity": 2,
+            "text": "CUDA profiling might have not been started correctly.",
+            "globalPid": 281550994276352
+          },
+          {
+            "timestamp": 101123000,
+            "timestampType": 2,
+            "source": 3,
+            "severity": 2,
+            "text": "No CUDA events collected. Does the process use CUDA?",
+            "globalPid": 281550994276352
+          },
+          {
+            "timestamp": 101123459,
+            "timestampType": 2,
+            "source": 3,
+            "severity": 2,
+            "text": "Not all CUDA events might have been collected.",
+            "globalPid": 281549601767424
+          },
+          {
+            "timestamp": 101123594,
+            "timestampType": 2,
+            "source": 3,
+            "severity": 2,
+            "text": "No CUDA events collected. Does the process use CUDA?",
+            "globalPid": 281549601767424
+          },
+          {
+            "timestamp": 1794008895,
+            "timestampType": 1,
+            "source": 3,
+            "severity": 1,
+            "text": "Profiling has stopped.",
+            "globalPid": -144115188075855872
+          },
+          {
+            "timestamp": 1794241051,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "CUDA hardware tracing is not supported on this system. A legacy (software instrumented) trace was collected instead.",
+            "globalPid": 281551011053568
+          },
+          {
+            "timestamp": 1794278471,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "CUDA hardware tracing is not supported on this system. A legacy (software instrumented) trace was collected instead.",
+            "globalPid": 281551027830784
+          },
+          {
+            "timestamp": 1794304168,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "CUDA hardware tracing is not supported on this system. A legacy (software instrumented) trace was collected instead.",
+            "globalPid": 281549601767424
+          },
+          {
+            "timestamp": 1797816395,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "Number of CUPTI events produced: \t3, CUPTI buffers: 50.",
+            "globalPid": 281549601767424
+          },
+          {
+            "timestamp": 1798875583,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "Number of CUPTI events produced: \t121692, CUPTI buffers: 50.",
+            "globalPid": 281551011053568
+          },
+          {
+            "timestamp": 1799562173,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 1,
+            "text": "Number of CUPTI events produced: \t3, CUPTI buffers: 50.",
+            "globalPid": 281551027830784
+          },
+          {
+            "timestamp": 2112776844,
+            "timestampType": 1,
+            "source": 2,
+            "severity": 1,
+            "text": "S3EventHandler: S3 trace events were not found, not creating counters",
+            "globalPid": 281474976710656
+          }
+        ],
+        "ENUM_DIAGNOSTIC_TIMESTAMP_SOURCE": [
+          {
+            "id": 0,
+            "name": "UnknownTimestamp",
+            "label": "Unknown timestamp"
+          },
+          {
+            "id": 1,
+            "name": "TargetTimestamp",
+            "label": "Target timestamp"
+          },
+          {
+            "id": 2,
+            "name": "HostTimestamp",
+            "label": "Host timestamp"
+          }
+        ],
+        "ENUM_DIAGNOSTIC_SEVERITY_LEVEL": [
+          {
+            "id": 0,
+            "name": "UnknownLevel",
+            "label": "Unknown"
+          },
+          {
+            "id": 1,
+            "name": "Info",
+            "label": "Info"
+          },
+          {
+            "id": 2,
+            "name": "Warning",
+            "label": "Warning"
+          },
+          {
+            "id": 3,
+            "name": "Error",
+            "label": "Error"
+          },
+          {
+            "id": 4,
+            "name": "Verbose",
+            "label": "Verbose"
+          }
+        ],
+        "ANALYSIS_DETAILS": [
+          {
+            "globalVid": 281474976710656,
+            "duration": 1794008895,
+            "startTime": 426210045119,
+            "stopTime": 428004054014
+          }
+        ],
+        "ENUM_DIAGNOSTIC_SOURCE_TYPE": [
+          {
+            "id": 0,
+            "name": "UnknownSource",
+            "label": "Unknown source"
+          },
+          {
+            "id": 1,
+            "name": "Injection",
+            "label": "Injection"
+          },
+          {
+            "id": 2,
+            "name": "Daemon",
+            "label": "Daemon"
+          },
+          {
+            "id": 3,
+            "name": "Analysis",
+            "label": "Analysis"
+          }
+        ]
+      },
+      "quality": {
+        "validation_level": "structural_capture_validation",
+        "worker_warnings": [
+          {
+            "timestamp": -19379490744,
+            "timestampType": 1,
+            "source": 1,
+            "severity": 2,
+            "text": "CUDA device 0: Unified Memory cannot be traced on devices that don't support peer-to-peer transfers.Please verify that SLI/NVLink is functioning properly.",
+            "globalPid": 281551011053568
+          },
+          {
+            "timestamp": 101113956,
+            "timestampType": 2,
+            "source": 3,
+            "severity": 2,
+            "text": "Not all NVTX events might have been collected.",
+            "globalPid": 281551011053568
+          },
+          {
+            "timestamp": 101121783,
+            "timestampType": 2,
+            "source": 3,
+            "severity": 2,
+            "text": "Not all CUDA events might have been collected.",
+            "globalPid": 281551011053568
+          }
+        ],
+        "all_process_warning_count": 17,
+        "unmatched_window_kernel_correlations": 0,
+        "completeness_proven": false,
+        "counts_are_observed_not_guaranteed_exhaustive": true
+      },
+      "temporal_normalizations": {
+        "kernel_count": {
+          "total": 23169,
+          "per_generated_token": 36.77619047619048,
+          "per_decode_iteration": 330.98571428571427,
+          "per_request": 2574.3333333333335
+        },
+        "kernel_total_ns": {
+          "total": 204361049,
+          "per_generated_token": 324382.61746031744,
+          "per_decode_iteration": 2919443.557142857,
+          "per_request": 22706783.222222224
+        },
+        "cuda_runtime_api_count": {
+          "total": 40703,
+          "per_generated_token": 64.60793650793651,
+          "per_decode_iteration": 581.4714285714285,
+          "per_request": 4522.555555555556
+        },
+        "cuda_runtime_api_total_ns": {
+          "total": 208836267,
+          "per_generated_token": 331486.1380952381,
+          "per_decode_iteration": 2983375.242857143,
+          "per_request": 23204029.666666668
+        },
+        "synchronization_count": {
+          "total": 210,
+          "per_generated_token": 0.3333333333333333,
+          "per_decode_iteration": 3.0,
+          "per_request": 23.333333333333332
+        },
+        "synchronization_total_ns": {
+          "total": 522896,
+          "per_generated_token": 829.9936507936508,
+          "per_decode_iteration": 7469.942857142857,
+          "per_request": 58099.555555555555
+        },
+        "graph_launch_count": {
+          "total": 0,
+          "per_generated_token": 0.0,
+          "per_decode_iteration": 0.0,
+          "per_request": 0.0
+        }
+      }
+    },
+    "normalization_note": "Window counts are temporal diagnostics; full capture includes prefill. Causal per-token kernel attribution remains pending."
+  }
+}

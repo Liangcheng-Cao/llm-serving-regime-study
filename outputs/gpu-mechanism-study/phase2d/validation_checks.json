@@ -1,0 +1,115 @@
+{
+  "preservation_hashes.json": {
+    "files": 205,
+    "unchanged": true
+  },
+  "phase2d_protected.json": {
+    "files": 76,
+    "unchanged": true
+  },
+  "collection": {
+    "attempts": 30,
+    "valid_traces": 16,
+    "valid_unprofiled_starts": 14,
+    "invalid": 0,
+    "installed_sources_unchanged_every_run": true,
+    "measurement_pipeline_hashes_constant_during_collection": true
+  },
+  "tests": {
+    "unit_tests_passed": 31,
+    "historical_validation": "PASS: analytic case, 60 frozen scenarios, conservation, causal contrast and service cliff."
+  },
+  "figures": {
+    "count": 6,
+    "png_and_svg": true,
+    "visually_reviewed": true
+  },
+  "raw_reports": [
+    {
+      "file": "traces/d-128-a-b1-trace.nsys-rep",
+      "bytes": 2787352,
+      "sha256": "b618e5509fac3519e95bd83c0241dc2097e784e1108b4688cb99ebd0e54b8d5c"
+    },
+    {
+      "file": "traces/d-128-a-b2-trace.nsys-rep",
+      "bytes": 2807227,
+      "sha256": "bf52df6b6808fc4e263afd85e79b2172da41c15c76cd8351da71eb56d807803b"
+    },
+    {
+      "file": "traces/d-128-a-b3-trace.nsys-rep",
+      "bytes": 2805433,
+      "sha256": "ed694e97a1a13227bc9f671325f09a6796311dd0c5230bef294e954ae5f5cf48"
+    },
+    {
+      "file": "traces/d-128-b-b1-trace.nsys-rep",
+      "bytes": 1517756,
+      "sha256": "b5a521ee74b0ac531929d4388c061778bd99e96b2f440f69d188cec27c74fdcb"
+    },
+    {
+      "file": "traces/d-128-b-b2-trace.nsys-rep",
+      "bytes": 1511791,
+      "sha256": "50d21938597503294ae3ca4365dfa8f8da359a00c8c1a8e353ddb38f49123ab3"
+    },
+    {
+      "file": "traces/d-128-b-b3-trace.nsys-rep",
+      "bytes": 1509071,
+      "sha256": "2809d9d08c9a163ad73ac45c4f2c5ea82dd460858cae673c8c498cae4d43fa8f"
+    },
+    {
+      "file": "traces/d-128-c-b1-trace.nsys-rep",
+      "bytes": 1470589,
+      "sha256": "e7c12672f4a29b54112e1d87b41c620b9d1fb8dad3499e32b50f205861bf7369"
+    },
+    {
+      "file": "traces/d-128-c-b2-trace.nsys-rep",
+      "bytes": 1473409,
+      "sha256": "93b968e05062706d260d68a03e680f781337562d3674975e448470b9918f73d7"
+    },
+    {
+      "file": "traces/d-128-c-b3-trace.nsys-rep",
+      "bytes": 1465389,
+      "sha256": "f025b267b7ea55b5f5621d83554d035881c75b7236be5e3e8e1c8e960dbc189c"
+    },
+    {
+      "file": "traces/d-128-d-b1-trace.nsys-rep",
+      "bytes": 2801019,
+      "sha256": "81760e79d31fdd2bb379e739f51d5bd490158f587c67f12660070607d2507e88"
+    },
+    {
+      "file": "traces/d-128-d-b2-trace.nsys-rep",
+      "bytes": 2803565,
+      "sha256": "6e9172ce16fc38ab71c8aa73ecd67f2835ed12aeed50cdc4e1513135a4bdd2b6"
+    },
+    {
+      "file": "traces/d-128-d-b3-trace.nsys-rep",
+      "bytes": 2785834,
+      "sha256": "e47cc6b0a20a3771d50839246955d0057ad0a802523c8c84523574dbdf11eb41"
+    },
+    {
+      "file": "traces/d-256-c-b1-trace.nsys-rep",
+      "bytes": 2865792,
+      "sha256": "b2769c449a8ff57a7a24f0ac546fab97921b71f94c96f21fbeb492f704152fd4"
+    },
+    {
+      "file": "traces/d-256-c-b2-trace.nsys-rep",
+      "bytes": 2855798,
+      "sha256": "cdaf3b79fa5f59c71898c5a42740d0f0492571aff50140524ab79b20eed21ef7"
+    },
+    {
+      "file": "traces/d-256-d-b1-trace.nsys-rep",
+      "bytes": 5517543,
+      "sha256": "0fcafa4dac86ad8c2d25a95765aa8eab923bc1147da89db89982044c0804e8af"
+    },
+    {
+      "file": "traces/d-256-d-b2-trace.nsys-rep",
+      "bytes": 5517098,
+      "sha256": "874e29e27e70c2dc81ccb4e47122882405ff6c4a4a84525f79d5a1f8802bd02e"
+    }
+  ],
+  "limitations": [
+    "Observed counts; Nsight completeness warnings retained",
+    "No exhaustive event-coverage certification",
+    "Window-normalized GPU metrics, not exact request attribution",
+    "Differential profiling perturbation; unprofiled measurements determine serving effect"
+  ]
+}

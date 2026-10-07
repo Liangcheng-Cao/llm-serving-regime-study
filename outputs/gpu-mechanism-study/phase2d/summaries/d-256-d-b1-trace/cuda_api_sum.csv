@@ -1,0 +1,21 @@
+Processing [/mnt/c/Users/liang/Documents/Codex/2026-09-25/files-pasted-by-the-user-start-2/llm-serving-regime-study/outputs/gpu-mechanism-study/phase2d/summaries/d-256-d-b1-trace/trace.sqlite] with [/opt/nvidia/nsight-systems/2026.1.3/target-linux-x64/reports/cuda_api_sum.py]...
+Time (%),Total Time (ns),Num Calls,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+40.1,290766839,37400,7774.5,6966.0,3476,786299,7002.4,cudaLaunchKernelExC
+23.4,169714252,22354,7592.1,6556.0,3116,1023465,10542.7,cudaLaunchKernel
+23.3,169144409,24833,6811.3,6124.0,3839,132232,3801.6,cuLaunchKernel
+7.8,56551340,1593,35499.9,24300.0,4849,10495165,263837.3,cudaMemcpyAsync
+1.7,11966563,24833,481.9,399.0,258,92307,828.8,cuKernelGetFunction
+0.8,6108302,22586,270.4,212.0,92,85964,941.0,cuKernelGetName
+0.8,5461731,6401,853.3,265.0,184,38395,2871.2,cudaMemsetAsync
+0.4,2648402,1298,2040.4,1697.0,384,71726,2649.6,cudaEventRecordWithFlags
+0.3,2158898,259,8335.5,7119.0,5990,64201,5049.9,cuLaunchKernelEx
+0.3,1852698,667,2777.7,2761.0,285,93553,4011.1,cudaEventQuery
+0.2,1576311,3113,506.4,308.0,159,24787,765.9,cudaStreamIsCapturing
+0.2,1509260,771,1957.5,1404.0,1044,101855,5033.2,cudaStreamWaitEvent
+0.2,1324807,1028,1288.7,1111.5,474,32325,1550.3,cudaEventCreateWithFlags
+0.2,1155816,517,2235.6,2707.0,658,19586,1572.8,cudaStreamSynchronize
+0.1,745052,1028,724.8,628.5,420,11176,409.6,cudaEventDestroy
+0.1,699968,257,2723.6,2557.0,1831,14926,1028.0,cudaEventSynchronize
+0.1,688034,25,27521.4,25767.0,22834,50862,6146.0,cudaGraphLaunch
+0.1,510907,257,1988.0,1916.0,1491,4300,335.1,cudaEventRecord
+0.0,8041,1,8041.0,8041.0,8041,8041,0.0,cuProfilerStart

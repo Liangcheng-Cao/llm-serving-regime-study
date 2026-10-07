@@ -1,0 +1,364 @@
+pair,output_len,source,metric,reference,comparison,reference_mean,comparison_mean,delta,ratio
+primary_B8,128,unprofiled,decode_ms,B8 graph,B8 forced eager,3.117377904761905,10.11402642063492,6.996648515873015,3.2444017791957105
+primary_B8,128,unprofiled,e2e_s,B8 graph,B8 forced eager,0.42020672011111615,1.322852873222233,0.902646153111117,3.1481002323628435
+primary_B8,128,unprofiled,decode_tokens_s,B8 graph,B8 forced eager,2566.8629485949573,791.2223158240869,-1775.6406327708705,0.3082448621797997
+primary_B8,128,unprofiled,serving_tokens_s,B8 graph,B8 forced eager,2437.4784352125916,774.3944948422868,-1663.0839403703048,0.3177031163251074
+primary_B8,128,unprofiled,requests_s,B8 graph,B8 forced eager,19.042800275098372,6.049956990955366,-12.992843284143007,0.3177031163251074
+primary_B8,128,profiled_observed,region_ms,B8 graph,B8 forced eager,220.219654,851.0750226666667,630.8553686666667,3.8646642441217653
+primary_B8,128,profiled_observed,kernel_count,B8 graph,B8 forced eager,23180.333333333332,23169.666666666668,-10.666666666664241,0.9995398398067328
+primary_B8,128,profiled_observed,kernel_count_per_token,B8 graph,B8 forced eager,41.39345238095238,41.37440476190476,-0.01904761904761898,0.9995398398067327
+primary_B8,128,profiled_observed,kernel_sum_us_per_token,B8 graph,B8 forced eager,353.23154166666666,361.5019488095238,8.270407142857152,1.0234135578715156
+primary_B8,128,profiled_observed,kernel_busy_us_per_token,B8 graph,B8 forced eager,352.2892779761905,361.5019488095238,9.212670833333334,1.0261508692125338
+primary_B8,128,profiled_observed,kernel_busy_fraction,B8 graph,B8 forced eager,0.8958746178161812,0.23789267677331458,-0.6579819410428666,0.26554237841140205
+primary_B8,128,profiled_observed,gpu_busy_us_per_token,B8 graph,B8 forced eager,352.9062613095238,362.6194160714286,9.713154761904775,1.027523327939443
+primary_B8,128,profiled_observed,gpu_busy_fraction,B8 graph,B8 forced eager,0.8974436920554211,0.23862815862922968,-0.6588155334261914,0.2658976387506809
+primary_B8,128,profiled_observed,gpu_inactive_us_per_token,B8 graph,B8 forced eager,40.34312083333333,1157.1574101190477,1116.8142892857143,28.682892800969213
+primary_B8,128,profiled_observed,gpu_inactive_fraction,B8 graph,B8 forced eager,0.10255630794457893,0.7613718413707703,0.6588155334261914,7.4239396545185015
+primary_B8,128,profiled_observed,inter_kernel_gap_us_per_token,B8 graph,B8 forced eager,40.95457261904762,1158.016550595238,1117.0619779761903,28.275635088831436
+primary_B8,128,profiled_observed,inter_kernel_gap_fraction,B8 graph,B8 forced eager,0.10411288061793254,0.7620671584373251,0.6579542778193925,7.3196241801618696
+primary_B8,128,profiled_observed,edge_gap_us,B8 graph,B8 forced eager,3.0976666666666666,144.663,141.56533333333334,46.70063488647369
+primary_B8,128,profiled_observed,kernel_overlap_excess_us_per_token,B8 graph,B8 forced eager,0.9422636904761905,0.0,-0.9422636904761905,0.0
+primary_B8,128,profiled_observed,kernel_boundary_crossings,B8 graph,B8 forced eager,1.6666666666666667,0.3333333333333333,-1.3333333333333335,0.19999999999999998
+primary_B8,128,profiled_observed,active_kernel_streams,B8 graph,B8 forced eager,2,2,0,1.0
+primary_B8,128,profiled_observed,copy_union_us_per_token,B8 graph,B8 forced eager,0.7316654761904762,1.0771440476190477,0.3454785714285715,1.47218104813057
+primary_B8,128,profiled_observed,memset_union_us_per_token,B8 graph,B8 forced eager,0.144875,0.04032321428571429,-0.10455178571428572,0.2783310735856034
+primary_B8,128,profiled_observed,observed_copy_bytes,B8 graph,B8 forced eager,60340,37520,-22820,0.6218097447795824
+primary_B8,128,profiled_observed,kernel_duration_mean_us,B8 graph,B8 forced eager,8.53339969624871,8.73745136364086,0.2040516673921502,1.0239121188102618
+primary_B8,128,profiled_observed,kernel_duration_median_us,B8 graph,B8 forced eager,1.44,1.792,0.3520000000000001,1.2444444444444445
+primary_B8,128,profiled_observed,kernel_duration_p95_us,B8 graph,B8 forced eager,37.428666666666665,37.876666666666665,0.4480000000000004,1.0119694351922768
+primary_B8,128,profiled_observed,kernel_duration_sd_us,B8 graph,B8 forced eager,34.77781072997384,33.78351353145976,-0.9942971985140758,0.9714100117964837
+primary_B8,128,profiled_observed,gap_mean_us,B8 graph,B8 forced eager,1.012192013729387,27.98993258401023,26.977740570280844,27.65278939603789
+primary_B8,128,profiled_observed,gap_median_us,B8 graph,B8 forced eager,0.032,23.625999999999998,23.593999999999998,738.3124999999999
+primary_B8,128,profiled_observed,gap_p95_us,B8 graph,B8 forced eager,3.498666666666667,64.59234999999998,61.09368333333332,18.461990282012188
+primary_B8,128,profiled_observed,gap_sd_us,B8 graph,B8 forced eager,7.158658661970123,36.89264301124493,29.733984349274806,5.153569230397104
+primary_B8,128,profiled_observed,gap_max_us,B8 graph,B8 forced eager,378.01966666666664,979.1913333333333,601.1716666666666,2.5903184931295464
+primary_B8,128,profiled_observed,runtime_api_count,B8 graph,B8 forced eager,3990,20923,16933,5.243859649122807
+primary_B8,128,profiled_observed,runtime_api_calls_per_token,B8 graph,B8 forced eager,7.125,37.362500000000004,30.237500000000004,5.2438596491228076
+primary_B8,128,profiled_observed,runtime_api_us_per_token,B8 graph,B8 forced eager,261.86789226190473,239.28432142857142,-22.58357083333331,0.9137596799734938
+primary_B8,128,profiled_observed,runtime_api_duration_mean_us,B8 graph,B8 forced eager,36.75338838763576,6.404435326722577,-30.348953060913182,0.17425428260315448
+primary_B8,128,profiled_observed,runtime_api_duration_median_us,B8 graph,B8 forced eager,1.2446666666666666,6.505,5.2603333333333335,5.2262988752008575
+primary_B8,128,profiled_observed,runtime_api_duration_p95_us,B8 graph,B8 forced eager,24.747683333333306,11.458466666666665,-13.289216666666642,0.4630116893096395
+primary_B8,128,profiled_observed,driver_api_count,B8 graph,B8 forced eager,980,19810,18830,20.214285714285715
+primary_B8,128,profiled_observed,driver_api_calls_per_token,B8 graph,B8 forced eager,1.75,35.375,33.625,20.214285714285715
+primary_B8,128,profiled_observed,driver_api_us_per_token,B8 graph,B8 forced eager,1.3703970238095238,88.07770476190476,86.70730773809524,64.27166961955325
+primary_B8,128,profiled_observed,driver_api_duration_mean_us,B8 graph,B8 forced eager,0.7830840136054422,2.4898291098771663,1.706745096271724,3.1795172249955668
+primary_B8,128,profiled_observed,driver_api_duration_median_us,B8 graph,B8 forced eager,0.21316666666666667,0.42366666666666664,0.21049999999999996,1.9874902267396402
+primary_B8,128,profiled_observed,driver_api_duration_p95_us,B8 graph,B8 forced eager,6.196816666666667,6.7326999999999995,0.5358833333333326,1.0864771966251487
+primary_B8,128,profiled_observed,kernel_launch_count,B8 graph,B8 forced eager,980,16310,15330,16.642857142857142
+primary_B8,128,profiled_observed,kernel_launch_calls_per_token,B8 graph,B8 forced eager,1.75,29.125,27.375,16.642857142857142
+primary_B8,128,profiled_observed,kernel_launch_us_per_token,B8 graph,B8 forced eager,15.516042857142857,211.30111250000002,195.78506964285717,13.618234652060588
+primary_B8,128,profiled_observed,kernel_launch_duration_mean_us,B8 graph,B8 forced eager,8.866310204081632,7.25497381974249,-1.6113363843391424,0.8182630263040697
+primary_B8,128,profiled_observed,kernel_launch_duration_median_us,B8 graph,B8 forced eager,7.603166666666667,6.6739999999999995,-0.9291666666666671,0.8777921480085051
+primary_B8,128,profiled_observed,kernel_launch_duration_p95_us,B8 graph,B8 forced eager,13.999066666666666,10.303983333333326,-3.69508333333334,0.7360478793824345
+primary_B8,128,profiled_observed,graph_launch_count,B8 graph,B8 forced eager,70,0,-70,0.0
+primary_B8,128,profiled_observed,graph_launch_calls_per_token,B8 graph,B8 forced eager,0.125,0.0,-0.125,0.0
+primary_B8,128,profiled_observed,graph_launch_us_per_token,B8 graph,B8 forced eager,34.68658154761905,0.0,-34.68658154761905,0.0
+primary_B8,128,profiled_observed,sync_count,B8 graph,B8 forced eager,70,210,140,3.0
+primary_B8,128,profiled_observed,sync_calls_per_token,B8 graph,B8 forced eager,0.125,0.375,0.25,3.0
+primary_B8,128,profiled_observed,sync_us_per_token,B8 graph,B8 forced eager,197.66568452380955,0.7840494047619048,-196.88163511904764,0.003966542835448321
+primary_B8,128,profiled_observed,sync_duration_mean_us,B8 graph,B8 forced eager,1581.3254761904764,2.0907984126984127,-1579.234677777778,0.0013221809451494403
+primary_B8,128,profiled_observed,sync_duration_median_us,B8 graph,B8 forced eager,1578.1021666666666,2.2925,-1575.8096666666665,0.001452694285847357
+primary_B8,128,profiled_observed,sync_duration_p95_us,B8 graph,B8 forced eager,2044.4690166666667,3.343816666666666,-2041.1252,0.001635542842375022
+primary_B8,128,profiled_observed,graph_launches_per_iteration,B8 graph,B8 forced eager,1.0,0.0,-1.0,0.0
+primary_B8,128,profiled_observed,family_GEMM_matmul_us_per_token,B8 graph,B8 forced eager,301.0735071428571,304.3341541666667,3.260647023809554,1.0108300695559453
+primary_B8,128,profiled_observed,family_attention_us_per_token,B8 graph,B8 forced eager,24.87947261904762,24.716909523809523,-0.1625630952380952,0.9934659750338262
+primary_B8,128,profiled_observed,family_normalization_us_per_token,B8 graph,B8 forced eager,8.578516071428572,10.12882380952381,1.5503077380952384,1.1807198034236552
+primary_B8,128,profiled_observed,family_sampling_us_per_token,B8 graph,B8 forced eager,1.260472619047619,1.4062315476190477,0.1457589285714287,1.1156383140488688
+primary_B8,128,profiled_observed,family_elementwise_us_per_token,B8 graph,B8 forced eager,10.474601785714286,12.266919642857143,1.7923178571428569,1.1711108349328656
+primary_B8,128,profiled_observed,family_KV_cache_us_per_token,B8 graph,B8 forced eager,2.8850083333333334,3.5876267857142854,0.702618452380952,1.243541221099056
+primary_B8,128,profiled_observed,family_unknown_us_per_token,B8 graph,B8 forced eager,4.079963095238095,5.061283333333333,0.9813202380952379,1.240521841788368
+primary_B8,128,profiled_observed,completion_window_busy_fraction,B8 graph,B8 forced eager,0.898010688472792,0.2386311986412012,-0.6593794898315908,0.265733138485279
+primary_B8,128,profiled_observed,window_busy_fraction_delta_pp,B8 graph,B8 forced eager,-0.05669964173709019,-0.00030400119715168206,0.05639564053993851,0.005361607019693372
+primary_B8,128,profiled_observed,profiled_completion_ms,B8 graph,B8 forced eager,3.1465702952380954,12.158242242857144,9.011671947619048,3.863966510221298
+primary_B8,128,profiled_observed,profiled_e2e_s,B8 graph,B8 forced eager,0.4236942799999923,1.5993288396666685,1.1756345596666762,3.774723698575061
+practical_B9,128,unprofiled,decode_ms,B9 graph bucket12,B9 natural eager,3.1801780142857146,9.952453692063491,6.772275677777777,3.1295272300342805
+practical_B9,128,unprofiled,e2e_s,B9 graph bucket12,B9 natural eager,0.4322791250000175,1.308681328444458,0.8764022034444405,3.027398855876756
+practical_B9,128,unprofiled,decode_tokens_s,B9 graph bucket12,B9 natural eager,2830.772043751991,904.4527955422201,-1926.319248209771,0.31950746353402265
+practical_B9,128,unprofiled,serving_tokens_s,B9 graph bucket12,B9 natural eager,2665.7124309212427,880.4093773049735,-1785.3030536162692,0.33027170038769454
+practical_B9,128,unprofiled,requests_s,B9 graph bucket12,B9 natural eager,20.82587836657221,6.878198260195106,-13.947680106377103,0.33027170038769454
+practical_B9,128,profiled_observed,region_ms,B9 graph bucket12,B9 natural eager,223.65983066666666,901.191281,677.5314503333334,4.029294300696749
+practical_B9,128,profiled_observed,kernel_count,B9 graph bucket12,B9 natural eager,23496.333333333332,23170.333333333332,-326.0,0.9861254947580473
+practical_B9,128,profiled_observed,kernel_count_per_token,B9 graph bucket12,B9 natural eager,37.2957671957672,36.77830687830688,-0.5174603174603192,0.9861254947580473
+practical_B9,128,profiled_observed,kernel_sum_us_per_token,B9 graph bucket12,B9 natural eager,318.61608783068783,322.77574708994706,4.159659259259229,1.013055396190382
+practical_B9,128,profiled_observed,kernel_busy_us_per_token,B9 graph bucket12,B9 natural eager,317.7004693121693,322.77574708994706,5.075277777777785,1.0159750402281933
+practical_B9,128,profiled_observed,kernel_busy_fraction,B9 graph bucket12,B9 natural eager,0.8949607363077193,0.22590935349516775,-0.6690513828125516,0.2524237593117069
+practical_B9,128,profiled_observed,gpu_busy_us_per_token,B9 graph bucket12,B9 natural eager,318.29422063492063,323.76924814814817,5.475027513227531,1.0172011527645906
+practical_B9,128,profiled_observed,gpu_busy_fraction,B9 graph bucket12,B9 natural eager,0.8966336199328911,0.22660399314497912,-0.670029626787912,0.2527275222648236
+practical_B9,128,profiled_observed,gpu_inactive_us_per_token,B9 graph bucket12,B9 natural eager,36.721383597883595,1106.6931026455024,1069.9717190476188,30.137565478586318
+practical_B9,128,profiled_observed,gpu_inactive_fraction,B9 graph bucket12,B9 natural eager,0.1033663800671089,0.7733960068550209,0.670029626787912,7.482084661888193
+practical_B9,128,profiled_observed,inter_kernel_gap_us_per_token,B9 graph bucket12,B9 natural eager,37.31513492063492,1107.5771375661377,1070.262002645503,29.681713329506362
+practical_B9,128,profiled_observed,inter_kernel_gap_fraction,B9 graph bucket12,B9 natural eager,0.10503926369228068,0.7740726242700097,0.669033360577729,7.3693645315118115
+practical_B9,128,profiled_observed,edge_gap_us,B9 graph bucket12,B9 natural eager,0.0,68.96366666666667,68.96366666666667,
+practical_B9,128,profiled_observed,kernel_overlap_excess_us_per_token,B9 graph bucket12,B9 natural eager,0.9156185185185185,0.0,-0.9156185185185185,0.0
+practical_B9,128,profiled_observed,kernel_boundary_crossings,B9 graph bucket12,B9 natural eager,2,0.3333333333333333,-1.6666666666666667,0.16666666666666666
+practical_B9,128,profiled_observed,active_kernel_streams,B9 graph bucket12,B9 natural eager,2,2,0,1.0
+practical_B9,128,profiled_observed,copy_union_us_per_token,B9 graph bucket12,B9 natural eager,0.7677502645502645,0.9578613756613756,0.19011111111111112,1.2476210297660726
+practical_B9,128,profiled_observed,memset_union_us_per_token,B9 graph bucket12,B9 natural eager,0.1325026455026455,0.03563968253968254,-0.09686296296296297,0.2689733658108054
+practical_B9,128,profiled_observed,observed_copy_bytes,B9 graph bucket12,B9 natural eager,63700,42980,-20720,0.6747252747252748
+practical_B9,128,profiled_observed,kernel_duration_mean_us,B9 graph bucket12,B9 natural eager,8.542206990454014,8.776375485541648,0.2341684950876335,1.027413114122535
+practical_B9,128,profiled_observed,kernel_duration_median_us,B9 graph bucket12,B9 natural eager,1.44,1.7493333333333334,0.30933333333333346,1.214814814814815
+practical_B9,128,profiled_observed,kernel_duration_p95_us,B9 graph bucket12,B9 natural eager,37.513999999999996,37.802,0.2880000000000038,1.007677133870022
+practical_B9,128,profiled_observed,kernel_duration_sd_us,B9 graph bucket12,B9 natural eager,35.190903951505085,35.11389654027741,-0.07700741122767596,0.9978117239803275
+practical_B9,128,profiled_observed,gap_mean_us,B9 graph bucket12,B9 natural eager,1.023498271196791,30.116230667432177,29.092732396235387,29.424798766115003
+practical_B9,128,profiled_observed,gap_median_us,B9 graph bucket12,B9 natural eager,0.032,24.085166666666666,24.053166666666666,752.6614583333333
+practical_B9,128,profiled_observed,gap_p95_us,B9 graph bucket12,B9 natural eager,3.4664,73.15419999999996,69.68779999999995,21.10379644588044
+practical_B9,128,profiled_observed,gap_sd_us,B9 graph bucket12,B9 natural eager,7.716640535858438,42.924318800470694,35.207678264612255,5.562565549218703
+practical_B9,128,profiled_observed,gap_max_us,B9 graph bucket12,B9 natural eager,346.5423333333333,798.7913333333333,452.249,2.3050324779945117
+practical_B9,128,profiled_observed,runtime_api_count,B9 graph bucket12,B9 natural eager,4340,20909.333333333332,16569.333333333332,4.817818740399385
+practical_B9,128,profiled_observed,runtime_api_calls_per_token,B9 graph bucket12,B9 natural eager,6.888888888888889,33.18941798941799,26.3005291005291,4.817818740399385
+practical_B9,128,profiled_observed,runtime_api_us_per_token,B9 graph bucket12,B9 natural eager,228.011835978836,227.3401835978836,-0.6716523809523949,0.9970543091411503
+practical_B9,128,profiled_observed,runtime_api_duration_mean_us,B9 graph bucket12,B9 natural eager,33.098492319508445,6.850113868908131,-26.248378450600313,0.2069615075750938
+practical_B9,128,profiled_observed,runtime_api_duration_median_us,B9 graph bucket12,B9 natural eager,1.5373333333333332,6.746,5.208666666666668,4.388117953165655
+practical_B9,128,profiled_observed,runtime_api_duration_p95_us,B9 graph bucket12,B9 natural eager,24.75315000000001,14.094233333333321,-10.658916666666688,0.5693915050542382
+practical_B9,128,profiled_observed,driver_api_count,B9 graph bucket12,B9 natural eager,1330,19810,18480,14.894736842105264
+practical_B9,128,profiled_observed,driver_api_calls_per_token,B9 graph bucket12,B9 natural eager,2.111111111111111,31.444444444444443,29.333333333333332,14.894736842105262
+practical_B9,128,profiled_observed,driver_api_us_per_token,B9 graph bucket12,B9 natural eager,1.388773544973545,83.78985026455027,82.40107671957672,60.333702760838804
+practical_B9,128,profiled_observed,driver_api_duration_mean_us,B9 graph bucket12,B9 natural eager,0.6578401002506266,2.664694884738348,2.006854784487721,4.050672623519214
+practical_B9,128,profiled_observed,driver_api_duration_median_us,B9 graph bucket12,B9 natural eager,0.195,0.4523333333333333,0.2573333333333333,2.3196581196581194
+practical_B9,128,profiled_observed,driver_api_duration_p95_us,B9 graph bucket12,B9 natural eager,5.760416666666665,7.209883333333333,1.4494666666666678,1.2516253164556965
+practical_B9,128,profiled_observed,kernel_launch_count,B9 graph bucket12,B9 natural eager,1330,16310,14980,12.263157894736842
+practical_B9,128,profiled_observed,kernel_launch_calls_per_token,B9 graph bucket12,B9 natural eager,2.111111111111111,25.88888888888889,23.77777777777778,12.263157894736842
+practical_B9,128,profiled_observed,kernel_launch_us_per_token,B9 graph bucket12,B9 natural eager,17.846133333333334,201.10963386243387,183.26350052910053,11.269087264230937
+practical_B9,128,profiled_observed,kernel_launch_duration_mean_us,B9 graph bucket12,B9 natural eager,8.453431578947368,7.768183282239935,-0.6852482967074334,0.9189384464394327
+practical_B9,128,profiled_observed,kernel_launch_duration_median_us,B9 graph bucket12,B9 natural eager,6.920333333333334,6.952,0.03166666666666629,1.004575887481335
+practical_B9,128,profiled_observed,kernel_launch_duration_p95_us,B9 graph bucket12,B9 natural eager,13.76926666666666,12.638366666666661,-1.1308999999999987,0.9178678118902484
+practical_B9,128,profiled_observed,graph_launch_count,B9 graph bucket12,B9 natural eager,70,0,-70,0.0
+practical_B9,128,profiled_observed,graph_launch_calls_per_token,B9 graph bucket12,B9 natural eager,0.1111111111111111,0.0,-0.1111111111111111,0.0
+practical_B9,128,profiled_observed,graph_launch_us_per_token,B9 graph bucket12,B9 natural eager,29.98010634920635,0.0,-29.98010634920635,0.0
+practical_B9,128,profiled_observed,sync_count,B9 graph bucket12,B9 natural eager,70,210,140,3.0
+practical_B9,128,profiled_observed,sync_calls_per_token,B9 graph bucket12,B9 natural eager,0.1111111111111111,0.3333333333333333,0.2222222222222222,3.0
+practical_B9,128,profiled_observed,sync_us_per_token,B9 graph bucket12,B9 natural eager,167.62987407407408,0.7594232804232804,-166.8704507936508,0.004530357638327035
+practical_B9,128,profiled_observed,sync_duration_mean_us,B9 graph bucket12,B9 natural eager,1508.6688666666666,2.2782698412698412,-1506.3905968253969,0.0015101192127756782
+practical_B9,128,profiled_observed,sync_duration_median_us,B9 graph bucket12,B9 natural eager,1541.2626666666667,2.4005,-1538.8621666666668,0.0015574892274472791
+practical_B9,128,profiled_observed,sync_duration_p95_us,B9 graph bucket12,B9 natural eager,1948.4518833333332,3.668333333333332,-1944.7835499999999,0.0018826912610526952
+practical_B9,128,profiled_observed,graph_launches_per_iteration,B9 graph bucket12,B9 natural eager,1.0,0.0,-1.0,0.0
+practical_B9,128,profiled_observed,family_GEMM_matmul_us_per_token,B9 graph bucket12,B9 natural eager,268.15077619047617,272.454473015873,4.303696825396855,1.0160495408088612
+practical_B9,128,profiled_observed,family_attention_us_per_token,B9 graph bucket12,B9 natural eager,23.72159523809524,22.115922222222224,-1.6056730158730161,0.932311760665471
+practical_B9,128,profiled_observed,family_normalization_us_per_token,B9 graph bucket12,B9 natural eager,7.869657142857142,8.412844973544974,0.5431878306878319,1.069023061720148
+practical_B9,128,profiled_observed,family_sampling_us_per_token,B9 graph bucket12,B9 natural eager,1.1844333333333334,1.2773211640211641,0.09288783068783069,1.0784238572773175
+practical_B9,128,profiled_observed,family_elementwise_us_per_token,B9 graph bucket12,B9 natural eager,11.350648148148148,10.887598941798942,-0.463049206349206,0.9592050427160186
+practical_B9,128,profiled_observed,family_KV_cache_us_per_token,B9 graph bucket12,B9 natural eager,2.5589645502645504,3.170600529100529,0.6116359788359786,1.23901698004091
+practical_B9,128,profiled_observed,family_unknown_us_per_token,B9 graph bucket12,B9 natural eager,3.780013227513227,4.456986243386243,0.6769730158730161,1.1790927637357447
+practical_B9,128,profiled_observed,completion_window_busy_fraction,B9 graph bucket12,B9 natural eager,0.8962998342647431,0.2267275541355304,-0.6695722801292128,0.25295949577132365
+practical_B9,128,profiled_observed,window_busy_fraction_delta_pp,B9 graph bucket12,B9 natural eager,0.033378566814797526,-0.012356099055126543,-0.04573466586992407,-0.3701806348871991
+practical_B9,128,profiled_observed,profiled_completion_ms,B9 graph bucket12,B9 natural eager,3.202298423809524,12.864714414285714,9.662415990476191,4.017337771718843
+practical_B9,128,profiled_observed,profiled_e2e_s,B9 graph bucket12,B9 natural eager,0.43572384566669103,1.681120846333376,1.245397000666685,3.858225486285084
+eager_scaling_policy_caveat,128,unprofiled,decode_ms,B8 forced eager,B9 natural eager,10.11402642063492,9.952453692063491,-0.16157272857142857,0.9840248856536716
+eager_scaling_policy_caveat,128,unprofiled,e2e_s,B8 forced eager,B9 natural eager,1.322852873222233,1.308681328444458,-0.014171544777775047,0.9892871345977761
+eager_scaling_policy_caveat,128,unprofiled,decode_tokens_s,B8 forced eager,B9 natural eager,791.2223158240869,904.4527955422201,113.23047971813321,1.143108298961714
+eager_scaling_policy_caveat,128,unprofiled,serving_tokens_s,B8 forced eager,B9 natural eager,774.3944948422868,880.4093773049735,106.01488246268673,1.1369003565608737
+eager_scaling_policy_caveat,128,unprofiled,requests_s,B8 forced eager,B9 natural eager,6.049956990955366,6.878198260195106,0.8282412692397401,1.1369003565608737
+eager_scaling_policy_caveat,128,profiled_observed,region_ms,B8 forced eager,B9 natural eager,851.0750226666667,901.191281,50.11625833333335,1.058885829096834
+eager_scaling_policy_caveat,128,profiled_observed,kernel_count,B8 forced eager,B9 natural eager,23169.666666666668,23170.333333333332,0.6666666666642413,1.0000287732523845
+eager_scaling_policy_caveat,128,profiled_observed,kernel_count_per_token,B8 forced eager,B9 natural eager,41.37440476190476,36.77830687830688,-4.596097883597885,0.8889144651132307
+eager_scaling_policy_caveat,128,profiled_observed,kernel_sum_us_per_token,B8 forced eager,B9 natural eager,361.5019488095238,322.77574708994706,-38.72620171957675,0.8928741550436795
+eager_scaling_policy_caveat,128,profiled_observed,kernel_busy_us_per_token,B8 forced eager,B9 natural eager,361.5019488095238,322.77574708994706,-38.72620171957675,0.8928741550436795
+eager_scaling_policy_caveat,128,profiled_observed,kernel_busy_fraction,B8 forced eager,B9 natural eager,0.23789267677331458,0.22590935349516775,-0.011983323278146829,0.949627187180858
+eager_scaling_policy_caveat,128,profiled_observed,gpu_busy_us_per_token,B8 forced eager,B9 natural eager,362.6194160714286,323.76924814814817,-38.850167923280424,0.8928624166235276
+eager_scaling_policy_caveat,128,profiled_observed,gpu_busy_fraction,B8 forced eager,B9 natural eager,0.23862815862922968,0.22660399314497912,-0.01202416548425056,0.9496112883185207
+eager_scaling_policy_caveat,128,profiled_observed,gpu_inactive_us_per_token,B8 forced eager,B9 natural eager,1157.1574101190477,1106.6931026455024,-50.464307473545205,0.9563894185594392
+eager_scaling_policy_caveat,128,profiled_observed,gpu_inactive_fraction,B8 forced eager,B9 natural eager,0.7613718413707703,0.7733960068550209,0.01202416548425056,1.0157927635760764
+eager_scaling_policy_caveat,128,profiled_observed,inter_kernel_gap_us_per_token,B8 forced eager,B9 natural eager,1158.016550595238,1107.5771375661377,-50.43941302910025,0.9564432710368659
+eager_scaling_policy_caveat,128,profiled_observed,inter_kernel_gap_fraction,B8 forced eager,B9 natural eager,0.7620671584373251,0.7740726242700097,0.012005465832684581,1.015753816051203
+eager_scaling_policy_caveat,128,profiled_observed,edge_gap_us,B8 forced eager,B9 natural eager,144.663,68.96366666666667,-75.69933333333334,0.4767194560230789
+eager_scaling_policy_caveat,128,profiled_observed,kernel_overlap_excess_us_per_token,B8 forced eager,B9 natural eager,0.0,0.0,0.0,
+eager_scaling_policy_caveat,128,profiled_observed,kernel_boundary_crossings,B8 forced eager,B9 natural eager,0.3333333333333333,0.3333333333333333,0.0,1.0
+eager_scaling_policy_caveat,128,profiled_observed,active_kernel_streams,B8 forced eager,B9 natural eager,2,2,0,1.0
+eager_scaling_policy_caveat,128,profiled_observed,copy_union_us_per_token,B8 forced eager,B9 natural eager,1.0771440476190477,0.9578613756613756,-0.11928267195767206,0.8892602412636099
+eager_scaling_policy_caveat,128,profiled_observed,memset_union_us_per_token,B8 forced eager,B9 natural eager,0.04032321428571429,0.03563968253968254,-0.004683531746031748,0.8838502379089598
+eager_scaling_policy_caveat,128,profiled_observed,observed_copy_bytes,B8 forced eager,B9 natural eager,37520,42980,5460,1.1455223880597014
+eager_scaling_policy_caveat,128,profiled_observed,kernel_duration_mean_us,B8 forced eager,B9 natural eager,8.73745136364086,8.776375485541648,0.03892412190078787,1.0044548599220549
+eager_scaling_policy_caveat,128,profiled_observed,kernel_duration_median_us,B8 forced eager,B9 natural eager,1.792,1.7493333333333334,-0.04266666666666663,0.9761904761904762
+eager_scaling_policy_caveat,128,profiled_observed,kernel_duration_p95_us,B8 forced eager,B9 natural eager,37.876666666666665,37.802,-0.07466666666666555,0.998028689606618
+eager_scaling_policy_caveat,128,profiled_observed,kernel_duration_sd_us,B8 forced eager,B9 natural eager,33.78351353145976,35.11389654027741,1.3303830088176483,1.0393796520773002
+eager_scaling_policy_caveat,128,profiled_observed,gap_mean_us,B8 forced eager,B9 natural eager,27.98993258401023,30.116230667432177,2.126298083421947,1.075966531074699
+eager_scaling_policy_caveat,128,profiled_observed,gap_median_us,B8 forced eager,B9 natural eager,23.625999999999998,24.085166666666666,0.4591666666666683,1.019434803465109
+eager_scaling_policy_caveat,128,profiled_observed,gap_p95_us,B8 forced eager,B9 natural eager,64.59234999999998,73.15419999999996,8.561849999999978,1.1325520746651885
+eager_scaling_policy_caveat,128,profiled_observed,gap_sd_us,B8 forced eager,B9 natural eager,36.89264301124493,42.924318800470694,6.0316757892257655,1.1634926450617078
+eager_scaling_policy_caveat,128,profiled_observed,gap_max_us,B8 forced eager,B9 natural eager,979.1913333333333,798.7913333333333,-180.39999999999998,0.8157663432478637
+eager_scaling_policy_caveat,128,profiled_observed,runtime_api_count,B8 forced eager,B9 natural eager,20923,20909.333333333332,-13.66666666666788,0.9993468113240612
+eager_scaling_policy_caveat,128,profiled_observed,runtime_api_calls_per_token,B8 forced eager,B9 natural eager,37.362500000000004,33.18941798941799,-4.173082010582014,0.8883082767324988
+eager_scaling_policy_caveat,128,profiled_observed,runtime_api_us_per_token,B8 forced eager,B9 natural eager,239.28432142857142,227.3401835978836,-11.944137830687822,0.950083909554211
+eager_scaling_policy_caveat,128,profiled_observed,runtime_api_duration_mean_us,B8 forced eager,B9 natural eager,6.404435326722577,6.850113868908131,0.44567854218555336,1.06958904562998
+eager_scaling_policy_caveat,128,profiled_observed,runtime_api_duration_median_us,B8 forced eager,B9 natural eager,6.505,6.746,0.24100000000000055,1.0370484242890086
+eager_scaling_policy_caveat,128,profiled_observed,runtime_api_duration_p95_us,B8 forced eager,B9 natural eager,11.458466666666665,14.094233333333321,2.6357666666666564,1.230027868766617
+eager_scaling_policy_caveat,128,profiled_observed,driver_api_count,B8 forced eager,B9 natural eager,19810,19810,0,1.0
+eager_scaling_policy_caveat,128,profiled_observed,driver_api_calls_per_token,B8 forced eager,B9 natural eager,35.375,31.444444444444443,-3.930555555555557,0.8888888888888888
+eager_scaling_policy_caveat,128,profiled_observed,driver_api_us_per_token,B8 forced eager,B9 natural eager,88.07770476190476,83.78985026455027,-4.287854497354488,0.951317367897522
+eager_scaling_policy_caveat,128,profiled_observed,driver_api_duration_mean_us,B8 forced eager,B9 natural eager,2.4898291098771663,2.664694884738348,0.1748657748611815,1.0702320388847122
+eager_scaling_policy_caveat,128,profiled_observed,driver_api_duration_median_us,B8 forced eager,B9 natural eager,0.42366666666666664,0.4523333333333333,0.028666666666666674,1.067663257277734
+eager_scaling_policy_caveat,128,profiled_observed,driver_api_duration_p95_us,B8 forced eager,B9 natural eager,6.7326999999999995,7.209883333333333,0.4771833333333335,1.070875478386581
+eager_scaling_policy_caveat,128,profiled_observed,kernel_launch_count,B8 forced eager,B9 natural eager,16310,16310,0,1.0
+eager_scaling_policy_caveat,128,profiled_observed,kernel_launch_calls_per_token,B8 forced eager,B9 natural eager,29.125,25.88888888888889,-3.2361111111111107,0.888888888888889
+eager_scaling_policy_caveat,128,profiled_observed,kernel_launch_us_per_token,B8 forced eager,B9 natural eager,211.30111250000002,201.10963386243387,-10.19147863756615,0.9517679840063968
+eager_scaling_policy_caveat,128,profiled_observed,kernel_launch_duration_mean_us,B8 forced eager,B9 natural eager,7.25497381974249,7.768183282239935,0.5132094624974455,1.0707389820071964
+eager_scaling_policy_caveat,128,profiled_observed,kernel_launch_duration_median_us,B8 forced eager,B9 natural eager,6.6739999999999995,6.952,0.27800000000000047,1.0416541804015584
+eager_scaling_policy_caveat,128,profiled_observed,kernel_launch_duration_p95_us,B8 forced eager,B9 natural eager,10.303983333333326,12.638366666666661,2.334383333333335,1.226551543982182
+eager_scaling_policy_caveat,128,profiled_observed,graph_launch_count,B8 forced eager,B9 natural eager,0,0,0,
+eager_scaling_policy_caveat,128,profiled_observed,graph_launch_calls_per_token,B8 forced eager,B9 natural eager,0.0,0.0,0.0,
+eager_scaling_policy_caveat,128,profiled_observed,graph_launch_us_per_token,B8 forced eager,B9 natural eager,0.0,0.0,0.0,
+eager_scaling_policy_caveat,128,profiled_observed,sync_count,B8 forced eager,B9 natural eager,210,210,0,1.0
+eager_scaling_policy_caveat,128,profiled_observed,sync_calls_per_token,B8 forced eager,B9 natural eager,0.375,0.3333333333333333,-0.041666666666666685,0.8888888888888888
+eager_scaling_policy_caveat,128,profiled_observed,sync_us_per_token,B8 forced eager,B9 natural eager,0.7840494047619048,0.7594232804232804,-0.024626124338624322,0.9685911063906711
+eager_scaling_policy_caveat,128,profiled_observed,sync_duration_mean_us,B8 forced eager,B9 natural eager,2.0907984126984127,2.2782698412698412,0.1874714285714285,1.089664994689505
+eager_scaling_policy_caveat,128,profiled_observed,sync_duration_median_us,B8 forced eager,B9 natural eager,2.2925,2.4005,0.1080000000000001,1.0471101417666304
+eager_scaling_policy_caveat,128,profiled_observed,sync_duration_p95_us,B8 forced eager,B9 natural eager,3.343816666666666,3.668333333333332,0.3245166666666659,1.0970497784467848
+eager_scaling_policy_caveat,128,profiled_observed,graph_launches_per_iteration,B8 forced eager,B9 natural eager,0.0,0.0,0.0,
+eager_scaling_policy_caveat,128,profiled_observed,family_GEMM_matmul_us_per_token,B8 forced eager,B9 natural eager,304.3341541666667,272.454473015873,-31.879681150793658,0.8952477705366748
+eager_scaling_policy_caveat,128,profiled_observed,family_attention_us_per_token,B8 forced eager,B9 natural eager,24.716909523809523,22.115922222222224,-2.600987301587299,0.894768911174684
+eager_scaling_policy_caveat,128,profiled_observed,family_normalization_us_per_token,B8 forced eager,B9 natural eager,10.12882380952381,8.412844973544974,-1.7159788359788362,0.8305845902497232
+eager_scaling_policy_caveat,128,profiled_observed,family_sampling_us_per_token,B8 forced eager,B9 natural eager,1.4062315476190477,1.2773211640211641,-0.12891038359788354,0.9083291910097256
+eager_scaling_policy_caveat,128,profiled_observed,family_elementwise_us_per_token,B8 forced eager,B9 natural eager,12.266919642857143,10.887598941798942,-1.3793207010582016,0.887557696535384
+eager_scaling_policy_caveat,128,profiled_observed,family_KV_cache_us_per_token,B8 forced eager,B9 natural eager,3.5876267857142854,3.170600529100529,-0.41702625661375636,0.8837598553243248
+eager_scaling_policy_caveat,128,profiled_observed,family_unknown_us_per_token,B8 forced eager,B9 natural eager,5.061283333333333,4.456986243386243,-0.6042970899470896,0.8806039792383836
+eager_scaling_policy_caveat,128,profiled_observed,completion_window_busy_fraction,B8 forced eager,B9 natural eager,0.2386311986412012,0.2267275541355304,-0.011903644505670802,0.9501169814615533
+eager_scaling_policy_caveat,128,profiled_observed,window_busy_fraction_delta_pp,B8 forced eager,B9 natural eager,-0.00030400119715168206,-0.012356099055126543,-0.01205209785797486,40.644902621753296
+eager_scaling_policy_caveat,128,profiled_observed,profiled_completion_ms,B8 forced eager,B9 natural eager,12.158242242857144,12.864714414285714,0.7064721714285707,1.0581064398386713
+eager_scaling_policy_caveat,128,profiled_observed,profiled_e2e_s,B8 forced eager,B9 natural eager,1.5993288396666685,1.681120846333376,0.0817920066667075,1.0511414567399127
+graph_scaling_padding,128,unprofiled,decode_ms,B8 graph,B9 graph bucket12,3.117377904761905,3.1801780142857146,0.06280010952380977,1.0201451705383169
+graph_scaling_padding,128,unprofiled,e2e_s,B8 graph,B9 graph bucket12,0.42020672011111615,0.4322791250000175,0.012072404888901322,1.0287296806812347
+graph_scaling_padding,128,unprofiled,decode_tokens_s,B8 graph,B9 graph bucket12,2566.8629485949573,2830.772043751991,263.9090951570338,1.1028138628521214
+graph_scaling_padding,128,unprofiled,serving_tokens_s,B8 graph,B9 graph bucket12,2437.4784352125916,2665.7124309212427,228.23399570865104,1.0936352881779423
+graph_scaling_padding,128,unprofiled,requests_s,B8 graph,B9 graph bucket12,19.042800275098372,20.82587836657221,1.7830780914738362,1.0936352881779423
+graph_scaling_padding,128,profiled_observed,region_ms,B8 graph,B9 graph bucket12,220.219654,223.65983066666666,3.440176666666673,1.0156215696654698
+graph_scaling_padding,128,profiled_observed,kernel_count,B8 graph,B9 graph bucket12,23180.333333333332,23496.333333333332,316.0,1.0136322457255431
+graph_scaling_padding,128,profiled_observed,kernel_count_per_token,B8 graph,B9 graph bucket12,41.39345238095238,37.2957671957672,-4.097685185185185,0.9010064406449273
+graph_scaling_padding,128,profiled_observed,kernel_sum_us_per_token,B8 graph,B9 graph bucket12,353.23154166666666,318.61608783068783,-34.615453835978826,0.902003502652534
+graph_scaling_padding,128,profiled_observed,kernel_busy_us_per_token,B8 graph,B9 graph bucket12,352.2892779761905,317.7004693121693,-34.5888086640212,0.9018170270105158
+graph_scaling_padding,128,profiled_observed,kernel_busy_fraction,B8 graph,B9 graph bucket12,0.8958746178161812,0.8949607363077193,-0.0009138815084618335,0.9989799002111596
+graph_scaling_padding,128,profiled_observed,gpu_busy_us_per_token,B8 graph,B9 graph bucket12,352.9062613095238,318.29422063492063,-34.61204067460318,0.9019228490133079
+graph_scaling_padding,128,profiled_observed,gpu_busy_fraction,B8 graph,B9 graph bucket12,0.8974436920554211,0.8966336199328911,-0.0008100721225299257,0.9990973560461776
+graph_scaling_padding,128,profiled_observed,gpu_inactive_us_per_token,B8 graph,B9 graph bucket12,40.34312083333333,36.721383597883595,-3.6217372354497357,0.9102266468077181
+graph_scaling_padding,128,profiled_observed,gpu_inactive_fraction,B8 graph,B9 graph bucket12,0.10255630794457893,0.1033663800671089,0.0008100721225299673,1.0078988034843037
+graph_scaling_padding,128,profiled_observed,inter_kernel_gap_us_per_token,B8 graph,B9 graph bucket12,40.95457261904762,37.31513492063492,-3.6394376984126993,0.9111347655299417
+graph_scaling_padding,128,profiled_observed,inter_kernel_gap_fraction,B8 graph,B9 graph bucket12,0.10411288061793254,0.10503926369228068,0.0009263830743481416,1.0088978718949073
+graph_scaling_padding,128,profiled_observed,edge_gap_us,B8 graph,B9 graph bucket12,3.0976666666666666,0.0,-3.0976666666666666,0.0
+graph_scaling_padding,128,profiled_observed,kernel_overlap_excess_us_per_token,B8 graph,B9 graph bucket12,0.9422636904761905,0.9156185185185185,-0.02664517195767202,0.9717221705272264
+graph_scaling_padding,128,profiled_observed,kernel_boundary_crossings,B8 graph,B9 graph bucket12,1.6666666666666667,2,0.33333333333333326,1.2
+graph_scaling_padding,128,profiled_observed,active_kernel_streams,B8 graph,B9 graph bucket12,2,2,0,1.0
+graph_scaling_padding,128,profiled_observed,copy_union_us_per_token,B8 graph,B9 graph bucket12,0.7316654761904762,0.7677502645502645,0.036084788359788345,1.0493186975934263
+graph_scaling_padding,128,profiled_observed,memset_union_us_per_token,B8 graph,B9 graph bucket12,0.144875,0.1325026455026455,-0.012372354497354493,0.914599796394447
+graph_scaling_padding,128,profiled_observed,observed_copy_bytes,B8 graph,B9 graph bucket12,60340,63700,3360,1.0556844547563806
+graph_scaling_padding,128,profiled_observed,kernel_duration_mean_us,B8 graph,B9 graph bucket12,8.53339969624871,8.542206990454014,0.008807294205304572,1.0010320967631665
+graph_scaling_padding,128,profiled_observed,kernel_duration_median_us,B8 graph,B9 graph bucket12,1.44,1.44,0.0,1.0
+graph_scaling_padding,128,profiled_observed,kernel_duration_p95_us,B8 graph,B9 graph bucket12,37.428666666666665,37.513999999999996,0.08533333333333104,1.0022798924175764
+graph_scaling_padding,128,profiled_observed,kernel_duration_sd_us,B8 graph,B9 graph bucket12,34.77781072997384,35.190903951505085,0.4130932215312484,1.0118780685977802
+graph_scaling_padding,128,profiled_observed,gap_mean_us,B8 graph,B9 graph bucket12,1.012192013729387,1.023498271196791,0.011306257467404102,1.0111700717986765
+graph_scaling_padding,128,profiled_observed,gap_median_us,B8 graph,B9 graph bucket12,0.032,0.032,0.0,1.0
+graph_scaling_padding,128,profiled_observed,gap_p95_us,B8 graph,B9 graph bucket12,3.498666666666667,3.4664,-0.032266666666666666,0.9907774390243902
+graph_scaling_padding,128,profiled_observed,gap_sd_us,B8 graph,B9 graph bucket12,7.158658661970123,7.716640535858438,0.5579818738883144,1.077945031357977
+graph_scaling_padding,128,profiled_observed,gap_max_us,B8 graph,B9 graph bucket12,378.01966666666664,346.5423333333333,-31.47733333333332,0.9167309637329275
+graph_scaling_padding,128,profiled_observed,runtime_api_count,B8 graph,B9 graph bucket12,3990,4340,350,1.087719298245614
+graph_scaling_padding,128,profiled_observed,runtime_api_calls_per_token,B8 graph,B9 graph bucket12,7.125,6.888888888888889,-0.23611111111111072,0.9668615984405459
+graph_scaling_padding,128,profiled_observed,runtime_api_us_per_token,B8 graph,B9 graph bucket12,261.86789226190473,228.011835978836,-33.85605628306874,0.8707132211183496
+graph_scaling_padding,128,profiled_observed,runtime_api_duration_mean_us,B8 graph,B9 graph bucket12,36.75338838763576,33.098492319508445,-3.6548960681273144,0.9005562145840991
+graph_scaling_padding,128,profiled_observed,runtime_api_duration_median_us,B8 graph,B9 graph bucket12,1.2446666666666666,1.5373333333333332,0.29266666666666663,1.2351365827530798
+graph_scaling_padding,128,profiled_observed,runtime_api_duration_p95_us,B8 graph,B9 graph bucket12,24.747683333333306,24.75315000000001,0.00546666666670248,1.0002208960973467
+graph_scaling_padding,128,profiled_observed,driver_api_count,B8 graph,B9 graph bucket12,980,1330,350,1.3571428571428572
+graph_scaling_padding,128,profiled_observed,driver_api_calls_per_token,B8 graph,B9 graph bucket12,1.75,2.111111111111111,0.36111111111111116,1.2063492063492063
+graph_scaling_padding,128,profiled_observed,driver_api_us_per_token,B8 graph,B9 graph bucket12,1.3703970238095238,1.388773544973545,0.01837652116402122,1.0134096330076205
+graph_scaling_padding,128,profiled_observed,driver_api_duration_mean_us,B8 graph,B9 graph bucket12,0.7830840136054422,0.6578401002506266,-0.12524391335481566,0.8400632484142118
+graph_scaling_padding,128,profiled_observed,driver_api_duration_median_us,B8 graph,B9 graph bucket12,0.21316666666666667,0.195,-0.018166666666666664,0.9147771696637998
+graph_scaling_padding,128,profiled_observed,driver_api_duration_p95_us,B8 graph,B9 graph bucket12,6.196816666666667,5.760416666666665,-0.4364000000000017,0.9295767450492051
+graph_scaling_padding,128,profiled_observed,kernel_launch_count,B8 graph,B9 graph bucket12,980,1330,350,1.3571428571428572
+graph_scaling_padding,128,profiled_observed,kernel_launch_calls_per_token,B8 graph,B9 graph bucket12,1.75,2.111111111111111,0.36111111111111116,1.2063492063492063
+graph_scaling_padding,128,profiled_observed,kernel_launch_us_per_token,B8 graph,B9 graph bucket12,15.516042857142857,17.846133333333334,2.3300904761904775,1.1501729853187286
+graph_scaling_padding,128,profiled_observed,kernel_launch_duration_mean_us,B8 graph,B9 graph bucket12,8.866310204081632,8.453431578947368,-0.41287862513426354,0.953432869408946
+graph_scaling_padding,128,profiled_observed,kernel_launch_duration_median_us,B8 graph,B9 graph bucket12,7.603166666666667,6.920333333333334,-0.682833333333333,0.910190929218089
+graph_scaling_padding,128,profiled_observed,kernel_launch_duration_p95_us,B8 graph,B9 graph bucket12,13.999066666666666,13.76926666666666,-0.22980000000000622,0.9835846199270423
+graph_scaling_padding,128,profiled_observed,graph_launch_count,B8 graph,B9 graph bucket12,70,70,0,1.0
+graph_scaling_padding,128,profiled_observed,graph_launch_calls_per_token,B8 graph,B9 graph bucket12,0.125,0.1111111111111111,-0.013888888888888895,0.8888888888888888
+graph_scaling_padding,128,profiled_observed,graph_launch_us_per_token,B8 graph,B9 graph bucket12,34.68658154761905,29.98010634920635,-4.706475198412701,0.8643142394429536
+graph_scaling_padding,128,profiled_observed,graph_launch_duration_mean_us,B8 graph,B9 graph bucket12,277.4926523809524,269.82095714285714,-7.671695238095253,0.9723535193733228
+graph_scaling_padding,128,profiled_observed,graph_launch_duration_median_us,B8 graph,B9 graph bucket12,258.6818333333333,258.09066666666666,-0.591166666666652,0.9977146958522407
+graph_scaling_padding,128,profiled_observed,graph_launch_duration_p95_us,B8 graph,B9 graph bucket12,368.4151333333333,331.85051666666664,-36.564616666666666,0.9007515887421924
+graph_scaling_padding,128,profiled_observed,sync_count,B8 graph,B9 graph bucket12,70,70,0,1.0
+graph_scaling_padding,128,profiled_observed,sync_calls_per_token,B8 graph,B9 graph bucket12,0.125,0.1111111111111111,-0.013888888888888895,0.8888888888888888
+graph_scaling_padding,128,profiled_observed,sync_us_per_token,B8 graph,B9 graph bucket12,197.66568452380955,167.62987407407408,-30.035810449735465,0.8480474214728073
+graph_scaling_padding,128,profiled_observed,sync_duration_mean_us,B8 graph,B9 graph bucket12,1581.3254761904764,1508.6688666666666,-72.65660952380972,0.9540533491569082
+graph_scaling_padding,128,profiled_observed,sync_duration_median_us,B8 graph,B9 graph bucket12,1578.1021666666666,1541.2626666666667,-36.839499999999816,0.9766558206571544
+graph_scaling_padding,128,profiled_observed,sync_duration_p95_us,B8 graph,B9 graph bucket12,2044.4690166666667,1948.4518833333332,-96.0171333333335,0.9530356622914827
+graph_scaling_padding,128,profiled_observed,graph_launches_per_iteration,B8 graph,B9 graph bucket12,1.0,1.0,0.0,1.0
+graph_scaling_padding,128,profiled_observed,family_GEMM_matmul_us_per_token,B8 graph,B9 graph bucket12,301.0735071428571,268.15077619047617,-32.92273095238096,0.890648860921664
+graph_scaling_padding,128,profiled_observed,family_attention_us_per_token,B8 graph,B9 graph bucket12,24.87947261904762,23.72159523809524,-1.1578773809523781,0.9534605335618765
+graph_scaling_padding,128,profiled_observed,family_normalization_us_per_token,B8 graph,B9 graph bucket12,8.578516071428572,7.869657142857142,-0.7088589285714297,0.9173681179041745
+graph_scaling_padding,128,profiled_observed,family_sampling_us_per_token,B8 graph,B9 graph bucket12,1.260472619047619,1.1844333333333334,-0.07603928571428553,0.9396739884982676
+graph_scaling_padding,128,profiled_observed,family_elementwise_us_per_token,B8 graph,B9 graph bucket12,10.474601785714286,11.350648148148148,0.8760463624338612,1.0836352904249449
+graph_scaling_padding,128,profiled_observed,family_KV_cache_us_per_token,B8 graph,B9 graph bucket12,2.8850083333333334,2.5589645502645504,-0.326043783068783,0.8869868834340341
+graph_scaling_padding,128,profiled_observed,family_unknown_us_per_token,B8 graph,B9 graph bucket12,4.079963095238095,3.780013227513227,-0.29994986772486776,0.9264822105682886
+graph_scaling_padding,128,profiled_observed,completion_window_busy_fraction,B8 graph,B9 graph bucket12,0.898010688472792,0.8962998342647431,-0.0017108542080488398,0.9980948398164855
+graph_scaling_padding,128,profiled_observed,window_busy_fraction_delta_pp,B8 graph,B9 graph bucket12,-0.05669964173709019,0.033378566814797526,0.09007820855188772,-0.588690965095867
+graph_scaling_padding,128,profiled_observed,profiled_completion_ms,B8 graph,B9 graph bucket12,3.1465702952380954,3.202298423809524,0.05572812857142839,1.0177107527696951
+graph_scaling_padding,128,profiled_observed,profiled_e2e_s,B8 graph,B9 graph bucket12,0.4236942799999923,0.43572384566669103,0.012029565666698716,1.0283920889059417
+primary_B8,256,unprofiled,decode_ms,B8 graph,B8 forced eager,3.6076202523809524,10.380492833333333,6.772872580952381,2.8773795763238743
+primary_B8,256,unprofiled,e2e_s,B8 graph,B8 forced eager,0.9512289896666672,2.6931840753333396,1.7419550856666723,2.831267869871264
+primary_B8,256,unprofiled,decode_tokens_s,B8 graph,B8 forced eager,2217.9538448580497,770.8067090587895,-1447.1471357992602,0.3475305452571857
+primary_B8,256,unprofiled,serving_tokens_s,B8 graph,B8 forced eager,2153.279916545543,760.444707738424,-1392.8352088071192,0.3531564576882265
+primary_B8,256,unprofiled,requests_s,B8 graph,B8 forced eager,8.411249674006028,2.9704871396032186,-5.440762534402809,0.3531564576882265
+primary_B8,256,profiled_observed,region_ms,B8 graph,B8 forced eager,228.4282635,901.4443269999999,673.0160635,3.946290678692656
+primary_B8,256,profiled_observed,kernel_count,B8 graph,B8 forced eager,23146,23170,24,1.0010368962239695
+primary_B8,256,profiled_observed,kernel_count_per_token,B8 graph,B8 forced eager,41.332142857142856,41.375,0.04285714285714448,1.0010368962239695
+primary_B8,256,profiled_observed,kernel_sum_us_per_token,B8 graph,B8 forced eager,365.1208955357143,353.7512178571428,-11.369677678571463,0.9688605121821647
+primary_B8,256,profiled_observed,kernel_busy_us_per_token,B8 graph,B8 forced eager,364.1836071428571,353.7512178571428,-10.432389285714294,0.9713540393331817
+primary_B8,256,profiled_observed,kernel_busy_fraction,B8 graph,B8 forced eager,0.8927841098569664,0.21976006632135994,-0.6730240435356065,0.24615140871690452
+primary_B8,256,profiled_observed,gpu_busy_us_per_token,B8 graph,B8 forced eager,364.8276767857143,354.8891339285714,-9.938542857142863,0.9727582541305374
+primary_B8,256,profiled_observed,gpu_busy_fraction,B8 graph,B8 forced eager,0.8943629749686584,0.22046700223134633,-0.673895972737312,0.24650730005797955
+primary_B8,256,profiled_observed,gpu_inactive_us_per_token,B8 graph,B8 forced eager,43.079936607142855,1254.8328785714284,1211.7529419642856,29.128011259964836
+primary_B8,256,profiled_observed,gpu_inactive_fraction,B8 graph,B8 forced eager,0.10563702503134159,0.7795329977686536,0.6738959727373119,7.379353948460523
+primary_B8,256,profiled_observed,inter_kernel_gap_us_per_token,B8 graph,B8 forced eager,43.723766964285716,1255.7724419642855,1212.0486749999998,28.72059132027716
+primary_B8,256,profiled_observed,inter_kernel_gap_fraction,B8 graph,B8 forced eager,0.10721536624094344,0.7802129639370663,0.6729975976961229,7.2770628995820035
+primary_B8,256,profiled_observed,edge_gap_us,B8 graph,B8 forced eager,0.134,111.0775,110.9435,828.9365671641791
+primary_B8,256,profiled_observed,kernel_overlap_excess_us_per_token,B8 graph,B8 forced eager,0.9372883928571429,0.0,-0.9372883928571429,0.0
+primary_B8,256,profiled_observed,kernel_boundary_crossings,B8 graph,B8 forced eager,1.5,0,-1.5,0.0
+primary_B8,256,profiled_observed,active_kernel_streams,B8 graph,B8 forced eager,2,2,0,1.0
+primary_B8,256,profiled_observed,copy_union_us_per_token,B8 graph,B8 forced eager,0.7622098214285713,1.098774107142857,0.33656428571428565,1.4415638269833368
+primary_B8,256,profiled_observed,memset_union_us_per_token,B8 graph,B8 forced eager,0.14779732142857144,0.03914196428571429,-0.10865535714285715,0.26483541046196224
+primary_B8,256,profiled_observed,observed_copy_bytes,B8 graph,B8 forced eager,60340,37520,-22820,0.6218097447795824
+primary_B8,256,profiled_observed,kernel_duration_mean_us,B8 graph,B8 forced eager,8.833420600418044,8.549879055024382,-0.2835415453936623,0.9679012742379499
+primary_B8,256,profiled_observed,kernel_duration_median_us,B8 graph,B8 forced eager,1.44,1.584,0.14400000000000013,1.1
+primary_B8,256,profiled_observed,kernel_duration_p95_us,B8 graph,B8 forced eager,37.471000000000004,37.56699999999999,0.09599999999998943,1.0025619812655118
+primary_B8,256,profiled_observed,kernel_duration_sd_us,B8 graph,B8 forced eager,38.8853163357432,35.255937407234036,-3.629378928509162,0.906664538943893
+primary_B8,256,profiled_observed,gap_mean_us,B8 graph,B8 forced eager,1.0820381511805452,30.352309918710148,29.270271767529604,28.051053362207803
+primary_B8,256,profiled_observed,gap_median_us,B8 graph,B8 forced eager,0.032,23.911749999999998,23.879749999999998,747.2421874999999
+primary_B8,256,profiled_observed,gap_p95_us,B8 graph,B8 forced eager,3.472,74.24159999999995,70.76959999999995,21.382949308755745
+primary_B8,256,profiled_observed,gap_sd_us,B8 graph,B8 forced eager,9.002363135534207,45.2213193268672,36.21895619133299,5.023272072681585
+primary_B8,256,profiled_observed,gap_max_us,B8 graph,B8 forced eager,472.85400000000004,847.3710000000001,374.51700000000005,1.7920351736476798
+primary_B8,256,profiled_observed,runtime_api_count,B8 graph,B8 forced eager,3990,20894,16904,5.236591478696742
+primary_B8,256,profiled_observed,runtime_api_calls_per_token,B8 graph,B8 forced eager,7.125,37.31071428571428,30.185714285714283,5.236591478696742
+primary_B8,256,profiled_observed,runtime_api_us_per_token,B8 graph,B8 forced eager,271.19100535714284,254.4233169642857,-16.76768839285714,0.9381701897864383
+primary_B8,256,profiled_observed,runtime_api_duration_mean_us,B8 graph,B8 forced eager,38.0618954887218,6.819038009411053,-31.24285747931075,0.17915655334169095
+primary_B8,256,profiled_observed,runtime_api_duration_median_us,B8 graph,B8 forced eager,1.3017500000000002,6.6850000000000005,5.38325,5.135394661033224
+primary_B8,256,profiled_observed,runtime_api_duration_p95_us,B8 graph,B8 forced eager,25.327349999999946,12.856049999999989,-12.471299999999957,0.5075955439475515
+primary_B8,256,profiled_observed,driver_api_count,B8 graph,B8 forced eager,980,19810,18830,20.214285714285715
+primary_B8,256,profiled_observed,driver_api_calls_per_token,B8 graph,B8 forced eager,1.75,35.375,33.625,20.214285714285715
+primary_B8,256,profiled_observed,driver_api_us_per_token,B8 graph,B8 forced eager,1.3050241071428572,92.79878482142857,91.49376071428571,71.10886635235939
+primary_B8,256,profiled_observed,driver_api_duration_mean_us,B8 graph,B8 forced eager,0.7457280612244899,2.62328720343261,1.87755914220812,3.5177531057704288
+primary_B8,256,profiled_observed,driver_api_duration_median_us,B8 graph,B8 forced eager,0.2405,0.434,0.1935,1.8045738045738047
+primary_B8,256,profiled_observed,driver_api_duration_p95_us,B8 graph,B8 forced eager,6.074049999999998,7.177599999999998,1.1035500000000003,1.181682732279122
+primary_B8,256,profiled_observed,kernel_launch_count,B8 graph,B8 forced eager,980,16310,15330,16.642857142857142
+primary_B8,256,profiled_observed,kernel_launch_calls_per_token,B8 graph,B8 forced eager,1.75,29.125,27.375,16.642857142857142
+primary_B8,256,profiled_observed,kernel_launch_us_per_token,B8 graph,B8 forced eager,15.564758035714286,223.75201160714283,208.18725357142856,14.375553483949458
+primary_B8,256,profiled_observed,kernel_launch_duration_mean_us,B8 graph,B8 forced eager,8.894147448979592,7.682472501532802,-1.2116749474467898,0.8637671621257187
+primary_B8,256,profiled_observed,kernel_launch_duration_median_us,B8 graph,B8 forced eager,7.5685,6.878,-0.6905000000000001,0.9087665984012684
+primary_B8,256,profiled_observed,kernel_launch_duration_p95_us,B8 graph,B8 forced eager,13.770774999999999,11.511149999999997,-2.2596250000000015,0.8359115590807342
+primary_B8,256,profiled_observed,graph_launch_count,B8 graph,B8 forced eager,70,0,-70,0.0
+primary_B8,256,profiled_observed,graph_launch_calls_per_token,B8 graph,B8 forced eager,0.125,0.0,-0.125,0.0
+primary_B8,256,profiled_observed,graph_launch_us_per_token,B8 graph,B8 forced eager,33.79535803571429,0.0,-33.79535803571429,0.0
+primary_B8,256,profiled_observed,sync_count,B8 graph,B8 forced eager,70,210,140,3.0
+primary_B8,256,profiled_observed,sync_calls_per_token,B8 graph,B8 forced eager,0.125,0.375,0.25,3.0
+primary_B8,256,profiled_observed,sync_us_per_token,B8 graph,B8 forced eager,207.51947857142858,0.8885008928571428,-206.63097767857144,0.004281530095264379
+primary_B8,256,profiled_observed,sync_duration_mean_us,B8 graph,B8 forced eager,1660.1558285714286,2.369335714285714,-1657.786492857143,0.0014271766984214596
+primary_B8,256,profiled_observed,sync_duration_median_us,B8 graph,B8 forced eager,1621.74375,2.5532500000000002,-1619.1905000000002,0.0015743855957514867
+primary_B8,256,profiled_observed,sync_duration_p95_us,B8 graph,B8 forced eager,2159.6364,4.099024999999999,-2155.537375,0.0018980162586628006
+primary_B8,256,profiled_observed,graph_launches_per_iteration,B8 graph,B8 forced eager,1.0,0.0,-1.0,0.0
+primary_B8,256,profiled_observed,family_GEMM_matmul_us_per_token,B8 graph,B8 forced eager,311.7759392857143,302.31408392857145,-9.461855357142838,0.9696517461263362
+primary_B8,256,profiled_observed,family_attention_us_per_token,B8 graph,B8 forced eager,25.31574375,22.635669642857142,-2.6800741071428575,0.8941340956201274
+primary_B8,256,profiled_observed,family_normalization_us_per_token,B8 graph,B8 forced eager,8.666387499999999,9.043641964285715,0.3772544642857163,1.0435307634565978
+primary_B8,256,profiled_observed,family_sampling_us_per_token,B8 graph,B8 forced eager,1.6422785714285715,1.24748125,-0.3947973214285714,0.759603925730366
+primary_B8,256,profiled_observed,family_elementwise_us_per_token,B8 graph,B8 forced eager,10.742845535714286,10.79860625,0.055760714285714386,1.0051904976293609
+primary_B8,256,profiled_observed,family_KV_cache_us_per_token,B8 graph,B8 forced eager,2.897813392857143,3.182224107142857,0.28441071428571396,1.0981466629241075
+primary_B8,256,profiled_observed,family_unknown_us_per_token,B8 graph,B8 forced eager,4.0798875,4.529510714285713,0.4496232142857135,1.1102048069427684
+primary_B8,256,profiled_observed,completion_window_busy_fraction,B8 graph,B8 forced eager,0.89513055881424,0.22101848848120176,-0.6741120703330382,0.2469120133424784
+primary_B8,256,profiled_observed,window_busy_fraction_delta_pp,B8 graph,B8 forced eager,-0.07675838455816208,-0.05514862498554457,0.021609759572617515,0.7184703704095914
+primary_B8,256,profiled_observed,profiled_completion_ms,B8 graph,B8 forced eager,3.2609220428571426,12.844582664285713,9.583660621428571,3.9389419604252773
+primary_B8,256,profiled_observed,profiled_e2e_s,B8 graph,B8 forced eager,0.8625760330000034,3.317104319500004,2.4545282865000004,3.845579047638564

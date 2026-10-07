@@ -1,6 +1,6 @@
 """Imported only by an isolated, hash-guarded SGLang copy.
 
-Two NVTX calls per cohort window; no added CUDA synchronization. Completion
+Two submission markers and a completion range per cohort; no added CUDA synchronization. Completion
 timestamps match the prior observer placement. I/O occurs only at cohort boundaries.
 """
 import json
