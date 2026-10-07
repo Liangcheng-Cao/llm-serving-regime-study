@@ -1,171 +1,84 @@
-# LLM Serving Regime Study
+# SGLang Decode Execution Regimes
 
-**Execution cliffs, queue amplification, and a classical explanation in SGLang serving**
+At the same useful batch size, changing the decode execution regime changes serving cadence by approximately **3.24×**. This study connects a controlled SGLang experiment to GPU trace structure: nearly the same observed computation, but many more individual launches and much larger inter-kernel gaps under eager decode. The conclusion is **Level-2 strong mechanism evidence**, with explicit profiling and attribution limits.
 
-An empirical LLM systems study with causal controls and queueing-model falsification.
-**Final screening decision: NO-GO FOR NEW OR GAP.** The systems effect is real;
-a minimal classical state-dependent service queue already reproduces its principal behavior.
+## Key Result
 
-## What happens at a runtime execution boundary?
+**B8 is the primary control:** graph bucket8 versus forced decode eager, input128/output128. Serving values are unprofiled; GPU/API values describe observed profiled windows.
 
-Modern LLM serving systems are often modeled using service rates that vary smoothly
-with load or batch size. What happens when the runtime itself introduces a discontinuous
-execution boundary?
+| Metric | Graph | Eager | Comparison direction |
+|---|---:|---:|---|
+| Decode interval (unprofiled) | 3.117 ms | 10.114 ms | Eager/graph 3.244× |
+| Decode throughput (unprofiled) | 2566.9 tok/s | 791.2 tok/s | Graph/eager 3.244× |
+| Observed GPU-work union | 352.906 µs/token | 362.619 µs/token | Eager/graph 1.028× |
+| Observed inter-kernel gaps | 40.955 µs/token | 1158.017 µs/token | Eager/graph 28.276× |
+| Observed individual runtime launches | 1.750 /token | 29.125 /token | Eager/graph 16.643× |
+| Observed GPU busy fraction | 89.74% | 23.86% | Graph +65.88 percentage points |
+| Kernel-name sequence similarity | 98.442% shared comparison | — | Graph versus eager; exact LCS |
 
-In this tested installation—**SGLang 0.5.19, RTX 4070 12GB,
-Qwen2.5-0.5B-Instruct, BF16, FlashInfer**—default decode CUDA-graph coverage ends at
-useful batch **B=8**. B≤8 uses graph replay; B>8 falls back to eager execution.
-This boundary is a software default, not the GPU's hardware capacity limit.
+Decode-interval means are **3.117 ± 0.053 ms graph** and **10.114 ± 0.187 ms eager** (sample SD across three restart means). Throughput averages are computed separately, so their ratio need not equal the ratio of mean intervals. GPU quantities use 70×B useful token equivalents, not exact request-level attribution.
 
-## Same batch, different execution path
+![Unprofiled serving comparison](outputs/gpu-mechanism-study/phase2e/figures/A_service_effect.png)
+*Separate unprofiled starts establish the serving effect: three starts per arm, three measured cohorts per start. B8 is primary; B9 graph uses padded bucket12. Points show restart means.*
 
-Hold actual useful batch at **B=9**, change only configured graph coverage, and verify
-the actual runtime path. The mean completed-decode interval changes from
-**10.892 ms (eager) to 3.655 ms (graph): a 2.98× difference**.
-This comparison keeps useful batch size fixed; graph replay pads B=9 into bucket 12.
+## Why This Matters
 
-![Same-batch causal contrast](figures/same_batch_graph_vs_eager.png)
+A batch-only service model, **μ(B)**, misses execution policy. Use **μ(B,m)**, where B is useful batch and m is execution regime. Crossing a graph/eager boundary can change service rate sharply even when useful work changes little.
 
-The 2×2 design also includes B=8 under both graph ceilings as a negative control.
-Its mean interval changes by 6.76%, with order-block drift reported explicitly.
-Ten instrumented cohorts per cell and observer-off client proxies support a large
-execution-path effect, without claiming kernel-only timing or zero instrumentation overhead.
-[Design and every cohort](experiments/step2_service_cliff.md).
+## Experimental Design
 
-## A finite pulse amplifies queue state
+- **B8 control:** graph bucket8 versus forced decode eager, both cap8.
+- **B9 practical case:** natural eager at cap8 versus graph at cap16, verified bucket12; cadence is 9.952 versus 3.180 ms (3.130×).
+- **Serving measurements:** three independent unprofiled starts per arm, three measured cohorts after three warmups.
+- **Structural evidence:** three independent Nsight traces per arm; marked steady decode, worker verification, structured SQLite parsing and interval unions across streams.
+- **Confirmation:** output256 adds two traces and one unprofiled start per B8 arm. No new data were collected during packaging.
 
-At **10 requests/s**, baseline decode batch is about 5. Add six requests at t=8 s:
+System: RTX 4070 12GB, SGLang 0.5.19, Qwen2.5-0.5B-Instruct, BF16/FlashInfer. [Full environment and reproduction](docs/REPRODUCIBILITY.md).
 
-- **Graph max16:** B≈5 → 11–12 → 5; recovery takes about half a second.
-- **Graph max8:** B≈5 → 21–22 → roughly 13–15; eager/high-batch operation persists.
+## Main Evidence
 
-![Pulse response](figures/pulse_response.png)
+All 25 B8 kernel names are shared; sequence similarity is 98.442%. Dominant GEMM time differs by about 1.1%. Eager has 16.643× more individual runtime launches and 28.276× larger recorded gaps. Every observed eager gap successor matches an individual launch through a worker-scoped correlation ID. This association does not assign every gap to CPU execution.
 
-All original pulse requests finish, but cap8 remains high for another approximately
-10.5 seconds until arrivals stop. The residual state therefore outlasts the requests
-that triggered it. [Five paired pulse trials](experiments/step3_pulse_response.md).
+## Mechanism
 
-## Separation lasts through the 60-second test
+The evidence strongly supports **host/runtime launch and orchestration structure as the dominant mechanism associated with much larger observed GPU execution gaps in eager decode**. Claim level: **2**, not exact causal decomposition. Graph synchronization waits largely overlap GPU work; summed CUDA API duration is not a measure of overhead that leaves the GPU idle.
 
-LOW and post-pulse HIGH histories receive identical future schedules: 600 arrivals
-over 60 seconds. At graph max8, LOW mean outstanding N is **4.23–4.32**, while HIGH
-is **13.38–14.34** across five repetitions. LOW stays graph-covered; HIGH stays eager.
-HIGH has 600 or 601 completions, so its net drift is approximately zero.
-None of the five cap8 pairs returns to LOW within the tested horizon.
+## Scheduler / OR Implication
 
-At max16, both histories pass the convergence criterion at the first evaluable
-five-second window and every later window. This is **long-lived operating-state
-separation over the tested horizon**, not a proof of hysteresis or bistability.
-[Matched-arrival method and accounting](experiments/step4_long_horizon.md).
+Calibrate service curves by regime, bucket and workload. Batching and queueing models should preserve execution boundaries rather than interpolate smoothly through them. This study introduces no scheduler algorithm. The earlier queueing investigation found that a classical state-dependent service model reproduced the main qualitative behavior; its **no-go for a new OR gap** remains intact. [Historical experiments](experiments/README.md).
 
-## A Classical Queue Already Explains It
+## Limitations
 
-A separate service calibration measures the following cap8 service law. Capacity
-is useful token rate divided by 128 tokens/request; it is a fixed-length capacity
-proxy, not measured end-to-end throughput. These calibration intervals are distinct
-from the same-B causal measurements above.
+One small model/device configuration; fixed synthetic requests; three primary traces per arm. Nsight perturbs eager cadence by about 20.24% at B8 versus 0.95% for graph. CUDA/NVTX completeness warnings remain. Gaps can include copies or dependency delays; their exact causes are unresolved. B9 changes useful batch and padding together. No Level-3 causal claim, hardware-counter conclusion, or universal speedup is made.
 
-| B | Regime | Capacity proxy (req/s) |
-|---:|---|---:|
-| 1 | graph | 2.551 |
-| 2 | graph | 5.076 |
-| 4 | graph | 9.996 |
-| 6 | graph | 14.672 |
-| 8 | graph | 19.166 |
-| 9 | eager | 6.937 |
-| 10 | eager | 7.795 |
-| 12 | eager | 9.064 |
-| 14 | eager | 10.758 |
-| 16 | eager | 12.156 |
+## Reproduce
 
-![Measured service curve](figures/service_curve.png)
-
-The B=8→9 boundary drops the capacity proxy from **19.17 to 6.94 requests/s**,
-across the external arrival rate of 10 requests/s. B=4 is approximately 10, not
-strictly greater than 10.
-
-Now use a minimal processor-sharing queue:
-
-$$B=N,\qquad \frac{dw_i}{dt}=-\frac{\mu_{\mathrm{tok}}(N)}{N}.$$
-
-Only the measured aggregate service law and remaining request work enter the model.
-There is no history variable, hidden operating mode, learned parameter or complex scheduler.
-The service rate is linearly interpolated between measured points; new requests require
-128 tokens. Initial work is reconstructed from the observed request lifecycles.
-
-| Metric | Real LOW | Model LOW | Real HIGH | Model HIGH |
-|---|---:|---:|---:|---:|
-| Mean N | 4.23–4.32 | 4.00 | 13.38–14.34 | 13.11–13.13 |
-| Median duration (s) | 0.417–0.424 | 0.400 | 1.323–1.436 | 1.311 |
-
-![Real system and minimal queue](figures/real_vs_queue_model.png)
-
-Real duration is server residency; model duration is future-job sojourn. The definitions
-are related but not identical. The model underpredicts mean N by 5.3–7.2% for LOW and
-2.0–8.5% for HIGH, yet reproduces the principal separation without corrective fitting.
-[Classical-model test and sensitivity cases](experiments/step5_classical_model.md).
-
-## Remove the cliff
-
-In the model, extend the B=8 per-job graph speed above B=8, holding arrivals,
-workload and HIGH initial work fixed. HIGH returns to **B≤8 in 0.23–0.26 seconds**.
-That is qualitatively consistent with the real max16 control. It is an explicitly
-extrapolated counterfactual, not a calibrated max16 performance prediction.
-
-## What this study establishes
-
-CUDA-graph coverage can create a sharp service-rate discontinuity that amplifies
-queue state and sustains a high-batch operating regime in the tested serving system.
-But the evidence does not require a new queueing abstraction: a minimal classical
-state-dependent queue reproduces the principal behavior.
-
-The contribution is empirical mechanism identification and falsification. **An
-LLM-specific mechanism does not, by itself, establish a new OR phenomenon.** No new
-scheduler, formulation, algorithm, stability theorem, hysteresis proof or bistability
-proof is claimed. [Limitations](docs/limitations.md) include the single GPU/model/backend,
-finite horizon, simplified model and unvalidated extrapolations.
-
-## Reproduce the offline study
-
-Requires Python 3.10+; validated with Python 3.12.14, NumPy 2.3.5 and Matplotlib 3.11.2.
-From the repository root:
+CPU-only validation from the repository root:
 
 ```bash
 python -m pip install -r requirements.txt
-python src/analyze_service_curve.py
-python src/simulate_state_dependent_queue.py
+python -m unittest discover -s tests
 python src/validate.py
-python src/make_figures.py
 ```
 
-These commands rebuild the service curve, run 60 deterministic model scenarios,
-check frozen results and flow conservation, and recreate the four figures. No GPU,
-model download or API access is required. GPU measurement reproduction is documented
-but is **not** supplied as a tested runnable harness.
+Committed summaries support inspection without GPU software. Event-level reanalysis requires retained SQLite files, which are not in Git. [Reproduction guide](docs/REPRODUCIBILITY.md) separates summary-only analysis, event analysis and fresh GPU collection into new output locations.
 
-- [Experiment evidence](experiments/README.md): questions, methods, results and verdicts.
-- [Methodology](docs/methodology.md): environment, timing, path verification and accounting.
-- [Data provenance](docs/data_provenance.md): inputs, units, derived outputs and sanitization.
-- [Limitations](docs/limitations.md): what the evidence cannot establish.
+## Repository Structure
+
+| Path | Purpose |
+|---|---|
+| `profiling/` | Guarded SGLang runner, Nsight extraction and mechanism analysis |
+| `tests/` | Timing, interval accounting, correlation and sequence checks |
+| `data/`, `src/` | Frozen historical inputs and classical queueing analysis |
+| `experiments/`, `docs/` | Historical protocols, abstract, summaries and reproduction |
+| `outputs/gpu-mechanism-study/` | Final report and preserved phase evidence |
+| `figures/` | Historical service-curve and queue-response figures |
+
+## Research Artifacts
+
+- [Abstract](docs/ABSTRACT.md) · [Executive summary](docs/EXECUTIVE_SUMMARY.md) · [Final technical report](outputs/gpu-mechanism-study/FINAL_REPORT.md)
+- [Phase 2D controlled campaign](outputs/gpu-mechanism-study/phase2d/REPORT.md) · [Phase 2E mechanism analysis](outputs/gpu-mechanism-study/phase2e/REPORT.md)
+- [Aggregate metrics](outputs/gpu-mechanism-study/phase2d/aggregate_metrics.csv) · [Hypothesis evidence matrix](outputs/gpu-mechanism-study/phase2e/hypothesis_evidence.csv)
+- [Curated figures and standalone captions](docs/FIGURES.md) · [Publication audit](docs/PUBLICATION_AUDIT.md)
 
 Code and released study artifacts are provided under the [MIT License](LICENSE).
-
-## GPU mechanism pipeline extension
-
-Phase 2B/2C adds a fixed-cohort runner with verified graph/eager policies and bounded
-Nsight Systems capture. [Runner instructions](profiling/README.md) and the
-[fresh-environment validation report](outputs/gpu-mechanism-study/REPORT.md) document
-the four supported arms, two output lengths, trace exports, observed overhead and
-trace completeness limitations. This extension does not change the historical
-tables or claim GPU-level causal attribution.
-
-Phase 2D completes the [controlled trace campaign](outputs/gpu-mechanism-study/phase2d/REPORT.md):
-three independent primary traces per arm, separate unprofiled repetitions, and a
-smaller output256 confirmation. The [protocol](profiling/phase2d_protocol.md)
-defines the steady decode region, observed-count limitations and reproduction.
-
-Phase 2E adds [mechanism analysis](outputs/gpu-mechanism-study/phase2e/REPORT.md)
-using the existing traces: event correlation, gap distributions, kernel sequence
-and duration comparisons, and synchronization interpretation. The strongest claim
-is level 2 (strong mechanism evidence), with completeness and profiler limits
-retained. No additional GPU experiment was needed for that claim.
