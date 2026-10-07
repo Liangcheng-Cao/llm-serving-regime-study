@@ -1,0 +1,17 @@
+{
+  "scope": "Phase 2B/2C validation only; arm labels follow the continuation request, not Phase 2A table letters",
+  "arms": {
+    "A": {"batch_size": 9, "graph_policy": "enabled", "max_decode_bs": 8, "force_decode_eager": false},
+    "B": {"batch_size": 9, "graph_policy": "enabled", "max_decode_bs": 16, "force_decode_eager": false},
+    "C": {"batch_size": 8, "graph_policy": "enabled", "max_decode_bs": 8, "force_decode_eager": false},
+    "D": {"batch_size": 8, "graph_policy": "enabled", "max_decode_bs": 8, "force_decode_eager": true}
+  },
+  "input_len": 128,
+  "output_lengths": [128, 256],
+  "warmup": 3,
+  "initial_baseline_repeats": 3,
+  "profile_repeats": 1,
+  "primary_completion_endpoints": [10, 80],
+  "profile_arms": ["A", "B"],
+  "profile_output_len": 128
+}

@@ -3,3 +3,10 @@ __pycache__/
 .venv/
 .env
 .DS_Store
+outputs/gpu-mechanism-study/traces/
+outputs/gpu-mechanism-study/runs/*/server.log
+outputs/gpu-mechanism-study/runs/*/server_info.json
+outputs/gpu-mechanism-study/runs/*/control.json
+outputs/gpu-mechanism-study/runs/*/observations.jsonl
+outputs/gpu-mechanism-study/summaries/**/*.sqlite
+outputs/gpu-mechanism-study/summaries/**/*trace.csv
