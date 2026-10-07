@@ -7,6 +7,7 @@ import tempfile
 HASHES = {
     "srt/managers/scheduler_components/batch_result_processor.py": "0f0a3d92603c58bc555969b4f01daf2796f5aac9f38ad5a7155455ef5ca3ed4a",
     "srt/model_executor/runner/decode_cuda_graph_runner.py": "4f9b185ed058b8a6fb1e1d803ab17840a618af5d5816e534fbcdb6f67878072d",
+    "srt/model_executor/model_runner.py": "b40efe0c7fb87d6f3baf5f9df3e755b9138247f82505183c564b4f8b1bc6663a",
 }
 
 
@@ -57,6 +58,12 @@ def prepare(original, run_id):
     anchor = "            output = self.backend.replay(self._replay_graph_key, forward_batch)\n"
     graph_new = replace_once(graph_new, anchor, "            _gm.replay(self._replay_graph_key.size)\n" + anchor)
     graph_path.write_text(graph_new)
+    runner_rel="srt/model_executor/model_runner.py"
+    runner_path=copied/runner_rel
+    runner=replace_once(runner_path.read_text(),"import logging\n","import logging\nfrom sglang import _gpu_mech_observer as _gm\n")
+    anchor="    ) -> ModelRunnerOutput:\n        if has_forward_context():\n"
+    runner=replace_once(runner,anchor,"    ) -> ModelRunnerOutput:\n        _gm.submission(forward_batch)\n        if has_forward_context():\n")
+    runner_path.write_text(runner)
     sources = {r: dict(original_sha256=digest(original/r), instrumented_sha256=digest(copied/r))
-               for r in (rel, graph_rel)}
+               for r in (rel, graph_rel, runner_rel)}
     return scratch, sources

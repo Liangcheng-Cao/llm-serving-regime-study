@@ -13,6 +13,27 @@ _rows = []
 _buckets = set()
 _range_open = False
 _finished_cohort = None
+_submit_control = None
+_submit_count = 0
+
+
+def submission(forward_batch):
+    """Two instantaneous markers bracket starts of decode submissions 10→80.
+
+    Independent of the completion observer; no per-step I/O or synchronization.
+    Prefill resets the counter and reads the cohort control outside steady decode.
+    """
+    global _submit_control, _submit_count
+    if forward_batch.forward_mode.is_extend():
+        _submit_control = json.loads(Path(os.environ["GPU_MECH_CONTROL"]).read_text())
+        _submit_count = 0
+    elif forward_batch.forward_mode.is_decode() and _submit_control is not None:
+        _submit_count += 1
+        if _submit_count in (10,80) and _submit_control["nvtx"]:
+            import torch
+            phase="WARMUP" if _submit_control["warmup"] else "MEASUREMENT"
+            edge="BEGIN" if _submit_count==10 else "END"
+            torch.cuda.nvtx.mark(f"GPU_MECH_{phase}_SUBMIT_{edge}:{_submit_control['cohort']}:B{forward_batch.batch_size}")
 
 
 def begin():

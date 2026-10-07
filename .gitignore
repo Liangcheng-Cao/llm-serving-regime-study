@@ -10,3 +10,10 @@ outputs/gpu-mechanism-study/runs/*/control.json
 outputs/gpu-mechanism-study/runs/*/observations.jsonl
 outputs/gpu-mechanism-study/summaries/**/*.sqlite
 outputs/gpu-mechanism-study/summaries/**/*trace.csv
+outputs/gpu-mechanism-study/phase2d/traces/
+outputs/gpu-mechanism-study/phase2d/runs/*/server.log
+outputs/gpu-mechanism-study/phase2d/runs/*/server_info.json
+outputs/gpu-mechanism-study/phase2d/runs/*/control.json
+outputs/gpu-mechanism-study/phase2d/runs/*/observations.jsonl
+outputs/gpu-mechanism-study/phase2d/summaries/**/*.sqlite
+outputs/gpu-mechanism-study/phase2d/summaries/**/*trace.csv
