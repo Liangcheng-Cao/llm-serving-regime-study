@@ -1,5 +1,9 @@
 # Limitations and scope
 
+This page describes the original historical queueing study. For current Phase
+2D/2E restart counts, trace limitations and publication scope, see the
+[final report](../outputs/gpu-mechanism-study/FINAL_REPORT.md#15-threats-to-validity).
+
 - One RTX 4070, one small Qwen model, SGLang 0.5.19, BF16 and one attention backend.
   Thresholds and effect sizes are not universal or predictions about another installation.
 - The default graph ceiling is a software heuristic, not a GPU hardware capacity limit.

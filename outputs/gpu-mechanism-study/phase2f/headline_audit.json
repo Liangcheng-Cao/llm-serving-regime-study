@@ -1,0 +1,57 @@
+{
+  "primary": [
+    {
+      "metric": "decode_ms",
+      "graph": 3.117377904761905,
+      "eager": 10.11402642063492,
+      "source": "phase2d/analysis.json",
+      "rendered_graph": "3.117 ms",
+      "rendered_eager": "10.114 ms"
+    },
+    {
+      "metric": "decode_tokens_s",
+      "graph": 2566.8629485949573,
+      "eager": 791.2223158240869,
+      "source": "phase2d/analysis.json",
+      "rendered_graph": "2566.9 tok/s",
+      "rendered_eager": "791.2 tok/s"
+    },
+    {
+      "metric": "gpu_busy_us_per_token",
+      "graph": 352.9062613095238,
+      "eager": 362.6194160714286,
+      "source": "phase2d/analysis.json",
+      "rendered_graph": "352.906 \u00b5s/token",
+      "rendered_eager": "362.619 \u00b5s/token"
+    },
+    {
+      "metric": "inter_kernel_gap_us_per_token",
+      "graph": 40.95457261904762,
+      "eager": 1158.016550595238,
+      "source": "phase2d/analysis.json",
+      "rendered_graph": "40.955 \u00b5s/token",
+      "rendered_eager": "1158.017 \u00b5s/token"
+    },
+    {
+      "metric": "kernel_launch_calls_per_token",
+      "graph": 1.75,
+      "eager": 29.125,
+      "source": "phase2d/analysis.json",
+      "rendered_graph": "1.750 /token",
+      "rendered_eager": "29.125 /token"
+    },
+    {
+      "metric": "gpu_busy_fraction",
+      "graph": 0.8974436920554211,
+      "eager": 0.23862815862922968,
+      "source": "phase2d/analysis.json",
+      "rendered_graph": "89.74%",
+      "rendered_eager": "23.86%"
+    }
+  ],
+  "sequence_similarity_percent": 98.44229225301055,
+  "b9_graph_decode_ms": 3.1801780142857146,
+  "b9_eager_decode_ms": 9.952453692063491,
+  "b9_eager_graph_ratio": 3.1295272300342805,
+  "abstract_word_count": 199
+}

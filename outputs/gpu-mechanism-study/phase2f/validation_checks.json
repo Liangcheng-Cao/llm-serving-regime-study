@@ -1,0 +1,37 @@
+{
+  "preservation_hashes.json": {
+    "files": 205,
+    "unchanged": true
+  },
+  "phase2d_protected.json": {
+    "files": 76,
+    "unchanged": true
+  },
+  "phase2e_protected.json": {
+    "files": 321,
+    "unchanged": true
+  },
+  "phase2f_protected.json": {
+    "files": 59,
+    "unchanged": true
+  },
+  "summary_only_reproduction": {
+    "analysis_equal_to_release": true,
+    "traces": 16,
+    "starts": 14
+  },
+  "phase2e_summary_report_equal": true,
+  "headline_values_match": true,
+  "abstract_word_count": 199,
+  "local_document_links_checked": 46,
+  "targeted_credentials_scan": {
+    "tracked_files": 260,
+    "matches": 0,
+    "not_comprehensive": true
+  },
+  "raw_nsys_or_sqlite_tracked": false,
+  "unit_tests_passed": 47,
+  "historical_validation": "PASS: analytic case, 60 frozen scenarios, conservation, causal contrast and service cliff.",
+  "new_gpu_data_collected": false,
+  "claim_level": 2
+}

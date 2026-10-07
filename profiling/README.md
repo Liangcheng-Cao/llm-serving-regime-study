@@ -1,4 +1,9 @@
-# Fixed-cohort runner and Nsight validation
+# Fixed-cohort runner and Nsight analysis
+
+For the current publication workflow, see [reproduction](../docs/REPRODUCIBILITY.md).
+This guide retains the Phase 2B/2C validation details; Phase 2D adds the controlled
+campaign and submission window, and Phase 2E adds offline mechanism analysis.
+Use fresh output locations when reproducing a released snapshot.
 
 This pipeline extends the existing study without running or modifying its archived
 scripts. Arm letters below follow the Phase 2B/2C request; the Phase 2A plan used
@@ -43,9 +48,10 @@ Nsight Compute counters and custom kernels are outside this phase.
 
 The Python client launches its own server process group on a checked-free loopback
 port. It snapshots environment, command, Git state and source hashes, then creates
-a guarded source-only SGLang copy in a unique Linux temporary directory. Two source
+a guarded source-only SGLang copy in a unique Linux temporary directory. Three source
 files receive observer calls: after the existing copy-completion synchronization,
-and immediately before actual graph backend replay. Audited SHA-256 checks and
+immediately before actual graph backend replay, and at ModelRunner decode submission
+for the Phase 2D boundary markers. Audited SHA-256 checks and
 single-anchor replacements fail closed if the installation changes. The installed
 package is unchanged; retained temporary copies support inspection.
 
@@ -64,7 +70,8 @@ window. Wrong B/path, missing/mixed buckets, nonconsecutive steps or missing dat
 invalidate the run. Warmups are also checked but excluded from timing summaries.
 `requested_mode` and `verified_mode` are separate fields.
 
-Baseline includes this small observer and two NVTX calls per cohort. It is
+Baseline includes this small observer, a completion NVTX range and two submission
+markers per cohort in the current pipeline. It is
 unprofiled, not instrumentation-free. This phase does not quantify all observer
 overhead; Nsight comparison uses the same observer/annotation policy in both arms.
 
@@ -136,6 +143,9 @@ an operation for which both records are absent. Treat extracted counts as observ
 counts until completeness is independently established. Worker diagnostic errors
 fail validation; warnings remain explicit and restrict interpretation.
 
-Memory counters, causal attribution, independent restart statistics, full-campaign
-automation and an optimization study are not implemented. See the validation report
-for measured overhead and readiness limits.
+Phase 2D adds independent restart statistics and bounded campaign automation;
+Phase 2E adds event association and a Level-2 mechanism conclusion. Memory counters,
+Level-3 causal attribution and an optimization study are not implemented. The
+completion-window metrics described above are historical validation diagnostics;
+current primary metrics use the submission window with interval clipping, as
+defined in [the Phase 2D protocol](phase2d_protocol.md).
