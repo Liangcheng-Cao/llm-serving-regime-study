@@ -4,7 +4,7 @@ from pathlib import Path
 import subprocess
 import sys
 
-from .core import save
+from .core import save, normalize
 from .parsers.nsys import parse_summary, inspect_sqlite
 
 
@@ -36,6 +36,10 @@ def export_trace(output, run_id, manifest):
             parsed[kind]=parse_summary(text,kind)
     measured=[x for x in manifest["cohorts"] if not x["warmup"]]
     window=inspect_sqlite(database,measured[0]["worker_pid"],measured[0]["verified_mode"]!="eager")
+    window["temporal_normalizations"]={key:normalize(window[key],generated_tokens=measured[0]["useful_decode_tokens"],
+                 decode_iterations=70,requests=measured[0]["actual_batch"]) for key in
+                 ("kernel_count","kernel_total_ns","cuda_runtime_api_count","cuda_runtime_api_total_ns",
+                  "synchronization_count","synchronization_total_ns","graph_launch_count")}
     result=dict(valid=window["valid"],report=str(report),bytes=report.stat().st_size,
                 sha256=hashlib.sha256(report.read_bytes()).hexdigest(),commands=commands,
                 whole_capture_summaries=parsed,completion_window=window,

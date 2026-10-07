@@ -49,6 +49,8 @@ class Config:
             raise ValueError("Unsafe or empty run ID")
         if self.profiling and self.repeats != 1:
             raise ValueError("Validation traces capture exactly one measured cohort")
+        if self.profiling and not self.nvtx:
+            raise ValueError("Trace validation requires the measurement NVTX range")
         return self
 
     @property
@@ -72,6 +74,20 @@ class Config:
 
 def save(path, value):
     path.write_text(json.dumps(value, indent=2, allow_nan=False) + "\n")
+
+
+def verify_server_info(config, info):
+    expected = dict(model_path=config.model, revision=config.revision, dtype=config.dtype,
+                    attention_backend="flashinfer", disable_radix_cache=True,
+                    disable_overlap_schedule=False, disable_prefill_cuda_graph=False,
+                    disable_decode_cuda_graph=config.force_decode_eager,
+                    mem_fraction_static=.669, chunked_prefill_size=2048, random_seed=config.seed,
+                    tp_size=1, dp_size=1, pp_size=1)
+    wrong={key:dict(expected=value,actual=info.get(key)) for key,value in expected.items() if info.get(key)!=value}
+    if wrong:
+        raise ValueError(f"Resolved runtime config disagrees: {wrong}")
+    return {**{key:info[key] for key in expected},
+            **{key:info.get(key) for key in ("cuda_graph_max_bs_decode","cuda_graph_bs_decode","cuda_graph_config")}}
 
 
 def distribution(values):

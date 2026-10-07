@@ -10,10 +10,11 @@ from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 
-from profiling.core import ARMS, Config, new_run_id, save, normalize, distribution, verify_cohort
+from profiling.core import ARMS, Config, new_run_id, save, normalize, distribution, verify_cohort, verify_server_info
 from profiling.instrument import replace_once
 from profiling.parsers.nsys import parse_summary, inspect_sqlite
 from profiling.run_decode_experiment import profile_command
+from profiling.summarize_validation import summarize_run
 
 
 def observation(graph=False,batch=9,bucket=None):
@@ -56,6 +57,14 @@ class ConfigurationTests(unittest.TestCase):
         cmd=profile_command(["python","-m","sglang.launch_server"],Path("trace"))
         self.assertIn("--capture-range=cudaProfilerApi",cmd)
         self.assertEqual(cmd[-3:],["python","-m","sglang.launch_server"])
+
+    def test_resolved_configuration_missing_fails(self):
+        with self.assertRaises(ValueError):
+            verify_server_info(Config(),{})
+
+    def test_invalid_runs_excluded_from_statistics(self):
+        self.assertIsNone(summarize_run(dict(valid=False,status="invalid",failures=["wrong path"])))
+        self.assertIsNone(summarize_run(dict(valid=True,status="initializing")))
 
 
 class VerificationTests(unittest.TestCase):
@@ -141,12 +150,12 @@ class ParserTests(unittest.TestCase):
             pid=42<<24; tid=pid+43
             db.executescript('''CREATE TABLE StringIds(id INTEGER,value TEXT);
               CREATE TABLE NVTX_EVENTS(start INTEGER,end INTEGER,text TEXT,textId INTEGER,globalTid INTEGER);
-              CREATE TABLE CUPTI_ACTIVITY_KIND_KERNEL(start INTEGER,end INTEGER,globalPid INTEGER,streamId INTEGER,demangledName INTEGER);
-              CREATE TABLE CUPTI_ACTIVITY_KIND_RUNTIME(start INTEGER,end INTEGER,globalTid INTEGER,nameId INTEGER);''')
+              CREATE TABLE CUPTI_ACTIVITY_KIND_KERNEL(start INTEGER,end INTEGER,globalPid INTEGER,streamId INTEGER,demangledName INTEGER,correlationId INTEGER);
+              CREATE TABLE CUPTI_ACTIVITY_KIND_RUNTIME(start INTEGER,end INTEGER,globalTid INTEGER,nameId INTEGER,correlationId INTEGER);''')
             db.executemany("INSERT INTO StringIds VALUES (?,?)",[(1,"kernel"),(2,"cudaGraphLaunch")])
             db.execute("INSERT INTO NVTX_EVENTS VALUES (100,200,?,NULL,?)",("GPU_MECH_MEASUREMENT_COMPLETION:test",tid))
-            db.execute("INSERT INTO CUPTI_ACTIVITY_KIND_KERNEL VALUES (120,150,?,7,1)",(pid,))
-            db.execute("INSERT INTO CUPTI_ACTIVITY_KIND_RUNTIME VALUES (105,110,?,2)",(tid,))
+            db.execute("INSERT INTO CUPTI_ACTIVITY_KIND_KERNEL VALUES (120,150,?,7,1,8)",(pid,))
+            db.execute("INSERT INTO CUPTI_ACTIVITY_KIND_RUNTIME VALUES (105,110,?,2,8)",(tid,))
             db.commit(); db.close()
             x=inspect_sqlite(path,42,True)
             self.assertEqual((x["kernel_count"],x["kernel_total_ns"],x["graph_launch_count"]),(1,30,1))
@@ -154,6 +163,19 @@ class ParserTests(unittest.TestCase):
                 inspect_sqlite(path,41,True)
             with self.assertRaises(ValueError):
                 inspect_sqlite(path,42,False)
+            db=sqlite3.connect(path)
+            db.execute("CREATE TABLE DIAGNOSTIC_EVENT(severity INTEGER,globalPid INTEGER,text TEXT)")
+            db.execute("INSERT INTO DIAGNOSTIC_EVENT VALUES (2,?,?)",(pid,"Not all CUDA events might have been collected."))
+            db.commit();db.close()
+            quality=inspect_sqlite(path,42,True)["quality"]
+            self.assertFalse(quality["completeness_proven"])
+            self.assertEqual(len(quality["worker_warnings"]),1)
+            self.assertEqual(quality["unmatched_window_kernel_correlations"],0)
+            db=sqlite3.connect(path)
+            db.execute("UPDATE DIAGNOSTIC_EVENT SET severity=3")
+            db.commit();db.close()
+            with self.assertRaises(ValueError):
+                inspect_sqlite(path,42,True)
 
 
 if __name__=="__main__":

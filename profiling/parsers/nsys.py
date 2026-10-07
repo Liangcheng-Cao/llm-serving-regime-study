@@ -66,6 +66,8 @@ def inspect_sqlite(path, worker_pid, expected_graph):
         apis=[r for r in apis if ((r["globalTid"]>>24)&0xffffff)==worker_pid]
         if not kernels or not apis:
             raise ValueError("No CUDA kernels/APIs in verified server worker")
+        if any(r.get("correlationId") is None for r in kernels+apis):
+            raise ValueError("Missing API/kernel correlation identifiers")
         window_kernels=[r for r in kernels if lo<=r["start"] and r["end"]<=hi]
         window_apis=[r for r in apis if lo<=r["start"] and r["end"]<=hi]
         graph_calls=[r for r in window_apis if "GraphLaunch" in strings.get(r["nameId"],"")]
@@ -78,6 +80,18 @@ def inspect_sqlite(path, worker_pid, expected_graph):
         names=Counter(strings.get(r.get("demangledName"),str(r.get("shortName"))) for r in window_kernels)
         diagnostic_tables=[t for t in tables if "DIAGNOSTIC" in t or "ANALYSIS" in t]
         diagnostics={t:[dict(r) for r in db.execute('SELECT * FROM "'+t+'" LIMIT 100')] for t in diagnostic_tables}
+        warnings=[r for r in diagnostics.get("DIAGNOSTIC_EVENT",[]) if r.get("severity",0)>=2]
+        worker_warnings=[r for r in warnings if ((r.get("globalPid",0)>>24)&0xffffff)==worker_pid]
+        if any(r.get("severity")==3 for r in worker_warnings):
+            raise ValueError("Nsight reports an error for the GPU worker")
+        correlation_ids={r.get("correlationId") for r in apis}
+        if "CUPTI_ACTIVITY_KIND_DRIVER" in tables:
+            correlation_ids.update(r["correlationId"] for r in db.execute("SELECT * FROM CUPTI_ACTIVITY_KIND_DRIVER")
+                                   if ((r["globalTid"]>>24)&0xffffff)==worker_pid)
+        unmatched=sum(r.get("correlationId") not in correlation_ids for r in window_kernels)
+        quality=dict(validation_level="structural_capture_validation",worker_warnings=worker_warnings,
+                     all_process_warning_count=len(warnings),unmatched_window_kernel_correlations=unmatched,
+                     completeness_proven=False,counts_are_observed_not_guaranteed_exhaustive=True)
         return dict(valid=True,worker_pid=worker_pid,nvtx_pid=nvtx_pid,nvtx_range=name,
                     window_ns=[lo,hi],scope="temporally contained events in completion window; boundary overlap excluded; not causal per-iteration attribution",
                     kernel_count=len(durations),kernel_total_ns=sum(durations),kernel_duration_ns=distribution(durations),
@@ -85,6 +99,7 @@ def inspect_sqlite(path, worker_pid, expected_graph):
                     synchronization_count=len(sync),synchronization_total_ns=sum(r["end"]-r["start"] for r in sync),
                     graph_launch_count=len(graph_calls),dominant_kernel_counts=names.most_common(10),
                     streams=sorted({r["streamId"] for r in window_kernels}),
-                    whole_capture_worker_kernel_count=len(kernels),sqlite_tables=sorted(tables),diagnostics=diagnostics)
+                    whole_capture_worker_kernel_count=len(kernels),sqlite_tables=sorted(tables),diagnostics=diagnostics,
+                    quality=quality)
     finally:
         db.close()

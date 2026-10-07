@@ -15,7 +15,7 @@ import sys
 import time
 import traceback
 
-from .core import ARMS, Config, new_run_id, save, verify_cohort, distribution
+from .core import ARMS, Config, new_run_id, save, verify_cohort, distribution, verify_server_info
 from .instrument import prepare, digest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -89,6 +89,7 @@ async def execute(config, output_dir):
     result = dict(schema_version=1, config=asdict(config), requested_mode=config.requested_mode,
                   valid=False, status="initializing", cohorts=[], failures=[], environment=environment(),
                   client_command=[sys.executable,*sys.argv], timing_scope="completion endpoints 10→80; 70 intervals")
+    result["pipeline_source_hashes"]={str(p.relative_to(ROOT)):digest(p) for p in (ROOT/"profiling").rglob("*.py")}
     save(run/"manifest.json", result)
     proc = None
     scratch = None
@@ -135,7 +136,9 @@ async def execute(config, output_dir):
             result["startup_s"] = time.perf_counter()-start
             async with session.get(url+"/server_info") as r:
                 r.raise_for_status()
-                save(run/"server_info.json",await r.json())
+                server_info=await r.json()
+                save(run/"server_info.json",server_info)
+                result["effective_config"]=verify_server_info(config,server_info)
             print(config.run_id,"server ready",round(result["startup_s"],2),flush=True)
             for index in range(config.warmup+config.repeats):
                 warmup = index < config.warmup
@@ -180,6 +183,9 @@ async def execute(config, output_dir):
         result["total_run_s"] = time.perf_counter()-start
         if scratch:
             result["installed_sources_unchanged"] = all(digest(original/r)==x["original_sha256"] for r,x in sources.items())
+            if not result["installed_sources_unchanged"]:
+                result.update(valid=False,status="invalid")
+                result["failures"].append(dict(type="SourceChanged",message="Installed source hash changed during run"))
         if config.profiling and result["valid"]:
             from .run_nsys_profile import export_trace
             try:
