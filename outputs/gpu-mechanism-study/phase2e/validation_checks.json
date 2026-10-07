@@ -1,0 +1,153 @@
+{
+  "preservation_hashes.json": {
+    "files": 205,
+    "unchanged": true
+  },
+  "phase2d_protected.json": {
+    "files": 76,
+    "unchanged": true
+  },
+  "phase2e_protected.json": {
+    "files": 321,
+    "unchanged": true
+  },
+  "d-128-c-b1-trace": {
+    "correlation_counts": {
+      "graph_replay": 22123,
+      "runtime_individual": 980,
+      "driver_individual": 70
+    },
+    "accounting_zero_residual": true
+  },
+  "d-128-d-b1-trace": {
+    "correlation_counts": {
+      "runtime_individual": 16310,
+      "driver_individual": 6860
+    },
+    "accounting_zero_residual": true
+  },
+  "d-128-a-b1-trace": {
+    "correlation_counts": {
+      "runtime_individual": 16310,
+      "driver_individual": 6860
+    },
+    "accounting_zero_residual": true
+  },
+  "d-128-b-b1-trace": {
+    "correlation_counts": {
+      "graph_replay": 22121,
+      "runtime_individual": 1330,
+      "driver_individual": 70
+    },
+    "accounting_zero_residual": true
+  },
+  "d-128-b-b2-trace": {
+    "correlation_counts": {
+      "graph_replay": 22121,
+      "runtime_individual": 1330,
+      "driver_individual": 70
+    },
+    "accounting_zero_residual": true
+  },
+  "d-128-a-b2-trace": {
+    "correlation_counts": {
+      "runtime_individual": 16311,
+      "driver_individual": 6860
+    },
+    "accounting_zero_residual": true
+  },
+  "d-128-d-b2-trace": {
+    "correlation_counts": {
+      "runtime_individual": 16309,
+      "driver_individual": 6860
+    },
+    "accounting_zero_residual": true
+  },
+  "d-128-c-b2-trace": {
+    "correlation_counts": {
+      "graph_replay": 22136,
+      "runtime_individual": 980,
+      "driver_individual": 70
+    },
+    "accounting_zero_residual": true
+  },
+  "d-128-d-b3-trace": {
+    "correlation_counts": {
+      "runtime_individual": 16310,
+      "driver_individual": 6860
+    },
+    "accounting_zero_residual": true
+  },
+  "d-128-c-b3-trace": {
+    "correlation_counts": {
+      "graph_replay": 22132,
+      "runtime_individual": 980,
+      "driver_individual": 70
+    },
+    "accounting_zero_residual": true
+  },
+  "d-128-b-b3-trace": {
+    "correlation_counts": {
+      "graph_replay": 22047,
+      "runtime_individual": 1330,
+      "driver_individual": 70
+    },
+    "accounting_zero_residual": true
+  },
+  "d-128-a-b3-trace": {
+    "correlation_counts": {
+      "runtime_individual": 16310,
+      "driver_individual": 6860
+    },
+    "accounting_zero_residual": true
+  },
+  "d-256-c-b1-trace": {
+    "correlation_counts": {
+      "graph_replay": 22122,
+      "runtime_individual": 980,
+      "driver_individual": 70
+    },
+    "accounting_zero_residual": true
+  },
+  "d-256-d-b1-trace": {
+    "correlation_counts": {
+      "runtime_individual": 16311,
+      "driver_individual": 6860
+    },
+    "accounting_zero_residual": true
+  },
+  "d-256-d-b2-trace": {
+    "correlation_counts": {
+      "runtime_individual": 16309,
+      "driver_individual": 6860
+    },
+    "accounting_zero_residual": true
+  },
+  "d-256-c-b2-trace": {
+    "correlation_counts": {
+      "graph_replay": 22070,
+      "runtime_individual": 980,
+      "driver_individual": 70
+    },
+    "accounting_zero_residual": true
+  },
+  "tests": {
+    "unit_tests_passed": 47,
+    "historical_validation": "PASS: analytic case, 60 frozen scenarios, conservation, causal contrast and service cliff."
+  },
+  "new_gpu_experiments": 0,
+  "figures": {
+    "count": 6,
+    "formats": [
+      "png",
+      "svg"
+    ],
+    "visual_review": "Three new figures reviewed; three reused byte-identical Phase 2D figures previously reviewed"
+  },
+  "analysis_sources": {
+    "profiling/phase2e_metrics.py": "45f89f9eaa97fd6dbb81a342eb9772aaf14090097424c1221d48462cc28feda3",
+    "profiling/analyze_phase2e.py": "a5f8aafee8621fe7e55c34d87bd71d8a7d0275931d7fbfab2a6783d5bdf3b901",
+    "profiling/report_phase2e.py": "193ef20e8a83ffb627a86b03664584a9546e9ddd80d481f7fd98e51b28b7da57"
+  },
+  "source_commit": "11e2ff3d48e62fe8d7946b73723faec3e143af12"
+}

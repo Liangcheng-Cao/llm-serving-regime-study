@@ -1,0 +1,2429 @@
+{
+  "accounting": {
+    "marked_span_us_per_token": 1500.3458365079366,
+    "kernel_span_us_per_token": 1500.3396984126985,
+    "kernel_union_us_per_token": 325.47363174603174,
+    "gpu_work_union_us_per_token": 326.51021587301585,
+    "interior_gaps_us_per_token": 1174.8660666666667,
+    "edge_gaps_us_per_token": 0.0061380952380952385,
+    "nonkernel_outside_kernels_us_per_token": 1.036584126984127,
+    "naive_residual_us_per_token": -1.0304460317460318,
+    "corrected_residual_us_per_token": 0.0,
+    "kernel_span_residual_us_per_token": 0.0
+  },
+  "gaps": {
+    "count": 23170,
+    "mean": 31.944998791540787,
+    "median": 23.935499999999998,
+    "p95": 79.97019999999995,
+    "sd": 49.70937924935849,
+    "cv": 1.5560926946261713,
+    "p90": 55.359,
+    "p99": 314.9438100000015,
+    "maximum": 872.305,
+    "total_us": 740165.622,
+    "time_fraction_gt_5us": 0.9797539056738304,
+    "count_gt_5us": 16090,
+    "time_fraction_gt_10us": 0.9702391068360103,
+    "count_gt_10us": 15116,
+    "time_fraction_gt_20us": 0.924608143986455,
+    "count_gt_20us": 12936,
+    "time_fraction_gt_50us": 0.5751145869890185,
+    "count_gt_50us": 4855
+  },
+  "correlation_counts": {
+    "runtime_individual": 16311,
+    "driver_individual": 6860
+  },
+  "correlation_multiplicity": {
+    "runtime_individual": {
+      "unique_apis": 16311,
+      "maximum_kernels_per_api": 1,
+      "apis_with_multiple_kernels": 0
+    },
+    "driver_individual": {
+      "unique_apis": 6860,
+      "maximum_kernels_per_api": 1,
+      "apis_with_multiple_kernels": 0
+    }
+  },
+  "return_to_kernel_delay_us": {
+    "runtime_individual": {
+      "count": 16311,
+      "mean": 55.54822015817547,
+      "median": 25.014,
+      "p95": 254.64249999999998,
+      "sd": 94.52160365231873,
+      "cv": 1.7016135419490528,
+      "p90": 133.891,
+      "p99": 479.6143,
+      "maximum": 1123.91
+    },
+    "driver_individual": {
+      "count": 6860,
+      "mean": 42.39575947521866,
+      "median": 20.9285,
+      "p95": 190.82584999999992,
+      "sd": 62.54794841874242,
+      "cv": 1.475335014467737,
+      "p90": 85.4512,
+      "p99": 327.60999,
+      "maximum": 591.934
+    }
+  },
+  "negative_return_delay_counts": {
+    "runtime_individual": 41,
+    "driver_individual": 15
+  },
+  "association": {
+    "gap_count": 23170,
+    "matched_gap_count": 23170,
+    "matched_gap_count_fraction": 1.0,
+    "matched_gap_time_fraction": 1.0,
+    "launch_start_in_gap_fraction": 0.4423392317652136,
+    "before_launch_fraction_of_matched_gap": 0.25487590667916754,
+    "during_launch_fraction_of_matched_gap": 0.13567752407717204,
+    "after_launch_fraction_of_matched_gap": 0.6094465692436605
+  },
+  "sync_events": [
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 157201381,
+      "end_ns": 157204197,
+      "position_fraction": 0.0004270063123234814,
+      "duration_us": 2.816,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": true
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 157245125,
+      "end_ns": 157245940,
+      "position_fraction": 0.0004732855893710525,
+      "duration_us": 0.815,
+      "overlap_gpu_work_us": 0.815,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": true
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 168725654,
+      "end_ns": 168727711,
+      "position_fraction": 0.012619193193697923,
+      "duration_us": 2.057,
+      "overlap_gpu_work_us": 2.057,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 170258879,
+      "end_ns": 170262030,
+      "position_fraction": 0.014241279526709586,
+      "duration_us": 3.151,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 170295341,
+      "end_ns": 170296162,
+      "position_fraction": 0.01427985475987776,
+      "duration_us": 0.821,
+      "overlap_gpu_work_us": 0.666,
+      "overlap_fraction": 0.8112058465286236,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 182616478,
+      "end_ns": 182619113,
+      "position_fraction": 0.027315089598120245,
+      "duration_us": 2.635,
+      "overlap_gpu_work_us": 2.635,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 183673928,
+      "end_ns": 183676746,
+      "position_fraction": 0.028433826373768425,
+      "duration_us": 2.818,
+      "overlap_gpu_work_us": 0.115,
+      "overlap_fraction": 0.040809084457061745,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 183706313,
+      "end_ns": 183707090,
+      "position_fraction": 0.028468088315684703,
+      "duration_us": 0.777,
+      "overlap_gpu_work_us": 0.777,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 196519854,
+      "end_ns": 196522174,
+      "position_fraction": 0.04202426548053957,
+      "duration_us": 2.32,
+      "overlap_gpu_work_us": 2.32,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 197642743,
+      "end_ns": 197645984,
+      "position_fraction": 0.04321223391334567,
+      "duration_us": 3.241,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 197696795,
+      "end_ns": 197697618,
+      "position_fraction": 0.043269418612572434,
+      "duration_us": 0.823,
+      "overlap_gpu_work_us": 0.809,
+      "overlap_fraction": 0.982989064398542,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 209316444,
+      "end_ns": 209318711,
+      "position_fraction": 0.055562509213947085,
+      "duration_us": 2.267,
+      "overlap_gpu_work_us": 2.267,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 210395519,
+      "end_ns": 210398222,
+      "position_fraction": 0.056704124312705946,
+      "duration_us": 2.703,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 210446660,
+      "end_ns": 210447495,
+      "position_fraction": 0.0567582292987038,
+      "duration_us": 0.835,
+      "overlap_gpu_work_us": 0.671,
+      "overlap_fraction": 0.8035928143712575,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 222725331,
+      "end_ns": 222727802,
+      "position_fraction": 0.06974853692912115,
+      "duration_us": 2.471,
+      "overlap_gpu_work_us": 2.471,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 223932016,
+      "end_ns": 223935102,
+      "position_fraction": 0.07102515793826866,
+      "duration_us": 3.086,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 223987303,
+      "end_ns": 223988115,
+      "position_fraction": 0.07108364921456092,
+      "duration_us": 0.812,
+      "overlap_gpu_work_us": 0.749,
+      "overlap_fraction": 0.9224137931034483,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 236342232,
+      "end_ns": 236344366,
+      "position_fraction": 0.08415463454041296,
+      "duration_us": 2.134,
+      "overlap_gpu_work_us": 2.134,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 237477670,
+      "end_ns": 237480854,
+      "position_fraction": 0.08535587927734464,
+      "duration_us": 3.184,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 237513922,
+      "end_ns": 237514709,
+      "position_fraction": 0.08539423233951382,
+      "duration_us": 0.787,
+      "overlap_gpu_work_us": 0.787,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 249889893,
+      "end_ns": 249892921,
+      "position_fraction": 0.09848747919946503,
+      "duration_us": 3.028,
+      "overlap_gpu_work_us": 3.028,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 251164700,
+      "end_ns": 251167842,
+      "position_fraction": 0.0998361703647719,
+      "duration_us": 3.142,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 251218080,
+      "end_ns": 251218805,
+      "position_fraction": 0.09989264411680186,
+      "duration_us": 0.725,
+      "overlap_gpu_work_us": 0.725,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 264386519,
+      "end_ns": 264388600,
+      "position_fraction": 0.11382428815404218,
+      "duration_us": 2.081,
+      "overlap_gpu_work_us": 2.081,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 265843929,
+      "end_ns": 265847165,
+      "position_fraction": 0.11536616546663135,
+      "duration_us": 3.236,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 265911690,
+      "end_ns": 265913091,
+      "position_fraction": 0.11543785370026385,
+      "duration_us": 1.401,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 279316571,
+      "end_ns": 279319407,
+      "position_fraction": 0.12961964323914285,
+      "duration_us": 2.836,
+      "overlap_gpu_work_us": 2.836,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 280585326,
+      "end_ns": 280588973,
+      "position_fraction": 0.1309619316478501,
+      "duration_us": 3.647,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 280637280,
+      "end_ns": 280638226,
+      "position_fraction": 0.1310168967530012,
+      "duration_us": 0.946,
+      "overlap_gpu_work_us": 0.686,
+      "overlap_fraction": 0.7251585623678647,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 294122378,
+      "end_ns": 294125287,
+      "position_fraction": 0.14528355243962446,
+      "duration_us": 2.909,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 295402071,
+      "end_ns": 295407027,
+      "position_fraction": 0.1466374127835079,
+      "duration_us": 4.956,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 295455717,
+      "end_ns": 295456774,
+      "position_fraction": 0.1466941679521366,
+      "duration_us": 1.057,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 308623317,
+      "end_ns": 308629762,
+      "position_fraction": 0.16062492436333808,
+      "duration_us": 6.445,
+      "overlap_gpu_work_us": 6.445,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 310062419,
+      "end_ns": 310067193,
+      "position_fraction": 0.16214743259664355,
+      "duration_us": 4.774,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 310141848,
+      "end_ns": 310143003,
+      "position_fraction": 0.162231465074163,
+      "duration_us": 1.155,
+      "overlap_gpu_work_us": 0.558,
+      "overlap_fraction": 0.4831168831168831,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 322575534,
+      "end_ns": 322578053,
+      "position_fraction": 0.17538577193033772,
+      "duration_us": 2.519,
+      "overlap_gpu_work_us": 2.519,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 323781727,
+      "end_ns": 323785296,
+      "position_fraction": 0.1766618724245733,
+      "duration_us": 3.569,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 323834330,
+      "end_ns": 323835154,
+      "position_fraction": 0.17671752414390698,
+      "duration_us": 0.824,
+      "overlap_gpu_work_us": 0.603,
+      "overlap_fraction": 0.7317961165048543,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 337903640,
+      "end_ns": 337906524,
+      "position_fraction": 0.1916022510860742,
+      "duration_us": 2.884,
+      "overlap_gpu_work_us": 2.884,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 339273513,
+      "end_ns": 339277387,
+      "position_fraction": 0.19305151800466847,
+      "duration_us": 3.874,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 339326066,
+      "end_ns": 339327324,
+      "position_fraction": 0.19310711682614526,
+      "duration_us": 1.258,
+      "overlap_gpu_work_us": 0.049,
+      "overlap_fraction": 0.038950715421303655,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 352502188,
+      "end_ns": 352505109,
+      "position_fraction": 0.20704688914807734,
+      "duration_us": 2.921,
+      "overlap_gpu_work_us": 2.921,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 353811232,
+      "end_ns": 353814455,
+      "position_fraction": 0.20843180159192018,
+      "duration_us": 3.223,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 353863830,
+      "end_ns": 353864650,
+      "position_fraction": 0.20848744802146818,
+      "duration_us": 0.82,
+      "overlap_gpu_work_us": 0.525,
+      "overlap_fraction": 0.6402439024390244,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 367308720,
+      "end_ns": 367311433,
+      "position_fraction": 0.22271156536748404,
+      "duration_us": 2.713,
+      "overlap_gpu_work_us": 2.713,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 368731006,
+      "end_ns": 368734413,
+      "position_fraction": 0.22421628299355578,
+      "duration_us": 3.407,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 368767750,
+      "end_ns": 368768540,
+      "position_fraction": 0.22425515657063688,
+      "duration_us": 0.79,
+      "overlap_gpu_work_us": 0.727,
+      "overlap_fraction": 0.920253164556962,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 382111852,
+      "end_ns": 382116092,
+      "position_fraction": 0.23837264453262133,
+      "duration_us": 4.24,
+      "overlap_gpu_work_us": 4.24,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 383241270,
+      "end_ns": 383244194,
+      "position_fraction": 0.2395675203675819,
+      "duration_us": 2.924,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 383271645,
+      "end_ns": 383272391,
+      "position_fraction": 0.23959965581565063,
+      "duration_us": 0.746,
+      "overlap_gpu_work_us": 0.64,
+      "overlap_fraction": 0.8579088471849866,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 396383712,
+      "end_ns": 396386357,
+      "position_fraction": 0.2534716606931039,
+      "duration_us": 2.645,
+      "overlap_gpu_work_us": 2.645,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 397753471,
+      "end_ns": 397757810,
+      "position_fraction": 0.2549208070045844,
+      "duration_us": 4.339,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 397804468,
+      "end_ns": 397805307,
+      "position_fraction": 0.25497475964475436,
+      "duration_us": 0.839,
+      "overlap_gpu_work_us": 0.553,
+      "overlap_fraction": 0.6591179976162098,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 411132551,
+      "end_ns": 411135400,
+      "position_fraction": 0.2690753001913441,
+      "duration_us": 2.849,
+      "overlap_gpu_work_us": 2.849,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 412357095,
+      "end_ns": 412360940,
+      "position_fraction": 0.2703708152570204,
+      "duration_us": 3.845,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 412409147,
+      "end_ns": 412410095,
+      "position_fraction": 0.270425884041971,
+      "duration_us": 0.948,
+      "overlap_gpu_work_us": 0.32,
+      "overlap_fraction": 0.33755274261603374,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 425323448,
+      "end_ns": 425327360,
+      "position_fraction": 0.2840886609680574,
+      "duration_us": 3.912,
+      "overlap_gpu_work_us": 3.912,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 427074940,
+      "end_ns": 427079352,
+      "position_fraction": 0.2859416644317234,
+      "duration_us": 4.412,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 427160812,
+      "end_ns": 427161962,
+      "position_fraction": 0.2860325133270834,
+      "duration_us": 1.15,
+      "overlap_gpu_work_us": 0.395,
+      "overlap_fraction": 0.34347826086956523,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 439264039,
+      "end_ns": 439266716,
+      "position_fraction": 0.2988372087253699,
+      "duration_us": 2.677,
+      "overlap_gpu_work_us": 2.677,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 440690871,
+      "end_ns": 440695177,
+      "position_fraction": 0.30034673582459126,
+      "duration_us": 4.306,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 440738788,
+      "end_ns": 440739623,
+      "position_fraction": 0.300397429956776,
+      "duration_us": 0.835,
+      "overlap_gpu_work_us": 0.484,
+      "overlap_fraction": 0.5796407185628742,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 455253455,
+      "end_ns": 455256186,
+      "position_fraction": 0.315753325516081,
+      "duration_us": 2.731,
+      "overlap_gpu_work_us": 2.731,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 456509857,
+      "end_ns": 456513407,
+      "position_fraction": 0.3170825449802617,
+      "duration_us": 3.55,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 456545208,
+      "end_ns": 456546044,
+      "position_fraction": 0.3171199448230495,
+      "duration_us": 0.836,
+      "overlap_gpu_work_us": 0.633,
+      "overlap_fraction": 0.757177033492823,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 468965732,
+      "end_ns": 468969221,
+      "position_fraction": 0.330260326847373,
+      "duration_us": 3.489,
+      "overlap_gpu_work_us": 3.489,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 470117081,
+      "end_ns": 470120278,
+      "position_fraction": 0.33147840474032847,
+      "duration_us": 3.197,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 470149260,
+      "end_ns": 470150100,
+      "position_fraction": 0.3315124487430743,
+      "duration_us": 0.84,
+      "overlap_gpu_work_us": 0.694,
+      "overlap_fraction": 0.8261904761904761,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 481414135,
+      "end_ns": 481416512,
+      "position_fraction": 0.3434302036587486,
+      "duration_us": 2.377,
+      "overlap_gpu_work_us": 2.377,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 482700843,
+      "end_ns": 482704841,
+      "position_fraction": 0.3447914855719556,
+      "duration_us": 3.998,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 482746140,
+      "end_ns": 482746937,
+      "position_fraction": 0.3448394078564386,
+      "duration_us": 0.797,
+      "overlap_gpu_work_us": 0.296,
+      "overlap_fraction": 0.3713927227101631,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 494214868,
+      "end_ns": 494217255,
+      "position_fraction": 0.35697283050857914,
+      "duration_us": 2.387,
+      "overlap_gpu_work_us": 2.387,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 495329364,
+      "end_ns": 495332411,
+      "position_fraction": 0.35815191950712544,
+      "duration_us": 3.047,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 495362581,
+      "end_ns": 495363441,
+      "position_fraction": 0.3581870616693806,
+      "duration_us": 0.86,
+      "overlap_gpu_work_us": 0.656,
+      "overlap_fraction": 0.7627906976744186,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 505668588,
+      "end_ns": 505670849,
+      "position_fraction": 0.36909037533999156,
+      "duration_us": 2.261,
+      "overlap_gpu_work_us": 2.261,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 507130364,
+      "end_ns": 507133260,
+      "position_fraction": 0.37063687169344556,
+      "duration_us": 2.896,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 507198007,
+      "end_ns": 507199299,
+      "position_fraction": 0.3707084350881358,
+      "duration_us": 1.292,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 521450137,
+      "end_ns": 521453101,
+      "position_fraction": 0.38578657775428427,
+      "duration_us": 2.964,
+      "overlap_gpu_work_us": 2.964,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 522525398,
+      "end_ns": 522528777,
+      "position_fraction": 0.38692415780451855,
+      "duration_us": 3.379,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 522559946,
+      "end_ns": 522560713,
+      "position_fraction": 0.3869607081077245,
+      "duration_us": 0.767,
+      "overlap_gpu_work_us": 0.764,
+      "overlap_fraction": 0.9960886571056062,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 534039165,
+      "end_ns": 534041462,
+      "position_fraction": 0.39910522978820046,
+      "duration_us": 2.297,
+      "overlap_gpu_work_us": 2.297,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 535039991,
+      "end_ns": 535042977,
+      "position_fraction": 0.4001640607988628,
+      "duration_us": 2.986,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 535083967,
+      "end_ns": 535084835,
+      "position_fraction": 0.40021058552196637,
+      "duration_us": 0.868,
+      "overlap_gpu_work_us": 0.586,
+      "overlap_fraction": 0.6751152073732719,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 545730293,
+      "end_ns": 545732393,
+      "position_fraction": 0.41147394210784694,
+      "duration_us": 2.1,
+      "overlap_gpu_work_us": 2.1,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 547066273,
+      "end_ns": 547069690,
+      "position_fraction": 0.4128873516851607,
+      "duration_us": 3.417,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 547113813,
+      "end_ns": 547114795,
+      "position_fraction": 0.4129376469675044,
+      "duration_us": 0.982,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 558752683,
+      "end_ns": 558754683,
+      "position_fraction": 0.42525107256302985,
+      "duration_us": 2.0,
+      "overlap_gpu_work_us": 2.0,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 559761484,
+      "end_ns": 559764324,
+      "position_fraction": 0.4263183407818682,
+      "duration_us": 2.84,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 559808271,
+      "end_ns": 559809090,
+      "position_fraction": 0.4263678394224869,
+      "duration_us": 0.819,
+      "overlap_gpu_work_us": 0.326,
+      "overlap_fraction": 0.398046398046398,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 572020883,
+      "end_ns": 572022939,
+      "position_fraction": 0.43928825946232075,
+      "duration_us": 2.056,
+      "overlap_gpu_work_us": 2.056,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 573071061,
+      "end_ns": 573074215,
+      "position_fraction": 0.44039930277366096,
+      "duration_us": 3.154,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 573122762,
+      "end_ns": 573123582,
+      "position_fraction": 0.4404540002156561,
+      "duration_us": 0.82,
+      "overlap_gpu_work_us": 0.321,
+      "overlap_fraction": 0.39146341463414636,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 585205073,
+      "end_ns": 585207582,
+      "position_fraction": 0.4532365673824428,
+      "duration_us": 2.509,
+      "overlap_gpu_work_us": 2.509,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 586477375,
+      "end_ns": 586480493,
+      "position_fraction": 0.45458260836511877,
+      "duration_us": 3.118,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 586513150,
+      "end_ns": 586513895,
+      "position_fraction": 0.4546204567817331,
+      "duration_us": 0.745,
+      "overlap_gpu_work_us": 0.545,
+      "overlap_fraction": 0.7315436241610739,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 598463584,
+      "end_ns": 598466129,
+      "position_fraction": 0.467263503735023,
+      "duration_us": 2.545,
+      "overlap_gpu_work_us": 2.545,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 599613114,
+      "end_ns": 599616156,
+      "position_fraction": 0.4684796572039443,
+      "duration_us": 3.042,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 599679133,
+      "end_ns": 599680754,
+      "position_fraction": 0.46854950247624233,
+      "duration_us": 1.621,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 613428775,
+      "end_ns": 613431193,
+      "position_fraction": 0.4830960343759982,
+      "duration_us": 2.418,
+      "overlap_gpu_work_us": 2.418,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 614660037,
+      "end_ns": 614663109,
+      "position_fraction": 0.4843986567977279,
+      "duration_us": 3.072,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 614712126,
+      "end_ns": 614713010,
+      "position_fraction": 0.4844537647270927,
+      "duration_us": 0.884,
+      "overlap_gpu_work_us": 0.368,
+      "overlap_fraction": 0.416289592760181,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 628092888,
+      "end_ns": 628095310,
+      "position_fraction": 0.4986100373977586,
+      "duration_us": 2.422,
+      "overlap_gpu_work_us": 2.422,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 629331627,
+      "end_ns": 629335069,
+      "position_fraction": 0.4999205701650097,
+      "duration_us": 3.442,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 629383848,
+      "end_ns": 629384687,
+      "position_fraction": 0.49997581774471667,
+      "duration_us": 0.839,
+      "overlap_gpu_work_us": 0.547,
+      "overlap_fraction": 0.6519666269368296,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 641025797,
+      "end_ns": 641028179,
+      "position_fraction": 0.5122925007902702,
+      "duration_us": 2.382,
+      "overlap_gpu_work_us": 2.382,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 642152172,
+      "end_ns": 642155186,
+      "position_fraction": 0.5134841572616595,
+      "duration_us": 3.014,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 642187148,
+      "end_ns": 642187939,
+      "position_fraction": 0.5135211603705205,
+      "duration_us": 0.791,
+      "overlap_gpu_work_us": 0.413,
+      "overlap_fraction": 0.5221238938053098,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 653767663,
+      "end_ns": 653770021,
+      "position_fraction": 0.5257728488772542,
+      "duration_us": 2.358,
+      "overlap_gpu_work_us": 2.358,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 654904775,
+      "end_ns": 654907710,
+      "position_fraction": 0.526975864634435,
+      "duration_us": 2.935,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 655028116,
+      "end_ns": 655029649,
+      "position_fraction": 0.5271063541258012,
+      "duration_us": 1.533,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 668352596,
+      "end_ns": 668356016,
+      "position_fraction": 0.5412030828528225,
+      "duration_us": 3.42,
+      "overlap_gpu_work_us": 3.42,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 669653934,
+      "end_ns": 669657911,
+      "position_fraction": 0.5425798426789594,
+      "duration_us": 3.977,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 669719098,
+      "end_ns": 669719989,
+      "position_fraction": 0.5426487833979043,
+      "duration_us": 0.891,
+      "overlap_gpu_work_us": 0.49,
+      "overlap_fraction": 0.5499438832772167,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 682542816,
+      "end_ns": 682545634,
+      "position_fraction": 0.5562157273925533,
+      "duration_us": 2.818,
+      "overlap_gpu_work_us": 2.818,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 683633849,
+      "end_ns": 683637129,
+      "position_fraction": 0.5573699935427692,
+      "duration_us": 3.28,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 683666673,
+      "end_ns": 683667433,
+      "position_fraction": 0.5574047199278691,
+      "duration_us": 0.76,
+      "overlap_gpu_work_us": 0.669,
+      "overlap_fraction": 0.8802631578947369,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 695581027,
+      "end_ns": 695583682,
+      "position_fraction": 0.5700095957876176,
+      "duration_us": 2.655,
+      "overlap_gpu_work_us": 2.655,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 696759907,
+      "end_ns": 696763437,
+      "position_fraction": 0.5712568002985411,
+      "duration_us": 3.53,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 696840638,
+      "end_ns": 696841719,
+      "position_fraction": 0.5713422102362543,
+      "duration_us": 1.081,
+      "overlap_gpu_work_us": 0.232,
+      "overlap_fraction": 0.21461609620721553,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 709341831,
+      "end_ns": 709344185,
+      "position_fraction": 0.5845679366049485,
+      "duration_us": 2.354,
+      "overlap_gpu_work_us": 2.354,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 710477808,
+      "end_ns": 710480799,
+      "position_fraction": 0.5857697515807776,
+      "duration_us": 2.991,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 710507739,
+      "end_ns": 710508449,
+      "position_fraction": 0.5858014172958771,
+      "duration_us": 0.71,
+      "overlap_gpu_work_us": 0.698,
+      "overlap_fraction": 0.9830985915492958,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 722905998,
+      "end_ns": 722908444,
+      "position_fraction": 0.5989182439045215,
+      "duration_us": 2.446,
+      "overlap_gpu_work_us": 2.446,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 724055708,
+      "end_ns": 724058794,
+      "position_fraction": 0.6001345878057277,
+      "duration_us": 3.086,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 724108867,
+      "end_ns": 724109757,
+      "position_fraction": 0.6001908277492302,
+      "duration_us": 0.89,
+      "overlap_gpu_work_us": 0.29,
+      "overlap_fraction": 0.3258426966292135,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 736375243,
+      "end_ns": 736378101,
+      "position_fraction": 0.613168127796635,
+      "duration_us": 2.858,
+      "overlap_gpu_work_us": 2.858,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 737530954,
+      "end_ns": 737534344,
+      "position_fraction": 0.6143908204986267,
+      "duration_us": 3.39,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 737583987,
+      "end_ns": 737584736,
+      "position_fraction": 0.6144469271395298,
+      "duration_us": 0.749,
+      "overlap_gpu_work_us": 0.357,
+      "overlap_fraction": 0.4766355140186916,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 749657226,
+      "end_ns": 749659801,
+      "position_fraction": 0.6272198965191599,
+      "duration_us": 2.575,
+      "overlap_gpu_work_us": 2.575,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 750897308,
+      "end_ns": 750900420,
+      "position_fraction": 0.6285318501228474,
+      "duration_us": 3.112,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 750941189,
+      "end_ns": 750941959,
+      "position_fraction": 0.6285782743400229,
+      "duration_us": 0.77,
+      "overlap_gpu_work_us": 0.007,
+      "overlap_fraction": 0.00909090909090909,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 761488691,
+      "end_ns": 761491140,
+      "position_fraction": 0.6397370793696912,
+      "duration_us": 2.449,
+      "overlap_gpu_work_us": 2.449,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 762464825,
+      "end_ns": 762467448,
+      "position_fraction": 0.6407697873027004,
+      "duration_us": 2.623,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 762522792,
+      "end_ns": 762523575,
+      "position_fraction": 0.6408311139041226,
+      "duration_us": 0.783,
+      "overlap_gpu_work_us": 0.472,
+      "overlap_fraction": 0.6028097062579821,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 773561287,
+      "end_ns": 773563691,
+      "position_fraction": 0.6525093684828815,
+      "duration_us": 2.404,
+      "overlap_gpu_work_us": 2.404,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 774631630,
+      "end_ns": 774634800,
+      "position_fraction": 0.6536417454999108,
+      "duration_us": 3.17,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 774669748,
+      "end_ns": 774670479,
+      "position_fraction": 0.6536820727100996,
+      "duration_us": 0.731,
+      "overlap_gpu_work_us": 0.438,
+      "overlap_fraction": 0.5991792065663475,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 787181015,
+      "end_ns": 787183539,
+      "position_fraction": 0.6669184569390026,
+      "duration_us": 2.524,
+      "overlap_gpu_work_us": 2.524,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 788255698,
+      "end_ns": 788258790,
+      "position_fraction": 0.6680554254900112,
+      "duration_us": 3.092,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 788312543,
+      "end_ns": 788313651,
+      "position_fraction": 0.6681155650635245,
+      "duration_us": 1.108,
+      "overlap_gpu_work_us": 0.315,
+      "overlap_fraction": 0.2842960288808664,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 800681445,
+      "end_ns": 800683698,
+      "position_fraction": 0.6812013332244667,
+      "duration_us": 2.253,
+      "overlap_gpu_work_us": 2.253,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 801713642,
+      "end_ns": 801716761,
+      "position_fraction": 0.6822933534085073,
+      "duration_us": 3.119,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 801743293,
+      "end_ns": 801744013,
+      "position_fraction": 0.6823247228956081,
+      "duration_us": 0.72,
+      "overlap_gpu_work_us": 0.72,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 812364676,
+      "end_ns": 812367099,
+      "position_fraction": 0.6935616908565939,
+      "duration_us": 2.423,
+      "overlap_gpu_work_us": 2.423,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 813421700,
+      "end_ns": 813424570,
+      "position_fraction": 0.6946799769425013,
+      "duration_us": 2.87,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 813451555,
+      "end_ns": 813452397,
+      "position_fraction": 0.6947115622528582,
+      "duration_us": 0.842,
+      "overlap_gpu_work_us": 0.7,
+      "overlap_fraction": 0.831353919239905,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 823691540,
+      "end_ns": 823693706,
+      "position_fraction": 0.7055450274772999,
+      "duration_us": 2.166,
+      "overlap_gpu_work_us": 2.166,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 824651067,
+      "end_ns": 824653936,
+      "position_fraction": 0.7065601659161171,
+      "duration_us": 2.869,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 824705618,
+      "end_ns": 824706388,
+      "position_fraction": 0.7066178785359558,
+      "duration_us": 0.77,
+      "overlap_gpu_work_us": 0.518,
+      "overlap_fraction": 0.6727272727272727,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 836125039,
+      "end_ns": 836127134,
+      "position_fraction": 0.7186991364954897,
+      "duration_us": 2.095,
+      "overlap_gpu_work_us": 2.095,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 837087730,
+      "end_ns": 837090473,
+      "position_fraction": 0.7197176223106919,
+      "duration_us": 2.743,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 837141043,
+      "end_ns": 837142237,
+      "position_fraction": 0.7197740251795935,
+      "duration_us": 1.194,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 848111158,
+      "end_ns": 848143146,
+      "position_fraction": 0.7313799366492515,
+      "duration_us": 31.988,
+      "overlap_gpu_work_us": 31.988,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 849487769,
+      "end_ns": 849491320,
+      "position_fraction": 0.7328363320830421,
+      "duration_us": 3.551,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 849550807,
+      "end_ns": 849551751,
+      "position_fraction": 0.7329030235851115,
+      "duration_us": 0.944,
+      "overlap_gpu_work_us": 0.331,
+      "overlap_fraction": 0.350635593220339,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 862220593,
+      "end_ns": 862224390,
+      "position_fraction": 0.7463071141215837,
+      "duration_us": 3.797,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 863401121,
+      "end_ns": 863404663,
+      "position_fraction": 0.7475560621458708,
+      "duration_us": 3.542,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 863460145,
+      "end_ns": 863460923,
+      "position_fraction": 0.7476185070079879,
+      "duration_us": 0.778,
+      "overlap_gpu_work_us": 0.38,
+      "overlap_fraction": 0.4884318766066838,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 876789888,
+      "end_ns": 876792699,
+      "position_fraction": 0.7617208037634269,
+      "duration_us": 2.811,
+      "overlap_gpu_work_us": 2.811,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 878064612,
+      "end_ns": 878068379,
+      "position_fraction": 0.7630694071182913,
+      "duration_us": 3.767,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 878101717,
+      "end_ns": 878102556,
+      "position_fraction": 0.7631086626178992,
+      "duration_us": 0.839,
+      "overlap_gpu_work_us": 0.374,
+      "overlap_fraction": 0.44576877234803336,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 890341567,
+      "end_ns": 890343918,
+      "position_fraction": 0.7760578992942597,
+      "duration_us": 2.351,
+      "overlap_gpu_work_us": 2.351,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 891543944,
+      "end_ns": 891547239,
+      "position_fraction": 0.7773299626240565,
+      "duration_us": 3.295,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 891579130,
+      "end_ns": 891579883,
+      "position_fraction": 0.7773671879039165,
+      "duration_us": 0.753,
+      "overlap_gpu_work_us": 0.548,
+      "overlap_fraction": 0.7277556440903055,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 904741118,
+      "end_ns": 904743830,
+      "position_fraction": 0.7912920070596591,
+      "duration_us": 2.712,
+      "overlap_gpu_work_us": 2.712,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 905849260,
+      "end_ns": 905852499,
+      "position_fraction": 0.7924643737985502,
+      "duration_us": 3.239,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 905878892,
+      "end_ns": 905879717,
+      "position_fraction": 0.7924957231844654,
+      "duration_us": 0.825,
+      "overlap_gpu_work_us": 0.694,
+      "overlap_fraction": 0.8412121212121212,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 920047295,
+      "end_ns": 920050718,
+      "position_fraction": 0.807485286273315,
+      "duration_us": 3.423,
+      "overlap_gpu_work_us": 3.423,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 921426965,
+      "end_ns": 921431688,
+      "position_fraction": 0.8089449179979908,
+      "duration_us": 4.723,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 921493386,
+      "end_ns": 921494171,
+      "position_fraction": 0.8090151885690583,
+      "duration_us": 0.785,
+      "overlap_gpu_work_us": 0.452,
+      "overlap_fraction": 0.575796178343949,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 936030301,
+      "end_ns": 936032835,
+      "position_fraction": 0.8243946215587711,
+      "duration_us": 2.534,
+      "overlap_gpu_work_us": 2.534,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 937179044,
+      "end_ns": 937182488,
+      "position_fraction": 0.8256099424154247,
+      "duration_us": 3.444,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 937212468,
+      "end_ns": 937213266,
+      "position_fraction": 0.8256453035748075,
+      "duration_us": 0.798,
+      "overlap_gpu_work_us": 0.549,
+      "overlap_fraction": 0.6879699248120301,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 948326921,
+      "end_ns": 948330218,
+      "position_fraction": 0.8374039184618596,
+      "duration_us": 3.297,
+      "overlap_gpu_work_us": 3.253,
+      "overlap_fraction": 0.9866545344252351,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 949458186,
+      "end_ns": 949461904,
+      "position_fraction": 0.8386007483436541,
+      "duration_us": 3.718,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 949490597,
+      "end_ns": 949491383,
+      "position_fraction": 0.838635037792456,
+      "duration_us": 0.786,
+      "overlap_gpu_work_us": 0.348,
+      "overlap_fraction": 0.44274809160305345,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 960792044,
+      "end_ns": 960794377,
+      "position_fraction": 0.8505914843165836,
+      "duration_us": 2.333,
+      "overlap_gpu_work_us": 2.333,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 961887426,
+      "end_ns": 961890253,
+      "position_fraction": 0.851750351522393,
+      "duration_us": 2.827,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 961925009,
+      "end_ns": 961925834,
+      "position_fraction": 0.8517901127255129,
+      "duration_us": 0.825,
+      "overlap_gpu_work_us": 0.533,
+      "overlap_fraction": 0.6460606060606061,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 973405468,
+      "end_ns": 973408209,
+      "position_fraction": 0.8639359462728401,
+      "duration_us": 2.741,
+      "overlap_gpu_work_us": 2.741,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 974493137,
+      "end_ns": 974496384,
+      "position_fraction": 0.8650866534552435,
+      "duration_us": 3.247,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 974525564,
+      "end_ns": 974526348,
+      "position_fraction": 0.8651209598313596,
+      "duration_us": 0.784,
+      "overlap_gpu_work_us": 0.396,
+      "overlap_fraction": 0.5051020408163265,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 985662504,
+      "end_ns": 985665656,
+      "position_fraction": 0.8769033650005754,
+      "duration_us": 3.152,
+      "overlap_gpu_work_us": 3.152,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 986925526,
+      "end_ns": 986934365,
+      "position_fraction": 0.8782395881410101,
+      "duration_us": 8.839,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 986979417,
+      "end_ns": 986980535,
+      "position_fraction": 0.8782966025091377,
+      "duration_us": 1.118,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 999488171,
+      "end_ns": 999491127,
+      "position_fraction": 0.8915303280917527,
+      "duration_us": 2.956,
+      "overlap_gpu_work_us": 2.956,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 1000667107,
+      "end_ns": 1000670339,
+      "position_fraction": 0.8927775918482761,
+      "duration_us": 3.232,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 1000720097,
+      "end_ns": 1000720853,
+      "position_fraction": 0.8928336529970222,
+      "duration_us": 0.756,
+      "overlap_gpu_work_us": 0.121,
+      "overlap_fraction": 0.16005291005291006,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 1012335431,
+      "end_ns": 1012338323,
+      "position_fraction": 0.9051221785133461,
+      "duration_us": 2.892,
+      "overlap_gpu_work_us": 2.892,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 1013467722,
+      "end_ns": 1013471033,
+      "position_fraction": 0.9063200938591642,
+      "duration_us": 3.311,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 1013519501,
+      "end_ns": 1013520365,
+      "position_fraction": 0.9063748738218163,
+      "duration_us": 0.864,
+      "overlap_gpu_work_us": 0.427,
+      "overlap_fraction": 0.49421296296296297,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 1024540611,
+      "end_ns": 1024543442,
+      "position_fraction": 0.9180347358157298,
+      "duration_us": 2.831,
+      "overlap_gpu_work_us": 2.831,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 1025600016,
+      "end_ns": 1025603288,
+      "position_fraction": 0.9191555408975829,
+      "duration_us": 3.272,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 1025633034,
+      "end_ns": 1025633788,
+      "position_fraction": 0.9191904725263675,
+      "duration_us": 0.754,
+      "overlap_gpu_work_us": 0.441,
+      "overlap_fraction": 0.5848806366047745,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 1036975101,
+      "end_ns": 1036978190,
+      "position_fraction": 0.9311898932694436,
+      "duration_us": 3.089,
+      "overlap_gpu_work_us": 3.089,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 1038180931,
+      "end_ns": 1038183855,
+      "position_fraction": 0.932465609725238,
+      "duration_us": 2.924,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 1038233413,
+      "end_ns": 1038234201,
+      "position_fraction": 0.932521133431758,
+      "duration_us": 0.788,
+      "overlap_gpu_work_us": 0.512,
+      "overlap_fraction": 0.649746192893401,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 1050261045,
+      "end_ns": 1050263937,
+      "position_fraction": 0.9452458525601923,
+      "duration_us": 2.892,
+      "overlap_gpu_work_us": 2.892,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 1051374140,
+      "end_ns": 1051377647,
+      "position_fraction": 0.9464234593607882,
+      "duration_us": 3.507,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 1051409314,
+      "end_ns": 1051410084,
+      "position_fraction": 0.9464606719451626,
+      "duration_us": 0.77,
+      "overlap_gpu_work_us": 0.474,
+      "overlap_fraction": 0.6155844155844156,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 1063124510,
+      "end_ns": 1063128177,
+      "position_fraction": 0.958854847177208,
+      "duration_us": 3.667,
+      "overlap_gpu_work_us": 1.939,
+      "overlap_fraction": 0.5287701118080175,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 1064187952,
+      "end_ns": 1064191434,
+      "position_fraction": 0.9599799232320275,
+      "duration_us": 3.482,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 1064218831,
+      "end_ns": 1064219589,
+      "position_fraction": 0.9600125918904938,
+      "duration_us": 0.758,
+      "overlap_gpu_work_us": 0.524,
+      "overlap_fraction": 0.6912928759894459,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 1075709452,
+      "end_ns": 1075712225,
+      "position_fraction": 0.9721691763982581,
+      "duration_us": 2.773,
+      "overlap_gpu_work_us": 2.773,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 1076859885,
+      "end_ns": 1076863216,
+      "position_fraction": 0.973386285202475,
+      "duration_us": 3.331,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 1076891690,
+      "end_ns": 1076892482,
+      "position_fraction": 0.9734199335292513,
+      "duration_us": 0.792,
+      "overlap_gpu_work_us": 0.369,
+      "overlap_fraction": 0.4659090909090909,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 1089386066,
+      "end_ns": 1089388751,
+      "position_fraction": 0.9866384478041352,
+      "duration_us": 2.685,
+      "overlap_gpu_work_us": 2.685,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 1090536987,
+      "end_ns": 1090540582,
+      "position_fraction": 0.9878560728914356,
+      "duration_us": 3.595,
+      "overlap_gpu_work_us": 0.0,
+      "overlap_fraction": 0.0,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaStreamSynchronize_v3020",
+      "start_ns": 1090575422,
+      "end_ns": 1090576227,
+      "position_fraction": 0.9878967354740371,
+      "duration_us": 0.805,
+      "overlap_gpu_work_us": 0.588,
+      "overlap_fraction": 0.7304347826086957,
+      "boundary_1pct": false
+    },
+    {
+      "name": "cudaEventSynchronize_v3020",
+      "start_ns": 1101294499,
+      "end_ns": 1101296858,
+      "position_fraction": 0.9992370594996692,
+      "duration_us": 2.359,
+      "overlap_gpu_work_us": 2.359,
+      "overlap_fraction": 1.0,
+      "boundary_1pct": true
+    }
+  ],
+  "kernels": [
+    {
+      "name": "void sglang::clamp_position_kernel<long>(T1 *, const T1 *, unsigned long)",
+      "family": "unknown",
+      "observed_count": 71,
+      "complete_count": 70,
+      "mean_us": 0.9636285714285715,
+      "median_us": 0.896,
+      "cumulative_us_per_token": 0.10754920634920634
+    },
+    {
+      "name": "void at::native::<unnamed>::multi_tensor_apply_kernel<at::native::<unnamed>::TensorListMetadata<(int)2>, at::native::<unnamed>::UnaryOpFunctor<long, (int)2, (int)1, (int)1>, at::native::Copy<long, long>>(T1, T2, T3...)",
+      "family": "unknown",
+      "observed_count": 70,
+      "complete_count": 70,
+      "mean_us": 1.8093285714285714,
+      "median_us": 1.696,
+      "cumulative_us_per_token": 0.20103650793650796
+    },
+    {
+      "name": "void at_cuda_detail::cub::detail::scan::DeviceScanInitKernel<at_cuda_detail::cub::ScanTileState<long, (bool)1>>(T1, int)",
+      "family": "unknown",
+      "observed_count": 70,
+      "complete_count": 70,
+      "mean_us": 0.7986,
+      "median_us": 0.8,
+      "cumulative_us_per_token": 0.08873333333333333
+    },
+    {
+      "name": "void at_cuda_detail::cub::detail::scan::DeviceScanKernel<at_cuda_detail::cub::detail::scan::policy_hub<long, long, long, unsigned int, std::plus<long>>::Policy1000, const long *, long *, at_cuda_detail::cub::ScanTileState<long, (bool)1>, std::plus<long>, at_cuda_detail::cub::NullType, unsigned int, long, (bool)0, at_cuda_detail::cub::NullType>(T2, T3, T4, int, T5, T6, T7)",
+      "family": "unknown",
+      "observed_count": 70,
+      "complete_count": 70,
+      "mean_us": 1.588042857142857,
+      "median_us": 1.536,
+      "cumulative_us_per_token": 0.17644920634920636
+    },
+    {
+      "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 3)]::operator ()() const::[lambda(int) (instance 1)], std::array<char *, (unsigned long)2>, (int)4, TrivialOffsetCalculator<(int)1, unsigned int>, TrivialOffsetCalculator<(int)1, unsigned int>, at::native::memory::LoadWithCast<(int)1>, at::native::memory::StoreWithCast<(int)1>>(int, T1, T2, T4, T5, T6, T7)",
+      "family": "elementwise",
+      "observed_count": 140,
+      "complete_count": 140,
+      "mean_us": 1.2207714285714286,
+      "median_us": 1.248,
+      "cumulative_us_per_token": 0.2712825396825397
+    },
+    {
+      "name": "create_flashinfer_kv_indices_triton",
+      "family": "unknown",
+      "observed_count": 70,
+      "complete_count": 70,
+      "mean_us": 1.6283,
+      "median_us": 1.536,
+      "cumulative_us_per_token": 0.1809222222222222
+    },
+    {
+      "name": "void at::native::<unnamed>::indexSelectSmallIndex<c10::BFloat16, long, unsigned int, (int)2, (int)2, (int)-2>(at::cuda::detail::TensorInfo<T1, T3>, at::cuda::detail::TensorInfo<const T1, T3>, at::cuda::detail::TensorInfo<const T2, T3>, int, int, T3, long)",
+      "family": "unknown",
+      "observed_count": 70,
+      "complete_count": 70,
+      "mean_us": 5.386871428571428,
+      "median_us": 5.056,
+      "cumulative_us_per_token": 0.5985412698412698
+    },
+    {
+      "name": "kernel_cutlass_kernel_flashinfernormkernelsrmsnormRMSNormKernel_object_at__tensorptrbf16gmemalign128oi648968961_tensorptrbf16gmemalign16o8961_tensorptrbf16gmemalign128oi648968961___False__0",
+      "family": "normalization",
+      "observed_count": 70,
+      "complete_count": 70,
+      "mean_us": 1.520857142857143,
+      "median_us": 1.504,
+      "cumulative_us_per_token": 0.168984126984127
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_16x16_128x2_tn_align8>(T1::Params)",
+      "family": "GEMM/matmul",
+      "observed_count": 6720,
+      "complete_count": 6720,
+      "mean_us": 19.002984226190478,
+      "median_us": 20.384,
+      "cumulative_us_per_token": 202.69849841269843
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<(bool)1, (long)64, (bool)0, __nv_bfloat16, __nv_bfloat16, long, (unsigned int)8>(sglang::FusedRopeParams)",
+      "family": "unknown",
+      "observed_count": 1680,
+      "complete_count": 1680,
+      "mean_us": 1.1979577380952382,
+      "median_us": 1.152,
+      "cumulative_us_per_token": 3.1945539682539685
+    },
+    {
+      "name": "void sglang::store_kvcache<(long)256, (long)256, (int)1, (bool)0, long>(sglang::StoreKVCacheParams)",
+      "family": "KV/cache",
+      "observed_count": 1680,
+      "complete_count": 1680,
+      "mean_us": 1.2204946428571428,
+      "median_us": 1.152,
+      "cumulative_us_per_token": 3.254652380952381
+    },
+    {
+      "name": "void at::native::elementwise_kernel<(int)128, (int)4, void at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 12)]::operator ()() const::[lambda(c10::BFloat16) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)",
+      "family": "elementwise",
+      "observed_count": 1680,
+      "complete_count": 1680,
+      "mean_us": 1.843302380952381,
+      "median_us": 1.76,
+      "cumulative_us_per_token": 4.915473015873016
+    },
+    {
+      "name": "void flashinfer::BatchPrefillWithPagedKVCacheKernel<flashinfer::KernelTraits<(flashinfer::MaskMode)0, (unsigned int)16, (unsigned int)1, (unsigned int)2, (unsigned int)4, (unsigned int)4, (unsigned int)1, (unsigned int)4, (flashinfer::PosEncodingMode)0, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, int, flashinfer::DefaultAttention<(bool)0, (bool)0, (bool)0, (bool)0>>, PagedParams>(T2)",
+      "family": "attention",
+      "observed_count": 1680,
+      "complete_count": 1680,
+      "mean_us": 5.9146511904761905,
+      "median_us": 5.759,
+      "cumulative_us_per_token": 15.772403174603173
+    },
+    {
+      "name": "void flashinfer::PersistentVariableLengthMergeStatesKernel<(unsigned int)8, (unsigned int)8, (unsigned int)16, (unsigned int)4, __nv_bfloat16, __nv_bfloat16, int>(T5 *, float *, T7 *, T6 *, float *, unsigned int, unsigned int *, unsigned int)",
+      "family": "attention",
+      "observed_count": 1680,
+      "complete_count": 1680,
+      "mean_us": 2.482982142857143,
+      "median_us": 2.4,
+      "cumulative_us_per_token": 6.621285714285714
+    },
+    {
+      "name": "kernel_cutlass_kernel_flashinfernormkernelsfused_add_rmsnormFusedAddRMSNormKernel_object_at__tensorptrbf16gmemalign128oi648968961_tensorptrbf16gmemalign128oi648968961_tensorptrbf16gmemali_0",
+      "family": "normalization",
+      "observed_count": 3360,
+      "complete_count": 3360,
+      "mean_us": 1.5513973214285715,
+      "median_us": 1.536,
+      "cumulative_us_per_token": 8.274119047619047
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, (bool)0, (bool)0, (bool)0, (bool)0>(sglang::ActivationParams)",
+      "family": "elementwise",
+      "observed_count": 1680,
+      "complete_count": 1680,
+      "mean_us": 1.2311059523809524,
+      "median_us": 1.216,
+      "cumulative_us_per_token": 3.282949206349206
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<(int)32, (int)16, int, __nv_bfloat16, __nv_bfloat16, float, __nv_bfloat16, (bool)0, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, (bool)1, (bool)0, (bool)0, (bool)0>(cublasLt::cublasSplitKParams<T6>, const T4 *, const T10 *, T9 *, T5 *, const T6 *, const T6 *, const T11 *, const T4 *, T11 *, void *, long, T6 *, int *, T6 *, T6 *, const T6 *, const T6 *, const T6 *, const T6 *, const T6 *)",
+      "family": "GEMM/matmul",
+      "observed_count": 1680,
+      "complete_count": 1680,
+      "mean_us": 1.359077976190476,
+      "median_us": 1.344,
+      "cumulative_us_per_token": 3.6242079365079367
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_16x16_128x1_tn_align8>(T1::Params)",
+      "family": "GEMM/matmul",
+      "observed_count": 70,
+      "complete_count": 70,
+      "mean_us": 613.9854714285714,
+      "median_us": 574.2935,
+      "cumulative_us_per_token": 68.22060793650793
+    },
+    {
+      "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)], std::array<char *, (unsigned long)2>, (int)4, TrivialOffsetCalculator<(int)1, unsigned int>, TrivialOffsetCalculator<(int)1, unsigned int>, at::native::memory::LoadWithCast<(int)1>, at::native::memory::StoreWithCast<(int)1>>(int, T1, T2, T4, T5, T6, T7)",
+      "family": "elementwise",
+      "observed_count": 70,
+      "complete_count": 70,
+      "mean_us": 10.9899,
+      "median_us": 10.88,
+      "cumulative_us_per_token": 1.2210999999999999
+    },
+    {
+      "name": "void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<float, at::native::ArgMaxOps<float>, unsigned int, long, (int)4, (int)4>>(T3)",
+      "family": "sampling",
+      "observed_count": 70,
+      "complete_count": 70,
+      "mean_us": 11.5281,
+      "median_us": 11.3915,
+      "cumulative_us_per_token": 1.2809000000000001
+    },
+    {
+      "name": "void at::native::vectorized_elementwise_kernel<(int)2, at::native::CUDAFunctorOnSelf_add<long>, std::array<char *, (unsigned long)2>>(int, T2, T3)",
+      "family": "elementwise",
+      "observed_count": 140,
+      "complete_count": 140,
+      "mean_us": 1.0399785714285714,
+      "median_us": 1.024,
+      "cumulative_us_per_token": 0.2311063492063492
+    },
+    {
+      "name": "void at::native::index_elementwise_kernel<(int)128, (int)4, void at::native::gpu_index_kernel<void at::native::index_put_kernel_impl<at::native::OpaqueType<(int)8>>(at::TensorIterator &, c10::ArrayRef<long>, c10::ArrayRef<long>)::[lambda(char *, const char *, long) (instance 1)]>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>, const T1 &, bool)::[lambda(int) (instance 1)]>(long, T3)",
+      "family": "elementwise",
+      "observed_count": 140,
+      "complete_count": 140,
+      "mean_us": 1.9773142857142856,
+      "median_us": 1.8875000000000002,
+      "cumulative_us_per_token": 0.4394031746031746
+    },
+    {
+      "name": "void at::native::index_elementwise_kernel<(int)128, (int)4, void at::native::gpu_index_kernel<void at::native::index_put_kernel_impl<at::native::OpaqueType<(int)4>>(at::TensorIterator &, c10::ArrayRef<long>, c10::ArrayRef<long>)::[lambda(char *, const char *, long) (instance 1)]>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>, const T1 &, bool)::[lambda(int) (instance 1)]>(long, T3)",
+      "family": "elementwise",
+      "observed_count": 70,
+      "complete_count": 70,
+      "mean_us": 2.591957142857143,
+      "median_us": 2.576,
+      "cumulative_us_per_token": 0.2879952380952381
+    },
+    {
+      "name": "void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctorOnSelf_add<int>, std::array<char *, (unsigned long)2>>(int, T2, T3)",
+      "family": "elementwise",
+      "observed_count": 70,
+      "complete_count": 70,
+      "mean_us": 1.0459142857142858,
+      "median_us": 1.024,
+      "cumulative_us_per_token": 0.11621269841269842
+    },
+    {
+      "name": "void at::native::index_elementwise_kernel<(int)128, (int)4, void at::native::gpu_index_kernel<void at::native::index_kernel_impl<at::native::OpaqueType<(int)8>>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>)::[lambda(char *, const char *, long) (instance 1)]>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>, const T1 &, bool)::[lambda(int) (instance 1)]>(long, T3)",
+      "family": "elementwise",
+      "observed_count": 70,
+      "complete_count": 70,
+      "mean_us": 2.201985714285714,
+      "median_us": 2.176,
+      "cumulative_us_per_token": 0.2446650793650794
+    }
+  ],
+  "selected_record_count": 64361,
+  "selected_api_records": 40700,
+  "selected_kernel_records": 23171,
+  "run_id": "d-128-a-b2-trace",
+  "arm": "A",
+  "block": 2,
+  "output_len": 128,
+  "region_ns": [
+    156797767,
+    1102015644
+  ],
+  "tokens": 630
+}

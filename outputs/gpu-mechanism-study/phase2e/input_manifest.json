@@ -1,0 +1,242 @@
+[
+  {
+    "run_id": "d-128-c-b1-trace",
+    "arm": "C",
+    "block": 1,
+    "output_len": 128,
+    "sqlite": "outputs/gpu-mechanism-study/phase2d/summaries/d-128-c-b1-trace/trace.sqlite",
+    "sqlite_sha256": "06958049a01d84fdca68a1fce05e885cbd27bd34ef51f2baf60c5e6f9941432a",
+    "phase2d_metrics_sha256": "caccc4eb54af419252b12bdc2308e8119dba4416b4c6edd59dd9923d92cbd997",
+    "worker_pid": 923,
+    "region_ns": [
+      53962154,
+      275158620
+    ],
+    "useful_tokens": 560
+  },
+  {
+    "run_id": "d-128-d-b1-trace",
+    "arm": "D",
+    "block": 1,
+    "output_len": 128,
+    "sqlite": "outputs/gpu-mechanism-study/phase2d/summaries/d-128-d-b1-trace/trace.sqlite",
+    "sqlite_sha256": "b14ebe05646c5985705d263ed53bbfa982f4f28d3a178da780b631470576b15f",
+    "phase2d_metrics_sha256": "13c7c7abd510c3807bc1eacf6c16d28aa6bea7ce30178788df8be115d4eae043",
+    "worker_pid": 1355,
+    "region_ns": [
+      142393929,
+      984002956
+    ],
+    "useful_tokens": 560
+  },
+  {
+    "run_id": "d-128-a-b1-trace",
+    "arm": "A",
+    "block": 1,
+    "output_len": 128,
+    "sqlite": "outputs/gpu-mechanism-study/phase2d/summaries/d-128-a-b1-trace/trace.sqlite",
+    "sqlite_sha256": "1cfcb7cd4aed4374473d976af76c670f95d92e7fd01ffab112072d7aac696ac3",
+    "phase2d_metrics_sha256": "0d97a6e36e20e4c094bb7f93a7a22e8f863a073ba4767438a115b062c3863a6c",
+    "worker_pid": 2337,
+    "region_ns": [
+      149304802,
+      1042076214
+    ],
+    "useful_tokens": 630
+  },
+  {
+    "run_id": "d-128-b-b1-trace",
+    "arm": "B",
+    "block": 1,
+    "output_len": 128,
+    "sqlite": "outputs/gpu-mechanism-study/phase2d/summaries/d-128-b-b1-trace/trace.sqlite",
+    "sqlite_sha256": "b8c271b64be3f1241d4e03ead8eafa6b858aaf0df93a2837df4d85d4127e4814",
+    "phase2d_metrics_sha256": "4ebf1f65b1b3300c0060f3ec9f90142da83ddb5e32d84c33c61f1beba96a38e8",
+    "worker_pid": 2769,
+    "region_ns": [
+      58818216,
+      287204214
+    ],
+    "useful_tokens": 630
+  },
+  {
+    "run_id": "d-128-b-b2-trace",
+    "arm": "B",
+    "block": 2,
+    "output_len": 128,
+    "sqlite": "outputs/gpu-mechanism-study/phase2d/summaries/d-128-b-b2-trace/trace.sqlite",
+    "sqlite_sha256": "bf920f4aa5b1da85c6cca6abd55aceae1445ec63b1f98d9efba167af8a2e9368",
+    "phase2d_metrics_sha256": "60f388a45fdaca0cddfb0b95718c6d2f2f050c95778b3678f65deb9551f7dc66",
+    "worker_pid": 3514,
+    "region_ns": [
+      58506322,
+      282355383
+    ],
+    "useful_tokens": 630
+  },
+  {
+    "run_id": "d-128-a-b2-trace",
+    "arm": "A",
+    "block": 2,
+    "output_len": 128,
+    "sqlite": "outputs/gpu-mechanism-study/phase2d/summaries/d-128-a-b2-trace/trace.sqlite",
+    "sqlite_sha256": "d99f8362acca81f2ad7a6a5fd7b414b6c884d6ec223d8d98d79d519c01603d56",
+    "phase2d_metrics_sha256": "0c957ce560ccb08c7df13327d0ff96819aba005377e3d3461d913a854d082371",
+    "worker_pid": 4532,
+    "region_ns": [
+      156797767,
+      1102015644
+    ],
+    "useful_tokens": 630
+  },
+  {
+    "run_id": "d-128-d-b2-trace",
+    "arm": "D",
+    "block": 2,
+    "output_len": 128,
+    "sqlite": "outputs/gpu-mechanism-study/phase2d/summaries/d-128-d-b2-trace/trace.sqlite",
+    "sqlite_sha256": "7283e5c3705281b265429af2df8d15816004b9d1c41dfd5b98bd8fd55b9514fd",
+    "phase2d_metrics_sha256": "675cd9b1c664ec11a3df88f18208e263c8ca502ece9cea5ebff1d448860c2325",
+    "worker_pid": 4964,
+    "region_ns": [
+      157292975,
+      1018307665
+    ],
+    "useful_tokens": 560
+  },
+  {
+    "run_id": "d-128-c-b2-trace",
+    "arm": "C",
+    "block": 2,
+    "output_len": 128,
+    "sqlite": "outputs/gpu-mechanism-study/phase2d/summaries/d-128-c-b2-trace/trace.sqlite",
+    "sqlite_sha256": "79e7843ceb926374d756dcbed4f27893fb15a44b03b20d8fc0730c0848e5b470",
+    "phase2d_metrics_sha256": "53d9a12ec7405f73a04282d848e3aaf3e5417b05ec7d6139af3536a6a5bd01f9",
+    "worker_pid": 5956,
+    "region_ns": [
+      53969725,
+      274796929
+    ],
+    "useful_tokens": 560
+  },
+  {
+    "run_id": "d-128-d-b3-trace",
+    "arm": "D",
+    "block": 3,
+    "output_len": 128,
+    "sqlite": "outputs/gpu-mechanism-study/phase2d/summaries/d-128-d-b3-trace/trace.sqlite",
+    "sqlite_sha256": "c35985d344654c239295a6e5ca2043bed8135479ba9fbeca633ed75826e8c315",
+    "phase2d_metrics_sha256": "18cb855e723c786be32f354c1c2c53a6638e37135e1815a2def98663945c3551",
+    "worker_pid": 6665,
+    "region_ns": [
+      140306818,
+      990908169
+    ],
+    "useful_tokens": 560
+  },
+  {
+    "run_id": "d-128-c-b3-trace",
+    "arm": "C",
+    "block": 3,
+    "output_len": 128,
+    "sqlite": "outputs/gpu-mechanism-study/phase2d/summaries/d-128-c-b3-trace/trace.sqlite",
+    "sqlite_sha256": "17128a2f7829f1625e1a905f9ad269d058ae6143146fa42c0bcc141f6a77c3b8",
+    "phase2d_metrics_sha256": "e97c53e8d4753d47114e2db5b515983892ae9ab79f03c9a763bd9bfa029ce6aa",
+    "worker_pid": 7097,
+    "region_ns": [
+      54478319,
+      273113611
+    ],
+    "useful_tokens": 560
+  },
+  {
+    "run_id": "d-128-b-b3-trace",
+    "arm": "B",
+    "block": 3,
+    "output_len": 128,
+    "sqlite": "outputs/gpu-mechanism-study/phase2d/summaries/d-128-b-b3-trace/trace.sqlite",
+    "sqlite_sha256": "0e3c25fbda11dbd0ef2d4c9bdc8af173689c7f9d1b66c044146ecde45da04a7b",
+    "phase2d_metrics_sha256": "fac9b0c1aa5309e13065aa0161c0ac750f86b75e6a3d3e81fb9a723e68b139cb",
+    "worker_pid": 8082,
+    "region_ns": [
+      59216999,
+      277961432
+    ],
+    "useful_tokens": 630
+  },
+  {
+    "run_id": "d-128-a-b3-trace",
+    "arm": "A",
+    "block": 3,
+    "output_len": 128,
+    "sqlite": "outputs/gpu-mechanism-study/phase2d/summaries/d-128-a-b3-trace/trace.sqlite",
+    "sqlite_sha256": "913141b98ff398bcfa7c6923716ad1c243841297ec0eca5e9b70f2d3a57db097",
+    "phase2d_metrics_sha256": "23833d0c6a7505d19899dd05c1e4d92bc49f1c82383242fbed774cbe897cb480",
+    "worker_pid": 8514,
+    "region_ns": [
+      148247786,
+      1013832340
+    ],
+    "useful_tokens": 630
+  },
+  {
+    "run_id": "d-256-c-b1-trace",
+    "arm": "C",
+    "block": 1,
+    "output_len": 256,
+    "sqlite": "outputs/gpu-mechanism-study/phase2d/summaries/d-256-c-b1-trace/trace.sqlite",
+    "sqlite_sha256": "21322f6ea05b8b546867f4402b9757899ae88a008b06b61b7cc06b0a3d793e8c",
+    "phase2d_metrics_sha256": "0669be913c6a0678dbbb0e11d9cd950297ac6ee8e9f7c438ca61b7103315b520",
+    "worker_pid": 1229,
+    "region_ns": [
+      56831255,
+      286428202
+    ],
+    "useful_tokens": 560
+  },
+  {
+    "run_id": "d-256-d-b1-trace",
+    "arm": "D",
+    "block": 1,
+    "output_len": 256,
+    "sqlite": "outputs/gpu-mechanism-study/phase2d/summaries/d-256-d-b1-trace/trace.sqlite",
+    "sqlite_sha256": "c812353adc852dc43506b2f85f771ee18d8f1e4908920c7bda50c2251f1c5027",
+    "phase2d_metrics_sha256": "0ae8fa328c121d66f0c62f89b5329487ef786758ef13a5de79bb6bf63051caa8",
+    "worker_pid": 1781,
+    "region_ns": [
+      154301076,
+      1052970787
+    ],
+    "useful_tokens": 560
+  },
+  {
+    "run_id": "d-256-d-b2-trace",
+    "arm": "D",
+    "block": 2,
+    "output_len": 256,
+    "sqlite": "outputs/gpu-mechanism-study/phase2d/summaries/d-256-d-b2-trace/trace.sqlite",
+    "sqlite_sha256": "0f22843147d64494cac964d848c3c5b2ce4f36e54c1cea2b53301f2197aa8fb7",
+    "phase2d_metrics_sha256": "975a08a5182eea7f3ffa30820e8e98b86e018b20b12289f93674d36ccb855d42",
+    "worker_pid": 2213,
+    "region_ns": [
+      148457102,
+      1052676045
+    ],
+    "useful_tokens": 560
+  },
+  {
+    "run_id": "d-256-c-b2-trace",
+    "arm": "C",
+    "block": 2,
+    "output_len": 256,
+    "sqlite": "outputs/gpu-mechanism-study/phase2d/summaries/d-256-c-b2-trace/trace.sqlite",
+    "sqlite_sha256": "a84a53ffe7e106ce6f7adb1eb79efa4949691a2df241ab5ba9f027d641f66904",
+    "phase2d_metrics_sha256": "a44966c0d72f5c5d4f7be7ab44c89e93a5faf5ba9c4b64ec1669fd47072e331d",
+    "worker_pid": 2645,
+    "region_ns": [
+      55104709,
+      282364289
+    ],
+    "useful_tokens": 560
+  }
+]
