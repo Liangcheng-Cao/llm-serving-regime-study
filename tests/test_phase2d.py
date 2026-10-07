@@ -76,6 +76,8 @@ class IntervalTests(unittest.TestCase):
         self.assertEqual(values[0]["mean"],10)
         self.assertEqual(values[0]["cv"],.2)
         self.assertTrue(values[0]["warning_cv_gt_10pct"])
+        signed=aggregate([dict(a=1,x=x) for x in [-8,-10,-12]],["a"],["x"])[0]
+        self.assertEqual(signed["cv"],.2)
 
     def test_invalid_trace_filter_keeps_failures_out(self):
         rows=[dict(run_id="a",accepted=True),dict(run_id="b",accepted=False)]

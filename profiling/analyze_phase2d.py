@@ -31,6 +31,9 @@ def aggregate(rows,keys,metrics):
             values=[r[metric] for r in items if r.get(metric) is not None]
             if not values:continue
             stats=distribution(values)
+            # CV of signed diagnostic deltas uses |mean|; near-zero means can
+            # produce huge CV and are interpreted with their absolute SD too.
+            stats["cv"]=stats["sd"]/abs(stats["mean"]) if stats["sd"] is not None and stats["mean"] else None
             output.append(dict(zip(keys,group),metric=metric,**stats,p50=stats["median"],
                                warning_cv_gt_10pct=stats["cv"] is not None and stats["cv"]>.1))
     return output
